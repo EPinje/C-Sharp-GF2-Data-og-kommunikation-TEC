@@ -43,6 +43,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.2 - Convert (tast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.3 - Tal og tekst (tasteopgave)", "Input, output & pseudokode intro\Opgave 12.3 - Tal og tekst (tasteopgave)\Opgave 12.3 - Tal og tekst (tasteopgave).csproj", "{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operatorer", "Operatorer", "{D0487CB7-A584-4D1A-8254-482897D34277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 1 - Lommeregner", "Operatorer\Opgave 1 - Lommeregner\Opgave 1 - Lommeregner.csproj", "{57E96F45-FDF4-4C37-B035-F9B7EA847C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAfOperatorer.cs", "Operatorer\DemoAfOperatorer.cs\DemoAfOperatorer.cs.csproj", "{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 2 - Tal-sammenligner", "Operatorer\Opgave 2 - Tal-sammenligner\Opgave 2 - Tal-sammenligner.csproj", "{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +129,18 @@ Global
 		{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E96F45-FDF4-4C37-B035-F9B7EA847C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E96F45-FDF4-4C37-B035-F9B7EA847C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E96F45-FDF4-4C37-B035-F9B7EA847C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E96F45-FDF4-4C37-B035-F9B7EA847C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +164,9 @@ Global
 		{4C7D88A5-850C-4C28-A372-2A7371E3B9E4} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 		{5F904C65-4D13-4D77-96E9-D43ABE8BC402} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 		{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{57E96F45-FDF4-4C37-B035-F9B7EA847C03} = {D0487CB7-A584-4D1A-8254-482897D34277}
+		{58ED9959-EBBF-4DB1-B785-E40ADE4FD73D} = {D0487CB7-A584-4D1A-8254-482897D34277}
+		{4DC4A1CF-69F6-44A8-82E6-A0B07F3F8A50} = {D0487CB7-A584-4D1A-8254-482897D34277}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
