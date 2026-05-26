@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.7.11819.209
+VisualStudioVersion = 18.7.11819.209 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intro til C#", "Intro til C#", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -29,11 +29,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 9 - Udskrift med far
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 10 - Lav et flag", "Input, output & pseudokode intro\Opgave 10 - Lav et flag\Opgave 10 - Lav et flag.csproj", "{FDD2D096-BF8C-4CB8-8948-DCD5C8BBED97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udskrivning med index - Tasteopgave", "Input, output & pseudokode intro\Udskrivning med index - Tasteopgave\Udskrivning med index - Tasteopgave.csproj", "{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 5 - Placer tekst midt på skærm med SetCursorPosition(x, y)", "Intro til C#\Opgave 5 - Placer tekst midt på skærm med SetCursorPosition(x, y)\Opgave 5 - Placer tekst midt på skærm med SetCursorPosition(x, y).csproj", "{377FF40D-2608-4C3B-A946-3D43E7E3B2F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 11 - Console.Clear();", "Input, output & pseudokode intro\Opgave 11 - Console.Clear();\Opgave 11 - Console.Clear();.csproj", "{88543787-DEB8-40F1-815A-C549C35B6F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.1 - Indtast dit navn", "Input, output & pseudokode intro\Opgave 12.1 - Indtast dit navn\Opgave 12.1 - Indtast dit navn.csproj", "{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.2 - Convert - Tasteopgave", "Input, output & pseudokode intro\Opgave 12.2 - Convert - Tasteopgave\Opgave 12.2 - Convert - Tasteopgave.csproj", "{76DE7CBD-D1DA-4118-BA7A-96057F91D572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.3 - Tal og tekst - Tasteopgave", "Input, output & pseudokode intro\Opgave 12.3 - Tal og tekst - Tasteopgave\Opgave 12.3 - Tal og tekst - Tasteopgave.csproj", "{23B40F17-F9D6-4D2A-AA47-70DBA4390180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opave 12 - Konvertering af USD til DKK", "Input, output & pseudokode intro\Opave 12 - Konvertering af USD til DKK\Opave 12 - Konvertering af USD til DKK.csproj", "{B3A667BF-4B9C-4C4B-85B6-9752456EAA02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 7.1 - Find fejlen mellem indexer & argumenter", "Input, output & pseudokode intro\Opgave 7.1 - Find fejlen mellem indexer & argumenter\Opgave 7.1 - Find fejlen mellem indexer & argumenter.csproj", "{BE6224B7-FC74-4366-94E6-98E11D21B1C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,10 +93,6 @@ Global
 		{FDD2D096-BF8C-4CB8-8948-DCD5C8BBED97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD2D096-BF8C-4CB8-8948-DCD5C8BBED97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD2D096-BF8C-4CB8-8948-DCD5C8BBED97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{377FF40D-2608-4C3B-A946-3D43E7E3B2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{377FF40D-2608-4C3B-A946-3D43E7E3B2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{377FF40D-2608-4C3B-A946-3D43E7E3B2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,6 +101,26 @@ Global
 		{88543787-DEB8-40F1-815A-C549C35B6F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88543787-DEB8-40F1-815A-C549C35B6F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88543787-DEB8-40F1-815A-C549C35B6F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76DE7CBD-D1DA-4118-BA7A-96057F91D572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76DE7CBD-D1DA-4118-BA7A-96057F91D572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76DE7CBD-D1DA-4118-BA7A-96057F91D572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76DE7CBD-D1DA-4118-BA7A-96057F91D572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B40F17-F9D6-4D2A-AA47-70DBA4390180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B40F17-F9D6-4D2A-AA47-70DBA4390180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B40F17-F9D6-4D2A-AA47-70DBA4390180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B40F17-F9D6-4D2A-AA47-70DBA4390180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A667BF-4B9C-4C4B-85B6-9752456EAA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A667BF-4B9C-4C4B-85B6-9752456EAA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A667BF-4B9C-4C4B-85B6-9752456EAA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A667BF-4B9C-4C4B-85B6-9752456EAA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6224B7-FC74-4366-94E6-98E11D21B1C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6224B7-FC74-4366-94E6-98E11D21B1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6224B7-FC74-4366-94E6-98E11D21B1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6224B7-FC74-4366-94E6-98E11D21B1C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,9 +137,13 @@ Global
 		{A99AE1D6-B383-4AF6-96E2-1CAC224F265B} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 		{072E822C-8912-4A04-99E7-2E15CE71016C} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 		{FDD2D096-BF8C-4CB8-8948-DCD5C8BBED97} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
-		{D395B0A8-C067-4C6D-A39F-2243BD20A5B3} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 		{377FF40D-2608-4C3B-A946-3D43E7E3B2F5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{88543787-DEB8-40F1-815A-C549C35B6F26} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{5EBF9527-39E6-4D7F-AF07-4B9B1C21A280} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{76DE7CBD-D1DA-4118-BA7A-96057F91D572} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{23B40F17-F9D6-4D2A-AA47-70DBA4390180} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{B3A667BF-4B9C-4C4B-85B6-9752456EAA02} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
+		{BE6224B7-FC74-4366-94E6-98E11D21B1C9} = {57B7A535-86DF-4EAA-958F-9A9B3631549B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
