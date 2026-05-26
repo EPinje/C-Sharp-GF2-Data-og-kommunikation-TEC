@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Opgave_12._1___Indtast_dit_navn_(tasteopgave)
+namespace Opgave_12._1___Indtast_dit_navn__tasteopgave_
+{
     internal class Program
     {
         static void Main(string[] args)

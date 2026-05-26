@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Opgave 4 - Position (tasteopgave)")]
+[assembly: AssemblyTitle("Opgave 12.1 - Indtast dit navn (tasteopgave)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("IT Center Nord")]
-[assembly: AssemblyProduct("Opgave 4 - Position (tasteopgave)")]
+[assembly: AssemblyProduct("Opgave 12.1 - Indtast dit navn (tasteopgave)")]
 [assembly: AssemblyCopyright("Copyright © IT Center Nord 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ef297f9e-fac2-4281-a0cd-7c43bb0f9dd6")]
+[assembly: Guid("4c7d88a5-850c-4c28-a372-2a7371e3b9e4")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF297F9E-FAC2-4281-A0CD-7C43BB0F9DD6}</ProjectGuid>
+    <ProjectGuid>{4C7D88A5-850C-4C28-A372-2A7371E3B9E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Opgave_4___Position__tasteopgave_</RootNamespace>
-    <AssemblyName>Opgave 4 - Position %28tasteopgave%29</AssemblyName>
+    <RootNamespace>Opgave_12._1___Indtast_dit_navn__tasteopgave_</RootNamespace>
+    <AssemblyName>Opgave 12.1 - Indtast dit navn %28tasteopgave%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

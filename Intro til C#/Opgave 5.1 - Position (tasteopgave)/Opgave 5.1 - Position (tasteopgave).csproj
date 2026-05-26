@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D395B0A8-C067-4C6D-A39F-2243BD20A5B3}</ProjectGuid>
+    <ProjectGuid>{69996074-DD60-4BED-B41E-8A6A0B5EC18B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Udskrivning_med_index___Tasteopgave</RootNamespace>
-    <AssemblyName>Udskrivning med index - Tasteopgave</AssemblyName>
+    <RootNamespace>Opgave_5._1___Position__tasteopgave_</RootNamespace>
+    <AssemblyName>Opgave 5.1 - Position %28tasteopgave%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
