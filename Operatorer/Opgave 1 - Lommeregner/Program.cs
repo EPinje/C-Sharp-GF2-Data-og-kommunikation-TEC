@@ -26,9 +26,9 @@ namespace Opgave_1___Lommeregner
 
             Console.WriteLine("Dette er en lommeregner, som leger med hele tal og decimaltal.");
             Console.WriteLine();
-            Console.WriteLine("Indtast et tal");
+            Console.Write("Indtast et tal: ");
             tal1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Indtast et andet tal");
+            Console.Write("Indtast et andet tal: ");
             tal2 = Convert.ToDouble(Console.ReadLine());
 
             //Diffinition af tal3

@@ -24,10 +24,11 @@ namespace Opgave_2___Tal_sammenligner
             Console.WriteLine("Angiv to tal, og programmet vil sammenligne dem for dig!");
             Console.WriteLine();
 
-            Console.WriteLine("Angiv det første tal");
+            Console.Write("Angiv det første tal: ");
             tal1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
 
-            Console.WriteLine("Angiv det næste tal");
+            Console.Write("Angiv det næste tal: ");
             tal2 = Convert.ToDouble(Console.ReadLine());
 
             //Definition af bool b
@@ -43,13 +44,38 @@ namespace Opgave_2___Tal_sammenligner
 
             //!=
 
+            b = tal1 != tal2;
+
+            Console.WriteLine();
+            Console.WriteLine("{0} != {1} : {2}", tal1, tal2, b);
+
+
             //<
 
+            b = tal1 < tal2;
+
+            Console.WriteLine();
+            Console.WriteLine("{0} < {1} : {2}", tal1, tal2, b);
+
             //>
+            
+            b = tal1 > tal2;
+
+            Console.WriteLine();
+            Console.WriteLine("{0} > {1} : {2}", tal1, tal2, b);
 
             //<=
 
+            b = tal1 <= tal2;
+
+            Console.WriteLine();
+            Console.WriteLine("{0} <= {1} : {2}", tal1, tal2, b);
+
             //>=
+
+            b = tal1 >= tal2;
+            Console.WriteLine();
+            Console.WriteLine("{0} >= {1} : {2}", tal1, tal2, b);
 
             Console.ReadKey();
         }
