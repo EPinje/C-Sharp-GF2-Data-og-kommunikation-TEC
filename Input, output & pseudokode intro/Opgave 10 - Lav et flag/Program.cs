@@ -15,12 +15,14 @@ namespace Opgave_10___Lav_et_flag
             //21.04.2026
 
             //Mellemrum er brugt til at lave farve og indsat efter koordinater. så de danner Dannebrog
-            //SetCursorPosition(x, y) sætter startpositionen for efterfølgende kommandoer efter x og y koordinater
+            
+            //ForegroundColor ændrer tekstfarve
+            
 
             //Udskrift til skærm
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(50, 10);
-            Console.WriteLine("                  ");
+            Console.BackgroundColor = ConsoleColor.Red;     //BackgroundColor ændrer baggrunden bag tekst
+            Console.SetCursorPosition(50, 10)               //SetCursorPosition(x, y) sætter startpositionen for efterfølgende kommandoer efter x og y koordinater
+            Console.WriteLine("                  ");        //WriteLine() udskriver indhold i parentesen og laver et linjeskift. Tekst angives i "" ellers ses indholdet som beregning.
             Console.SetCursorPosition(50, 11);
             Console.WriteLine("                  ");
             Console.SetCursorPosition(50, 12);
@@ -52,7 +54,7 @@ namespace Opgave_10___Lav_et_flag
 
 
             //Afventer at bruger trykker på en tast
-            Console.ReadKey();
+            Console.ReadKey();                              //ReadKey() afventer at bruger trykker på en tast, og lukker programmet, når det sker
         }
     }
 }
