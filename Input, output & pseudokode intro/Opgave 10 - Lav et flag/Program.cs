@@ -15,6 +15,7 @@ namespace Opgave_10___Lav_et_flag
             //21.04.2026
 
             //Mellemrum er brugt til at lave farve og indsat efter koordinater. så de danner Dannebrog
+            //SetCursorPosition(x, y) sætter startpositionen for efterfølgende kommandoer efter x og y koordinater
 
             //Udskrift til skærm
             Console.BackgroundColor = ConsoleColor.Red;
