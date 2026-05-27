@@ -20,23 +20,31 @@ namespace _22___Biogradbilletter_og_alder
                 Er man over 65 år vil billetprisen være 35 kroner.
             */
 
-            int alder;
+            //variabler
+            int alder, billetpris = 0;                                                                  //variabel til alder og billetpris. Gemmer alder som et heltal.
 
-            Console.Write("Velkommen til biografen! Indtast din alder for at se billetprisen: ");
+            //Info til bruger
+            Console.WriteLine("Velkommen til biografen!");                                              //Skriver en besked til brugeren
+            Console.WriteLine("------------------------\n");                                            //\n laver en ny linje. Bruges til at gøre programmet overskueligt for brugeren.
 
-            alder = Convert.ToInt16(Console.ReadLine());
-            Console.WriteLine();
+            Console.Write("Indtast din alder for at få udskrevet din billetpris: ");
 
-            bool under18 = alder < 18;
-            bool mellem18og65 = alder >= 18 && alder <= 65;
-            bool over65 = alder > 65;
+            //Input fra bruger
+            alder = Convert.ToInt16(Console.ReadLine());                                                //konverterer brugerinput til int og gemmer det i variablen alder
+            Console.WriteLine();                                                                        //linjeskrift for at gøre programmet mere overskueligt
 
-            if (under18)
-                Console.WriteLine("Billetprisen er 45 kroner");
-            else if (mellem18og65)
-                Console.WriteLine("Billetprisen er 75 kroner");
-            else if (over65)
-                Console.WriteLine("Billetprisen er 35 kroner");
+            //bool variabler til de forskellige aldersgrupper
+            bool under18 = alder < 18;                                                                  //alder er mindre end 18
+            bool mellem18og65 = alder >= 18 && alder <= 65;                                             //alder er større eller lig med 18 samtidig med at alder er mindre eller lig med 65
+            bool over65 = alder > 65;                                                                   //alder er større end 65
+
+            //billetpris tilpasses brugerens alder
+            if (under18) billetpris = 45;                                                               //hvis under18 er sand, så sæt billetpris til 45
+            if (mellem18og65) billetpris = 75;                                                          //hvis mellem18og65 er sand, så sæt billetpris til 75
+            if (over65) billetpris = 35;                                                                //hvis over65 er sand, så sæt billetpris til 35
+
+            //Billetpris udskrives til brugeren
+            Console.WriteLine($"Eftersom du er {alder} år, koster din billet {billetpris} kroner.");    //$ gør det muligt at inkludere variabler inde i teksten, så længe de er omgivet af {}.
 
             Console.ReadKey();
 
