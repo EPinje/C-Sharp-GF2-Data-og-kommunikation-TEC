@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23.1 - if med double bundet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23 - Køb af T-shirt", "variabler, Math funktion og rutediagram\23 - Køb af T-shirt\23 - Køb af T-shirt.csproj", "{239F5780-9476-44A8-B043-202A0F07684C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24 - Hotelreservation - bestilling", "variabler, Math funktion og rutediagram\24 - Hotelreservation - bestilling\24 - Hotelreservation - bestilling.csproj", "{89896244-3BCB-443D-8CB1-5600C4DB24BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +217,10 @@ Global
 		{239F5780-9476-44A8-B043-202A0F07684C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{239F5780-9476-44A8-B043-202A0F07684C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{239F5780-9476-44A8-B043-202A0F07684C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -253,6 +259,7 @@ Global
 		{94AD4D7F-CE21-4AE4-A449-F293FE3D2FD1} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 		{D3B7B311-9ADC-4751-8B3D-6AB397125E17} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 		{239F5780-9476-44A8-B043-202A0F07684C} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{89896244-3BCB-443D-8CB1-5600C4DB24BF} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}

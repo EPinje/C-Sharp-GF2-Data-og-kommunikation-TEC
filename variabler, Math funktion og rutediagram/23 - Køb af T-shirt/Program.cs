@@ -15,7 +15,7 @@ namespace _23___Køb_af_T_shirt
                 Lav et program hvor man kan købe T-shirt.
             
                 Det skal være sådan at man kan indtaste om man vil købe Small, Medium eller Large T-shirt.
-                Man skal altså kunne indtaste S, M eller F som T-shirt størrelse.
+                Man skal altså kunne indtaste S, M eller L som T-shirt størrelse.
                 Man kan kun købe én type.
                 Man skal også kunne angive hvor mange (antal) man vil købe af den pågældende type.
 
@@ -49,30 +49,28 @@ namespace _23___Køb_af_T_shirt
             if (størrelse == "s") pris = 120;
             if (størrelse == "m") pris = 160;
             if (størrelse == "l") pris = 185;
-            if (antal >= 10) pris *= 0.95;
 
-            //Oprettelse af rabatinfo, som giver information om rabatten, hvis der er nogen, og ellers er tom
-            bool rabatcheck = antal >= 10;
+            double prisudenrabat, prismedrabat, rabat;
 
-            string rabatinfo;
-
-            if (rabatcheck)
-                rabatinfo = "Du har fået en rabat på 5% for at købe mere end 10 T-shirts.";
-            else
-                rabatinfo = "";
+            prisudenrabat = pris * antal;
+            prismedrabat = pris * antal * 0.95;
+            rabat = prisudenrabat - prismedrabat;
 
             //Info om totalpris og rabat
-            Console.WriteLine("Totalprisen er " + pris);
-            Console.WriteLine(rabatinfo);
+
+            bool rabatcheck = antal >= 10;
+
+            if (rabatcheck == false)
+            {
+                Console.WriteLine("Totalprisen er " + prisudenrabat + " kr. ");
+            }
+            else
+            {
+                Console.WriteLine("Totalprisen er " + prismedrabat + " kr. ");
+                Console.WriteLine("Du har fået en rabat på " + rabat + " kr. ");
+            }
 
             Console.ReadKey();
-
-
-
-
-
-
-
         }
     }
 }
