@@ -11,7 +11,6 @@ namespace _24___Hotelreservation___bestilling
         static void Main(string[] args)
         {
             /*
-            
                 Hotelreservation – bestilling
 
                     Lav et program hvor man kan reservere et hotelværelse.
@@ -111,13 +110,7 @@ namespace _24___Hotelreservation___bestilling
                 Console.WriteLine("Reservationen er afbrudt. Genstart siden for at prøve igen.");
             }
 
-
-
-
-
-
             Console.ReadKey();
-
         }
     }
 }
