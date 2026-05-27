@@ -34,26 +34,24 @@ namespace _24___Hotelreservation___bestilling
             //Variabler
             double enkeltværelsePris = 765, dobbeltværelsePris = 980, familieværelsePris = 1250, eurokurs = 7.45, prisdkk = 0, priseur = 0;
 
-            string enkeltværelsePrisiKR = enkeltværelsePris + " kr. ", dobbeltværelsePrisiKR = dobbeltværelsePris + " kr. ", familieværelsePrisiKR = familieværelsePris + " kr. ";
-            string enkeltværelsePrisiEUR = (enkeltværelsePris / eurokurs).ToString("0.00") + " EUR ", dobbeltværelsePrisiEUR = (dobbeltværelsePris / eurokurs).ToString("0.00") + " EUR ", familieværelsePrisiEUR = (familieværelsePris / eurokurs).ToString("0.00") + " EUR ";
-            string enkeltværelseInfo = "Enkeltværelser koster: " + enkeltværelsePrisiKR + "/ " + enkeltværelsePrisiEUR, dobbeltværelseInfo = "Dobbeltværelser koster: " + dobbeltværelsePrisiKR + "/ " + dobbeltværelsePrisiEUR, familieværelseInfo = "Familieværelser koster: " + familieværelsePrisiKR + "/ " + familieværelsePrisiEUR;
+            string enkeltværelsePrisiKR = $"{enkeltværelsePris} kr.", dobbeltværelsePrisiKR = $"{dobbeltværelsePris} kr.", familieværelsePrisiKR = $"{familieværelsePris} kr.";
+            string enkeltværelsePrisiEUR = $"{(enkeltværelsePris / eurokurs):F2} EUR", dobbeltværelsePrisiEUR = $"{(dobbeltværelsePris / eurokurs):F2} EUR", familieværelsePrisiEUR = $"{(familieværelsePris / eurokurs):F2} EUR";
+            string enkeltværelseInfo = $"Enkeltværelser koster: {enkeltværelsePrisiKR} / {enkeltværelsePrisiEUR}", dobbeltværelseInfo = $"Dobbeltværelser koster: {dobbeltværelsePrisiKR} / {dobbeltværelsePrisiEUR}", familieværelseInfo = $"Familieværelser koster: {familieværelsePrisiKR} / {familieværelsePrisiEUR}";
 
 
             //Velkomst og info
-            Console.SetCursorPosition(20, 1);
+            Console.SetCursorPosition(10, 1);
             Console.WriteLine("Velkommen til Hotel C#");
-            Console.WriteLine();
+            Console.SetCursorPosition(10, 2);
+            Console.WriteLine("----------------------\n");
 
-            Console.WriteLine("På denne side kan du reservere et hotelværelse");
-            Console.WriteLine();
+            Console.WriteLine("På denne side kan du reservere et hotelværelse.\n");
 
-            Console.WriteLine("Vi har Enkeltværelser, Dobbeltværelser og Familieværelser.");
-            Console.WriteLine();
+            Console.WriteLine("Vi har enkeltværelser, dobbeltværelser og familieværelser.\n");
 
             Console.WriteLine(enkeltværelseInfo);
             Console.WriteLine(dobbeltværelseInfo);
-            Console.WriteLine(familieværelseInfo);
-            Console.WriteLine();
+            Console.WriteLine($"{familieværelseInfo}\n");
 
             //Input fra bruger
             Console.Write("Hvilket type værelse vil du reservere? (Angiv det som E, D eller F) ");
@@ -65,7 +63,7 @@ namespace _24___Hotelreservation___bestilling
             double antalVærelser = Convert.ToDouble(Console.ReadLine().ToLower());
             Console.WriteLine();
 
-            Console.Write("Hvor mange dage (antal overnatninger) vil du resevere det/dem? ");
+            Console.Write("Hvor mange dage (antal overnatninger) vil du resevere til? ");
             double antalDage = Convert.ToDouble(Console.ReadLine().ToLower());
             Console.WriteLine();
 
@@ -87,7 +85,7 @@ namespace _24___Hotelreservation___bestilling
             }
             
             //Udskrivning af reservationsdetaljer
-            Console.WriteLine("Du har valgt at reservere " + antalVærelser + " " + værelseTypeInfo + " " + antalDage + " overnatninger");
+            Console.WriteLine($"Du har valgt at reservere {antalVærelser} {værelseTypeInfo} til {antalDage} overnatninger.");
 
             //Bekræftelse
             Console.Write("Er det korrekt? (Ja / Nej) ");
@@ -106,7 +104,7 @@ namespace _24___Hotelreservation___bestilling
             {
                 //lige lært at \n laver en ny linje
 
-                Console.WriteLine($"Den samlede pris er: " + prisdkk + " dkk / " + { priseur:F2} + " EUR ");
+                Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
             }
             else
             {
