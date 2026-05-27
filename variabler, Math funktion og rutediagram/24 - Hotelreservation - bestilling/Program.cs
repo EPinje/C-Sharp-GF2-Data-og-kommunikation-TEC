@@ -106,7 +106,7 @@ namespace _24___Hotelreservation___bestilling
             {
                 //lige lært at \n laver en ny linje
 
-                Console.WriteLine($"Den samlede pris er: " + prisdkk + " dkk / " + { priseur:F2} + " EUR ");
+                Console.WriteLine($"Den samlede pris er: " + prisdkk + " dkk / " + { priseur:F2} + " EUR "); dfdf
             }
             else
             {
