@@ -17,7 +17,7 @@ namespace Opgave_3___Adgangskontrol
                         Får børnerabat: alder < 12 || (højde < 140 && !harKørekort)
             */
 
-            // 1. Set the console to understand special characters
+            //Gør at programmet inkluderer specialtegn, som æ, ø og å
             Console.OutputEncoding = Encoding.UTF8;
 
             double alder, højde;
@@ -43,7 +43,11 @@ namespace Opgave_3___Adgangskontrol
             alderOK = alder >= 18;
             højdeOK = højde >= 140;
 
-            if (alder >= 18 && harKørekort)
+            bool MåKøreGokart = alder >= 18 && harKørekort;
+            bool MåKøreRutsjebane = alder >= 12 && (harKørekort || højde >= 140);
+            bool FårBørnerabat = alder < 12 || (højde < 140 && !harKørekort);
+
+            if (MåKøreGokart)
             {
                 Console.WriteLine("Du har mulighed for at suse rundt på gokartbanerne");
             }
@@ -54,7 +58,7 @@ namespace Opgave_3___Adgangskontrol
 
             Console.WriteLine();
 
-            if (alder >= 12 && (harKørekort || højde >= 140))
+            if (MåKøreRutsjebane)
             {
                 Console.WriteLine("Rutjebanerne er skabt til dig!");
             }
@@ -63,7 +67,16 @@ namespace Opgave_3___Adgangskontrol
                 Console.WriteLine("Du er for lav eller ung til at have det sjovt i en rutjebane");
             }
 
-            Får børnerabat: alder < 12 || (højde < 140 && !harKørekort)
+            Console.WriteLine();
+
+            if (FårBørnerabat)
+            {
+                Console.WriteLine("Tillykke, du får børnerabat!");
+            }
+            else
+            {
+                Console.WriteLine("Du har desværre været for længe på denne jord til at få børnerabat");
+            }
 
             Console.WriteLine();
 
@@ -76,13 +89,13 @@ namespace Opgave_3___Adgangskontrol
             Console.WriteLine("Kørekort = " + harKørekort);
             Console.WriteLine();
 
-            Console.WriteLine("Må køre gokart: " + (alder >= 18 && harKørekort));
+            Console.WriteLine("Må køre gokart: " + MåKøreGokart);
             Console.WriteLine();
 
-            Console.WriteLine("Må køre rutsjebane: " + (alder >= 12 && (harKørekort || højde >= 140)));
+            Console.WriteLine("Må køre rutsjebane: " + MåKøreRutsjebane);
             Console.WriteLine();
 
-            Console.WriteLine("Får børnerabat: " + (alder < 12 || (højde < 140 && !harKørekort)));
+            Console.WriteLine("Får børnerabat: " + FårBørnerabat);
             Console.WriteLine();
 
             Console.ReadKey();
