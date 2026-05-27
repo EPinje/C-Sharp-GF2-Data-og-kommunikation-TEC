@@ -17,7 +17,7 @@ namespace Opgave_3___Adgangskontrol
                         Får børnerabat: alder < 12 || (højde < 140 && !harKørekort)
             */
 
-            //Gør at programmet inkluderer specialtegn, som æ, ø og å
+            //Gør at specialtegn som æ, ø og å, kan bruges i programmet
             Console.OutputEncoding = Encoding.UTF8;
 
             double alder, højde;

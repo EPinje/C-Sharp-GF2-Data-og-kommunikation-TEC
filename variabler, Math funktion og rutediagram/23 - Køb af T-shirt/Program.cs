@@ -28,7 +28,7 @@ namespace _23___Køb_af_T_shirt
                 Programmet skal kunne udskrive totalprisen inkl. rabat og rabatten hvis der er nogen.
             */
 
-            //Gør at programmet inkluderer specialtegn, som æ, ø og å
+            //Gør at specialtegn som æ, ø og å, kan bruges i programmet
             Console.OutputEncoding = Encoding.UTF8;
 
             //Variabler

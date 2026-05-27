@@ -16,9 +16,9 @@ namespace _24___Hotelreservation___bestilling
                     Lav et program hvor man kan reservere et hotelværelse.
                 
                         Det skal være sådan at man kan indtaste om man ønsker Enkeltværelse, Dobbeltværelse eller Familieværelse.
-                        Man skal altså kunne indtaste E, D eller F som værelsestype.
-                        Man kan kun reservere én type.
-                        Man skal også kunne angive hvor mange (antal) værelser man vil reservere og i hvor mange dage (antal overnatninger).
+                            Man skal altså kunne indtaste E, D eller F som værelsestype.
+                            Man kan kun reservere én type.
+                            Man skal også kunne angive hvor mange (antal) værelser man vil reservere og i hvor mange dage (antal overnatninger).
                         
                             Værelserne koster:
 
@@ -26,9 +26,12 @@ namespace _24___Hotelreservation___bestilling
                             Dobbeltværelse koster 980 kr.
                             Familieværelse koster 1250 kr.
 
-                    Nogle kunder vil gerne betale i € (euro).
-                        Programmet skal derfor kunne udskrive totalprisen både i DKK og i EUR
+                        Nogle kunder vil gerne betale i € (euro).
+                            Programmet skal derfor kunne udskrive totalprisen både i DKK og i EUR
             */
+
+            //Gør at specialtegn som æ, ø og å, kan bruges i programmet
+            Console.OutputEncoding = Encoding.UTF8;
 
             //Variabler
             double enkeltværelsePris = 765, dobbeltværelsePris = 980, familieværelsePris = 1250, eurokurs = 7.45, prisdkk = 0, priseur = 0;
@@ -37,14 +40,13 @@ namespace _24___Hotelreservation___bestilling
             string enkeltværelsePrisiEUR = $"{(enkeltværelsePris / eurokurs):F2} EUR", dobbeltværelsePrisiEUR = $"{(dobbeltværelsePris / eurokurs):F2} EUR", familieværelsePrisiEUR = $"{(familieværelsePris / eurokurs):F2} EUR";
             string enkeltværelseInfo = $"Enkeltværelser koster: {enkeltværelsePrisiKR} / {enkeltværelsePrisiEUR}", dobbeltværelseInfo = $"Dobbeltværelser koster: {dobbeltværelsePrisiKR} / {dobbeltværelsePrisiEUR}", familieværelseInfo = $"Familieværelser koster: {familieværelsePrisiKR} / {familieværelsePrisiEUR}";
 
-
             //Velkomst og info
             Console.SetCursorPosition(10, 1);
             Console.WriteLine("Velkommen til Hotel C#");
             Console.SetCursorPosition(10, 2);
             Console.WriteLine("----------------------\n");
 
-            Console.WriteLine("På denne side kan du reservere et hotelværelse.\n");
+            Console.WriteLine("På denne side kan du reservere hotelværelser.\n");
 
             Console.WriteLine("Vi har enkeltværelser, dobbeltværelser og familieværelser.\n");
 
