@@ -81,6 +81,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24 - Hotelreservation - bes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25 - Hotelreservation - udvidet bestilling", "variabler, Math funktion og rutediagram\25 - Hotelreservation - udvidet bestilling\25 - Hotelreservation - udvidet bestilling.csproj", "{A01776CB-8D5C-4235-BB6F-9A728A2055EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14 - Trekantsberegning", "variabler, Math funktion og rutediagram\14 - Trekantsberegning\14 - Trekantsberegning.csproj", "{9F056213-77FB-408C-8663-D3FE1035A76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15 - Temperaturomregning", "variabler, Math funktion og rutediagram\15 - Temperaturomregning\15 - Temperaturomregning.csproj", "{0F05DE40-61CA-445D-B453-6F8BB46FC303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16 - Areal og omkreds af en cirkel ud fra radius", "variabler, Math funktion og rutediagram\16 - Areal og omkreds af en cirkel ud fra radius\16 - Areal og omkreds af en cirkel ud fra radius.csproj", "{AFC60A11-5C02-460C-96F2-2EF477524923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 - Avanceret trekantsprogram", "variabler, Math funktion og rutediagram\17 - Avanceret trekantsprogram\17 - Avanceret trekantsprogram.csproj", "{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +235,22 @@ Global
 		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F056213-77FB-408C-8663-D3FE1035A76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F056213-77FB-408C-8663-D3FE1035A76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F056213-77FB-408C-8663-D3FE1035A76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F056213-77FB-408C-8663-D3FE1035A76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F05DE40-61CA-445D-B453-6F8BB46FC303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F05DE40-61CA-445D-B453-6F8BB46FC303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F05DE40-61CA-445D-B453-6F8BB46FC303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F05DE40-61CA-445D-B453-6F8BB46FC303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC60A11-5C02-460C-96F2-2EF477524923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC60A11-5C02-460C-96F2-2EF477524923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC60A11-5C02-460C-96F2-2EF477524923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC60A11-5C02-460C-96F2-2EF477524923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,6 +290,11 @@ Global
 		{D3B7B311-9ADC-4751-8B3D-6AB397125E17} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 		{239F5780-9476-44A8-B043-202A0F07684C} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 		{89896244-3BCB-443D-8CB1-5600C4DB24BF} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{A01776CB-8D5C-4235-BB6F-9A728A2055EC} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{9F056213-77FB-408C-8663-D3FE1035A76A} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{0F05DE40-61CA-445D-B453-6F8BB46FC303} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{AFC60A11-5C02-460C-96F2-2EF477524923} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
+		{BB2725AE-958C-4F27-A86B-0A57FA3C3D24} = {4B810C5E-965B-43C6-963F-C046756F9E7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}

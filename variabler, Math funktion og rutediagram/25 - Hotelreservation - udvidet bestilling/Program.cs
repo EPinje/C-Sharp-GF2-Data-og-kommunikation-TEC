@@ -40,7 +40,6 @@ namespace _25___Hotelreservation___udvidet_bestilling
             string enkeltværelsePrisiEUR = $"{(enkeltværelsePris / eurokurs):F2} EUR", dobbeltværelsePrisiEUR = $"{(dobbeltværelsePris / eurokurs):F2} EUR", familieværelsePrisiEUR = $"{(familieværelsePris / eurokurs):F2} EUR";
             string enkeltværelseInfo = $"Enkeltværelser koster: {enkeltværelsePrisiKR} / {enkeltværelsePrisiEUR}", dobbeltværelseInfo = $"Dobbeltværelser koster: {dobbeltværelsePrisiKR} / {dobbeltværelsePrisiEUR}", familieværelseInfo = $"Familieværelser koster: {familieværelsePrisiKR} / {familieværelsePrisiEUR}";
 
-
             //Velkomst og info
             Console.SetCursorPosition(10, 1);
             Console.WriteLine("Velkommen til Hotel C#");
@@ -58,19 +57,23 @@ namespace _25___Hotelreservation___udvidet_bestilling
             //Input fra bruger
             Console.Write("Er du interesseret i mere end en type værelse? (j/n) ");
 
-            string janej = Console.ReadLine().ToLower();
+            string fleretyper = Console.ReadLine().ToLower();
             Console.WriteLine();
 
             //bool til at tjekke antal af værelsestyper
-            bool flereTyperVærelser = janej == "j";
+            bool flereTyperVærelser = fleretyper == "j";
 
-            //variable til at holde styr på værelsestyper, antal værelser og overnatninger
-            string værelseType = "", værelseTypeInfo = "";
+            //variabler til at holde styr på værelsestyper, antal værelser og overnatninger
+            string værelseType = "", værelseTypeInfo = "", bekræftelse;
             int antalVærelser = 0, antalDage = 0, antalEnkeltVærelser = 0, antalDobbeltVærelser = 0, antalFamilieVærelser = 0, overnatningerEnkeltVærelser = 0, overnatningerDobbeltVærelser = 0, overnatningerFamilievVærelser = 0;
 
-            if (flereTyperVærelser == false)
+            //variabler til priser for flere typer værelser
+
+            int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+
+            if (flereTyperVærelser == false) //For personer som ønsker at reservere en enkelt værelsestype
             {
-                //Input fra bruger, som ønsker at reservere en enkelt værelsestype
+                //Input fra bruger
                 Console.Write("Hvilket type værelse vil du reservere? (Angiv det med det første bogstav i typen): ");
 
                 værelseType = Console.ReadLine().ToLower();
@@ -103,8 +106,8 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.WriteLine($"Du har valgt at reservere {antalVærelser} {værelseTypeInfo} til {antalDage} overnatninger.");
 
                 //Bekræftelse
-                Console.Write("Er det korrekt? (Ja / Nej) ");
-                string bekræftelse = Console.ReadLine().ToLower();
+                Console.Write("Er det korrekt? (j/n) ");
+                bekræftelse = Console.ReadLine().ToLower();
                 Console.WriteLine();
 
                 //Udregning af pris i DKK og EUR
@@ -115,10 +118,8 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 priseur = prisdkk / eurokurs;
 
                 //Hvis bekræftelse er ja, skal programmet fortsætte til betaling og udregning af totalpris. Hvis nej, skal programmet afbrydes.
-                if (bekræftelse == "ja")
+                if (bekræftelse == "j")
                 {
-                    //lige lært at \n laver en ny linje
-
                     Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
                 }
                 else
@@ -126,10 +127,10 @@ namespace _25___Hotelreservation___udvidet_bestilling
                     Console.WriteLine("Reservationen er afbrudt. Genstart siden for at prøve igen.");
                 }
             }
-            else
+            else //For personer som ønsker at reservere flere værelsestyper
             {
-                //Input fra bruger som ønsker at reservere flere værelsestyper
-                Console.WriteLine("Her skal vi vide hvilken type af værelser du vil reserverer, hvor mange af hver og hvor lang tid, du ønsker at opholdet skal vare.\n");
+                //Input fra bruger
+                Console.WriteLine("Her skal vi vide hvilken type af værelser du vil reserverer, hvor mange af hver type og hvor lang tid, du ønsker at opholdet skal vare.\n");
 
                 Console.WriteLine("Hvis der en type værelse, du ikke er interesseret i, kan du skrive 0.\n");
 
@@ -156,58 +157,48 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
                 overnatningerFamilievVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
                 Console.WriteLine();
+
+                //variabler til at sammensætte priser for de ønskede værelser og overnatnigner
+
+                enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser)
+
+                prisdkk = (enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser) + (dobbeltværelsePris * antalDobbeltVærelser * overnatningerDobbeltVærelser) + (familieværelsePris * antalFamilieVærelser * overnatningerFamilievVærelser);
+                priseur = prisdkk / eurokurs;
+
+                int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+
+                //Udskrivning af reservationsdetaljer
+                Console.WriteLine("Bekræft reservation af:\n");
+
+                if (antalEnkeltVærelser == 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelse med {overnatningerEnkeltVærelser} overnatninger.");
+                if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelse med {overnatningerDobbeltVærelser} overnatninger.");
+                if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalFamilieVærelser} familietværelse med {overnatningerFamilievVærelser} overnatninger.");
+
+                if (antalEnkeltVærelser > 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelser med {overnatningerEnkeltVærelser} overnatninger.");
+                if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelser med {overnatningerDobbeltVærelser} overnatninger.");
+                if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalFamilieVærelser} familietværelser med {overnatningerFamilievVærelser} overnatninger.");
+
+                //Bekræftelse
+                Console.WriteLine();
+                Console.Write("Er det korrekt? (j/n) ");
+                bekræftelse = Console.ReadLine().ToLower();
+                Console.WriteLine();
+
+                if (bekræftelse == "j")
+                {
+                    Console.WriteLine("Reservationen er bekræftet.\n");
+
+                    Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
+
+                }
+                else
+                {
+                    Console.WriteLine("Reservationen er afbrudt. Genstart siden for at prøve igen.");
+                }
             }
-
-
-            /*
-
-            //værelseTypeInfo redefineres
-
-            string værelseTypeInfo = "";
-
-            if (antalVærelser == 1)
-            {
-                if (værelseType == "e") værelseTypeInfo = "enkeltværelse";
-                if (værelseType == "d") værelseTypeInfo = "dobbeltværelse";
-                if (værelseType == "f") værelseTypeInfo = "familieværelse";
-            }
-            else
-            {
-                if (værelseType == "e") værelseTypeInfo = "enkeltværelser";
-                if (værelseType == "d") værelseTypeInfo = "dobbeltværelser";
-                if (værelseType == "f") værelseTypeInfo = "familieværelser";
-            }
-
-            //Udskrivning af reservationsdetaljer
-            Console.WriteLine($"Du har valgt at reservere {antalVærelser} {værelseTypeInfo} til {antalDage} overnatninger.");
-
-            //Bekræftelse
-            Console.Write("Er det korrekt? (Ja / Nej) ");
-            string bekræftelse = Console.ReadLine().ToLower();
-            Console.WriteLine();
-
-            //Udregning af pris i DKK og EUR
-            if (værelseType == "e") prisdkk = enkeltværelsePris * antalVærelser * antalDage;
-            if (værelseType == "d") prisdkk = dobbeltværelsePris * antalVærelser * antalDage;
-            if (værelseType == "f") prisdkk = familieværelsePris * antalVærelser * antalDage;
-
-            priseur = prisdkk / eurokurs;
-
-            //Hvis bekræftelse er ja, skal programmet fortsætte til betaling og udregning af totalpris. Hvis nej, skal programmet afbrydes.
-            if (bekræftelse == "ja")
-            {
-                //lige lært at \n laver en ny linje
-
-                Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
-            }
-            else
-            {
-                Console.WriteLine("Reservationen er afbrudt. Genstart siden for at prøve igen.");
-            }
-
-            */
 
             Console.ReadKey();
+
         }
     }
 }

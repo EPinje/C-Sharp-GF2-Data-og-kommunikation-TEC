@@ -10,6 +10,10 @@ namespace _22___Biogradbilletter_og_alder
     {
         static void Main(string[] args)
         {
+            //Jonas Christian Larsen
+            //Opgave 22 - Biografbilletter og alder
+            //28.05.2026
+
             /*
                 Biografbilletter og alder
                 
@@ -46,10 +50,8 @@ namespace _22___Biogradbilletter_og_alder
             //Billetpris udskrives til brugeren
             Console.WriteLine($"Eftersom du er {alder} år, koster din billet {billetpris} kroner.");    //$ gør det muligt at inkludere variabler inde i teksten, så længe de er omgivet af {}.
 
-            Console.ReadKey();
-
-
-
+            //Forhindring af at programmet lukker med det samme
+            Console.ReadKey();                                                                          //Afventer at bruger trykker på en tast, og lukker programmet, når det sker
         }
     }
 }
