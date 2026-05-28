@@ -158,14 +158,18 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 overnatningerFamilievVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
+
+
                 //variabler til at sammensætte priser for de ønskede værelser og overnatnigner
 
-                enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser)
+                //int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
 
+                //prisdkkEnkeltVærelser = enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser
+                //prisdkkDobbeltVærelser = 
                 prisdkk = (enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser) + (dobbeltværelsePris * antalDobbeltVærelser * overnatningerDobbeltVærelser) + (familieværelsePris * antalFamilieVærelser * overnatningerFamilievVærelser);
                 priseur = prisdkk / eurokurs;
 
-                int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+                //int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
 
                 //Udskrivning af reservationsdetaljer
                 Console.WriteLine("Bekræft reservation af:\n");
@@ -195,6 +199,8 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 {
                     Console.WriteLine("Reservationen er afbrudt. Genstart siden for at prøve igen.");
                 }
+
+                
             }
 
             Console.ReadKey();
