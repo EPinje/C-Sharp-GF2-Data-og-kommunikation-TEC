@@ -80,11 +80,11 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.WriteLine();
 
                 Console.Write("Hvor mange værelser vil du reservere? ");
-                antalVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                antalVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange dage (antal overnatninger) vil du resevere til? ");
-                antalDage = Convert.ToInt32(Console.ReadLine().ToLower());
+                antalDage = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 //værelseTypeInfo redefineres
@@ -135,27 +135,27 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.WriteLine("Hvis der en type værelse, du ikke er interesseret i, kan du skrive 0.\n");
 
                 Console.Write("Hvor mange enkeltværesler er du interesseret i? ");
-                antalEnkeltVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                antalEnkeltVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerEnkeltVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                overnatningerEnkeltVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange dobbeltværelser er du interesseret i? ");
-                antalDobbeltVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                antalDobbeltVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerDobbeltVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                overnatningerDobbeltVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange familieværelser er du interesseret i? ");
-                antalFamilieVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                antalFamilieVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerFamilievVærelser = Convert.ToInt32(Console.ReadLine().ToLower());
+                overnatningerFamilievVærelser = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
                 //variabler til at sammensætte priser for de ønskede værelser og overnatnigner
