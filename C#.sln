@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23 - Køb af T-shirt", "var
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24 - Hotelreservation - bestilling", "variabler, Math funktion og rutediagram\24 - Hotelreservation - bestilling\24 - Hotelreservation - bestilling.csproj", "{89896244-3BCB-443D-8CB1-5600C4DB24BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25 - Hotelreservation - udvidet bestilling", "variabler, Math funktion og rutediagram\25 - Hotelreservation - udvidet bestilling\25 - Hotelreservation - udvidet bestilling.csproj", "{A01776CB-8D5C-4235-BB6F-9A728A2055EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,10 @@ Global
 		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89896244-3BCB-443D-8CB1-5600C4DB24BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01776CB-8D5C-4235-BB6F-9A728A2055EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
