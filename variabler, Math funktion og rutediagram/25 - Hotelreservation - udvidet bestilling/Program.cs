@@ -39,7 +39,7 @@ namespace _25___Hotelreservation___udvidet_bestilling
             string enkeltværelsePrisiKR = $"{enkeltværelsePris} kr.", dobbeltværelsePrisiKR = $"{dobbeltværelsePris} kr.", familieværelsePrisiKR = $"{familieværelsePris} kr.";
             string enkeltværelsePrisiEUR = $"{(enkeltværelsePris / eurokurs):F2} EUR", dobbeltværelsePrisiEUR = $"{(dobbeltværelsePris / eurokurs):F2} EUR", familieværelsePrisiEUR = $"{(familieværelsePris / eurokurs):F2} EUR";
             string enkeltværelseInfo = $"Enkeltværelser koster: {enkeltværelsePrisiKR} / {enkeltværelsePrisiEUR}", dobbeltværelseInfo = $"Dobbeltværelser koster: {dobbeltværelsePrisiKR} / {dobbeltværelsePrisiEUR}", familieværelseInfo = $"Familieværelser koster: {familieværelsePrisiKR} / {familieværelsePrisiEUR}";
-
+            
             //Velkomst og info
             Console.SetCursorPosition(10, 1);
             Console.WriteLine("Velkommen til Hotel C#");
@@ -65,11 +65,12 @@ namespace _25___Hotelreservation___udvidet_bestilling
 
             //variabler til at holde styr på værelsestyper, antal værelser og overnatninger
             string værelseType = "", værelseTypeInfo = "", bekræftelse;
-            int antalVærelser = 0, antalDage = 0, antalEnkeltVærelser = 0, antalDobbeltVærelser = 0, antalFamilieVærelser = 0, overnatningerEnkeltVærelser = 0, overnatningerDobbeltVærelser = 0, overnatningerFamilievVærelser = 0;
+            double antalVærelser = 0, antalDage = 0, antalEnkeltVærelser = 0, antalDobbeltVærelser = 0, antalFamilieVærelser = 0, overnatningerEnkeltVærelser = 0, overnatningerDobbeltVærelser = 0, overnatningerFamilievVærelser = 0;
 
             //variabler til priser for flere typer værelser
 
-            int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+            double prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0, prisEUREnkeltVørelser = 0, prisEURDobbeltVærelser = 0, prisEURFamilieVærelser = 0;
+            string enkeltVærelseInfo = "";
 
             if (flereTyperVærelser == false) //For personer som ønsker at reservere en enkelt værelsestype
             {
@@ -80,11 +81,11 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.WriteLine();
 
                 Console.Write("Hvor mange værelser vil du reservere? ");
-                antalVærelser = Convert.ToInt32(Console.ReadLine());
+                antalVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange dage (antal overnatninger) vil du resevere til? ");
-                antalDage = Convert.ToInt32(Console.ReadLine());
+                antalDage = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 //værelseTypeInfo redefineres
@@ -135,41 +136,43 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 Console.WriteLine("Hvis der en type værelse, du ikke er interesseret i, kan du skrive 0.\n");
 
                 Console.Write("Hvor mange enkeltværesler er du interesseret i? ");
-                antalEnkeltVærelser = Convert.ToInt32(Console.ReadLine());
+                antalEnkeltVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerEnkeltVærelser = Convert.ToInt32(Console.ReadLine());
+                overnatningerEnkeltVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange dobbeltværelser er du interesseret i? ");
-                antalDobbeltVærelser = Convert.ToInt32(Console.ReadLine());
+                antalDobbeltVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerDobbeltVærelser = Convert.ToInt32(Console.ReadLine());
+                overnatningerDobbeltVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange familieværelser er du interesseret i? ");
-                antalFamilieVærelser = Convert.ToInt32(Console.ReadLine());
+                antalFamilieVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
                 Console.Write("Hvor mange overnatninger vil du reservere dem i? ");
-                overnatningerFamilievVærelser = Convert.ToInt32(Console.ReadLine());
+                overnatningerFamilievVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
 
 
-                //variabler til at sammensætte priser for de ønskede værelser og overnatnigner
+                prisdkkEnkeltVærelser = enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser;
+                prisdkkDobbeltVærelser = dobbeltværelsePris * antalDobbeltVærelser * overnatningerDobbeltVærelser;
+                prisdkkFamilieVærelser = familieværelsePris * antalFamilieVærelser * overnatningerFamilievVærelser;
 
-                //int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+                prisEUREnkeltVørelser = prisdkkEnkeltVærelser / eurokurs;
+                prisEURDobbeltVærelser = prisdkkDobbeltVærelser / eurokurs;
+                prisEURFamilieVærelser = prisdkkFamilieVærelser / eurokurs;
 
-                //prisdkkEnkeltVærelser = enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser
-                //prisdkkDobbeltVærelser = 
-                prisdkk = (enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser) + (dobbeltværelsePris * antalDobbeltVærelser * overnatningerDobbeltVærelser) + (familieværelsePris * antalFamilieVærelser * overnatningerFamilievVærelser);
+                prisdkk = prisdkkEnkeltVærelser + prisdkkDobbeltVærelser + prisdkkFamilieVærelser;
                 priseur = prisdkk / eurokurs;
 
-                //int prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
+                //ToDouble prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
 
                 //Udskrivning af reservationsdetaljer
                 Console.WriteLine("Bekræft reservation af:\n");
@@ -192,7 +195,22 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 {
                     Console.WriteLine("Reservationen er bekræftet.\n");
 
+                    if (antalEnkeltVærelser == 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelse med {overnatningerEnkeltVærelser} overnatninger:          {prisdkkEnkeltVærelser} dkk");
+                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelse med {overnatningerDobbeltVærelser} overnatninger.");
+                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalFamilieVærelser} familietværelse med {overnatningerFamilievVærelser} overnatninger.");
+
+                    if (antalEnkeltVærelser > 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelser med {overnatningerEnkeltVærelser} overnatninger.");
+                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelser med {overnatningerDobbeltVærelser} overnatninger.");
+                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalFamilieVærelser} familietværelser med {overnatningerFamilievVærelser} overnatninger.");
+
                     Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
+
+                    enkeltVærelseInfo = $"{prisdkkEnkeltVærelser} dkk / {prisEUREnkeltVørelser} EUR";
+                    dobbeltværelseInfo = $"{prisdkkDobbeltVærelser} dkk / {prisEURDobbeltVærelser} EUR";
+                    familieværelseInfo = $"{prisdkkFamilieVærelser} dkk / {prisEURFamilieVærelser} EUR";
+
+                    prisdkk = prisdkkEnkeltVærelser + prisdkkDobbeltVærelser + prisdkkFamilieVærelser;
+                    priseur = prisdkk / eurokurs;
 
                 }
                 else
