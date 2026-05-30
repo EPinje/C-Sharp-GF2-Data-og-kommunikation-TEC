@@ -89,6 +89,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16 - Areal og omkreds af en
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 - Avanceret trekantsprogram", "variabler, Math funktion og rutediagram\17 - Avanceret trekantsprogram\17 - Avanceret trekantsprogram.csproj", "{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B73A683-73D7-4FBA-9499-959B1A26EA13}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
