@@ -30,16 +30,36 @@ namespace _25___Hotelreservation___udvidet_bestilling
                             Programmet skal derfor kunne udskrive totalprisen både i DKK og i EUR
             */
 
+
+
             //Gør at specialtegn som æ, ø og å, kan bruges i programmet
             Console.OutputEncoding = Encoding.UTF8;
 
+
+
             //Variabler til information om værelser
+
+            //priser
             double enkeltværelsePris = 765, dobbeltværelsePris = 980, familieværelsePris = 1250, eurokurs = 7.45, prisdkk = 0, priseur = 0;
 
+            //Info om priser
             string enkeltværelsePrisiKR = $"{enkeltværelsePris} kr.", dobbeltværelsePrisiKR = $"{dobbeltværelsePris} kr.", familieværelsePrisiKR = $"{familieværelsePris} kr.";
             string enkeltværelsePrisiEUR = $"{(enkeltværelsePris / eurokurs):F2} EUR", dobbeltværelsePrisiEUR = $"{(dobbeltværelsePris / eurokurs):F2} EUR", familieværelsePrisiEUR = $"{(familieværelsePris / eurokurs):F2} EUR";
             string enkeltværelseInfo = $"Enkeltværelser koster: {enkeltværelsePrisiKR} / {enkeltværelsePrisiEUR}", dobbeltværelseInfo = $"Dobbeltværelser koster: {dobbeltværelsePrisiKR} / {dobbeltværelsePrisiEUR}", familieværelseInfo = $"Familieværelser koster: {familieværelsePrisiKR} / {familieværelsePrisiEUR}";
-            
+
+            //Brugerinput om en eller flere værelsestyper
+            string fleretyper;
+
+            //Værelsestyper, antal værelser, overnatninger og bekræftelse
+            string værelseType, værelseTypeInfo, bekræftelse;
+            double antalVærelser, antalDage, antalEnkeltVærelser, antalDobbeltVærelser, antalFamilieVærelser, overnatningerEnkeltVærelser, overnatningerDobbeltVærelser, overnatningerFamilievVærelser;
+
+            //Priser for flere typer værelser
+            double prisdkkEnkeltVærelser, prisdkkDobbeltVærelser, prisdkkFamilieVærelser, prisEUREnkeltVørelser, prisEURDobbeltVærelser, prisEURFamilieVærelser;
+            string enkeltVærelseInfo;
+
+
+
             //Velkomst og info
             Console.SetCursorPosition(10, 1);
             Console.WriteLine("Velkommen til Hotel C#");
@@ -54,23 +74,15 @@ namespace _25___Hotelreservation___udvidet_bestilling
             Console.WriteLine(dobbeltværelseInfo);
             Console.WriteLine($"{familieværelseInfo}\n");
 
+
             //Input fra bruger
             Console.Write("Er du interesseret i mere end en type værelse? (j/n) ");
-
-            string fleretyper = Console.ReadLine().ToLower();
+            fleretyper = Console.ReadLine().ToLower();
             Console.WriteLine();
+
 
             //bool til at tjekke antal af værelsestyper
             bool flereTyperVærelser = fleretyper == "j";
-
-            //variabler til at holde styr på værelsestyper, antal værelser og overnatninger
-            string værelseType = "", værelseTypeInfo = "", bekræftelse;
-            double antalVærelser = 0, antalDage = 0, antalEnkeltVærelser = 0, antalDobbeltVærelser = 0, antalFamilieVærelser = 0, overnatningerEnkeltVærelser = 0, overnatningerDobbeltVærelser = 0, overnatningerFamilievVærelser = 0;
-
-            //variabler til priser for flere typer værelser
-
-            double prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0, prisEUREnkeltVørelser = 0, prisEURDobbeltVærelser = 0, prisEURFamilieVærelser = 0;
-            string enkeltVærelseInfo = "";
 
             if (flereTyperVærelser == false) //For personer som ønsker at reservere en enkelt værelsestype
             {
@@ -159,8 +171,7 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 overnatningerFamilievVærelser = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine();
 
-
-
+                //Udregning af pris i DKK og EUR
                 prisdkkEnkeltVærelser = enkeltværelsePris * antalEnkeltVærelser * overnatningerEnkeltVærelser;
                 prisdkkDobbeltVærelser = dobbeltværelsePris * antalDobbeltVærelser * overnatningerDobbeltVærelser;
                 prisdkkFamilieVærelser = familieværelsePris * antalFamilieVærelser * overnatningerFamilievVærelser;
@@ -171,6 +182,11 @@ namespace _25___Hotelreservation___udvidet_bestilling
 
                 prisdkk = prisdkkEnkeltVærelser + prisdkkDobbeltVærelser + prisdkkFamilieVærelser;
                 priseur = prisdkk / eurokurs;
+
+                //Info om pris
+                enkeltVærelseInfo = $"{prisdkkEnkeltVærelser} dkk/{prisEUREnkeltVørelser} EUR";
+                dobbeltværelseInfo = $"{prisdkkDobbeltVærelser} dkk/{prisEURDobbeltVærelser} EUR";
+                familieværelseInfo = $"{prisdkkFamilieVærelser} dkk/{prisEURFamilieVærelser} EUR";
 
                 //ToDouble prisdkkEnkeltVærelser = 0, prisdkkDobbeltVærelser = 0, prisdkkFamilieVærelser = 0;
 
@@ -195,13 +211,13 @@ namespace _25___Hotelreservation___udvidet_bestilling
                 {
                     Console.WriteLine("Reservationen er bekræftet.\n");
 
-                    if (antalEnkeltVærelser == 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelse med {overnatningerEnkeltVærelser} overnatninger:          {prisdkkEnkeltVærelser} dkk");
-                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelse med {overnatningerDobbeltVærelser} overnatninger.");
-                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalFamilieVærelser} familietværelse med {overnatningerFamilievVærelser} overnatninger.");
+                    if (antalEnkeltVærelser == 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelse med {overnatningerEnkeltVærelser} overnatninger:          {enkeltVærelseInfo}");
+                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelse med {overnatningerDobbeltVærelser} overnatninger:     {dobbeltværelseInfo}");
+                    if (antalDobbeltVærelser == 1) Console.WriteLine($"{antalFamilieVærelser} familietværelse med {overnatningerFamilievVærelser} overnatninger:    {familieværelseInfo}");
 
-                    if (antalEnkeltVærelser > 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelser med {overnatningerEnkeltVærelser} overnatninger.");
-                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelser med {overnatningerDobbeltVærelser} overnatninger.");
-                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalFamilieVærelser} familietværelser med {overnatningerFamilievVærelser} overnatninger.");
+                    if (antalEnkeltVærelser > 1) Console.WriteLine($"{antalEnkeltVærelser} enkeltværelser med {overnatningerEnkeltVærelser} overnatninger:          {enkeltVærelseInfo}");
+                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalDobbeltVærelser} dobbelttværelser med {overnatningerDobbeltVærelser} overnatninger:     {dobbeltværelseInfo}");
+                    if (antalDobbeltVærelser > 1) Console.WriteLine($"{antalFamilieVærelser} familietværelser med {overnatningerFamilievVærelser} overnatninger:    {familieværelseInfo}");
 
                     Console.WriteLine($"Den samlede pris er: {prisdkk} dkk / {priseur:N2} EUR ");
 
