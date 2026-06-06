@@ -136,6 +136,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37 - Gæt en fynsk by", "do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "38 - Køb af T-Shirt med do-while", "do-while loop & pseudokode fortsat\38 - Køb af T-Shirt med do-while\38 - Køb af T-Shirt med do-while.csproj", "{2D53CB48-479B-46F6-A648-CB5893DF0127}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "39 - Passord med do-while", "do-while loop & pseudokode fortsat\39 - Passord med do-while\39 - Passord med do-while.csproj", "{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Switch Case", "Switch Case", "{60E8A5E6-A615-4670-91E0-38D136EBEBC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "40 - Menu med switch", "Switch Case\40 - Menu med switch\40 - Menu med switch.csproj", "{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "41 - Menu med switch og while", "Switch Case\41 - Menu med switch og while\41 - Menu med switch og while.csproj", "{2CBE9C5A-263B-466C-977B-BDFCD24059AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "42 - Drinks", "Switch Case\42 - Drinks\42 - Drinks.csproj", "{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -370,6 +380,22 @@ Global
 		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBE9C5A-263B-466C-977B-BDFCD24059AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBE9C5A-263B-466C-977B-BDFCD24059AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBE9C5A-263B-466C-977B-BDFCD24059AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBE9C5A-263B-466C-977B-BDFCD24059AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -432,6 +458,10 @@ Global
 		{9D28B73D-6280-4A48-A218-32DFA14DE8C5} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
 		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
 		{2D53CB48-479B-46F6-A648-CB5893DF0127} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{2CBE9C5A-263B-466C-977B-BDFCD24059AD} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
