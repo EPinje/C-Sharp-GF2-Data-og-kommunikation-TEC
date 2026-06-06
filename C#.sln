@@ -114,6 +114,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31.2 - Tabeller i kolonner"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31.3  - Tabeller i kolonner 2", "for loop\31.3  - Tabeller i kolonner 2\31.3  - Tabeller i kolonner 2.csproj", "{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "while loop", "while loop", "{C09C7E39-D3BE-49FE-BF51-9A098A3D4618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33.1 - while passwword (tasteopgave)", "while loop\33.1 - while passwword (tasteopgave)\33.1 - while passwword (tasteopgave).csproj", "{97402CA4-B6C8-4E06-9261-82C9552EDA67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "do-while", "do-while", "{FDD965BA-8671-4907-86DF-F3A7E943BA57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33 - Oversæt while diagram til kode", "while loop\33 - Oversæt while diagram til kode\33 - Oversæt while diagram til kode.csproj", "{9195FC1F-8076-4279-BAA2-0E02A4124987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34.1 - Terningekast (tasteopgave)", "do-while loop & pseudokode fortsat\34.1 - Terningekast (tasteopgave)\34.1 - Terningekast (tasteopgave).csproj", "{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34 - 100 terningekast", "do-while loop & pseudokode fortsat\34 - 100 terningekast\34 - 100 terningekast.csproj", "{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "35 - Tæl 1-ere & 2-ere ved 1000 terningekast", "do-while loop & pseudokode fortsat\35 - Tæl 1-ere & 2-ere ved 1000 terningekast\35 - Tæl 1-ere & 2-ere ved 1000 terningekast.csproj", "{879553CE-03D7-45DB-8D43-4959F5D338B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "35.1 - do while (tasteopgave)", "do-while loop & pseudokode fortsat\35.1 - do while (tasteopgave)\35.1 - do while (tasteopgave).csproj", "{62439FC1-6C36-4B24-B4BD-A63545A3338F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "36 - Kommentarer til do while tasteopgave", "do-while loop & pseudokode fortsat\36 - Kommentarer til do while tasteopgave\36 - Kommentarer til do while tasteopgave.csproj", "{9D28B73D-6280-4A48-A218-32DFA14DE8C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37 - Gæt en fynsk by", "do-while loop & pseudokode fortsat\37 - Gæt en fynsk by\37 - Gæt en fynsk by.csproj", "{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "38 - Køb af T-Shirt med do-while", "do-while loop & pseudokode fortsat\38 - Køb af T-Shirt med do-while\38 - Køb af T-Shirt med do-while.csproj", "{2D53CB48-479B-46F6-A648-CB5893DF0127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -312,6 +334,42 @@ Global
 		{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97402CA4-B6C8-4E06-9261-82C9552EDA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97402CA4-B6C8-4E06-9261-82C9552EDA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97402CA4-B6C8-4E06-9261-82C9552EDA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97402CA4-B6C8-4E06-9261-82C9552EDA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9195FC1F-8076-4279-BAA2-0E02A4124987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9195FC1F-8076-4279-BAA2-0E02A4124987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9195FC1F-8076-4279-BAA2-0E02A4124987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9195FC1F-8076-4279-BAA2-0E02A4124987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879553CE-03D7-45DB-8D43-4959F5D338B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879553CE-03D7-45DB-8D43-4959F5D338B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879553CE-03D7-45DB-8D43-4959F5D338B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879553CE-03D7-45DB-8D43-4959F5D338B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62439FC1-6C36-4B24-B4BD-A63545A3338F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62439FC1-6C36-4B24-B4BD-A63545A3338F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62439FC1-6C36-4B24-B4BD-A63545A3338F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62439FC1-6C36-4B24-B4BD-A63545A3338F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D28B73D-6280-4A48-A218-32DFA14DE8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D28B73D-6280-4A48-A218-32DFA14DE8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D28B73D-6280-4A48-A218-32DFA14DE8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D28B73D-6280-4A48-A218-32DFA14DE8C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D53CB48-479B-46F6-A648-CB5893DF0127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -365,6 +423,15 @@ Global
 		{EB65EB06-5771-474F-A0E7-50EB6F97D370} = {062CCF45-70D3-46DD-A751-1CA239CA1E76}
 		{334827DA-EE7F-415C-B0AD-B19F6702986C} = {062CCF45-70D3-46DD-A751-1CA239CA1E76}
 		{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283} = {062CCF45-70D3-46DD-A751-1CA239CA1E76}
+		{97402CA4-B6C8-4E06-9261-82C9552EDA67} = {C09C7E39-D3BE-49FE-BF51-9A098A3D4618}
+		{9195FC1F-8076-4279-BAA2-0E02A4124987} = {C09C7E39-D3BE-49FE-BF51-9A098A3D4618}
+		{B74152EC-B8F7-426B-BF0F-5E6986F4ECA7} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{115CCEAF-0351-4F01-A3F5-7E4FA59F5C73} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{879553CE-03D7-45DB-8D43-4959F5D338B7} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{62439FC1-6C36-4B24-B4BD-A63545A3338F} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{9D28B73D-6280-4A48-A218-32DFA14DE8C5} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{293E76A0-B776-49EC-9F4E-9D39F8FC8AF2} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
+		{2D53CB48-479B-46F6-A648-CB5893DF0127} = {FDD965BA-8671-4907-86DF-F3A7E943BA57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
