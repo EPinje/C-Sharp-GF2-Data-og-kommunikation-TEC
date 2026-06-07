@@ -146,6 +146,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "41 - Menu med switch og whi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "42 - Drinks", "Switch Case\42 - Drinks\42 - Drinks.csproj", "{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43 - Omksriv 42's switch til if", "Switch Case\43 - Omksriv 42's switch til if\43 - Omksriv 42's switch til if.csproj", "{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44 - Arealberegning", "Switch Case\44 - Arealberegning\44 - Arealberegning.csproj", "{2FAA910F-47C4-404C-B76C-7D173C6330C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44.1 - Trekantsareal med vinkler", "Switch Case\44.1 - Trekantsareal med vinkler\44.1 - Trekantsareal med vinkler.csproj", "{133FA073-1F6C-4501-ACCD-3E9F66730491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45 - Menu til cirkusbilletter", "Switch Case\45 - Menu til cirkusbilletter\45 - Menu til cirkusbilletter.csproj", "{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -396,6 +404,22 @@ Global
 		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FAA910F-47C4-404C-B76C-7D173C6330C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAA910F-47C4-404C-B76C-7D173C6330C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAA910F-47C4-404C-B76C-7D173C6330C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAA910F-47C4-404C-B76C-7D173C6330C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133FA073-1F6C-4501-ACCD-3E9F66730491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133FA073-1F6C-4501-ACCD-3E9F66730491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133FA073-1F6C-4501-ACCD-3E9F66730491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133FA073-1F6C-4501-ACCD-3E9F66730491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -462,6 +486,10 @@ Global
 		{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 		{2CBE9C5A-263B-466C-977B-BDFCD24059AD} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 		{7595CE93-41C0-4CCE-BAF8-FB06F29E3988} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{FEC5166D-ADF2-4A09-97CA-DCC656A1DF45} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{2FAA910F-47C4-404C-B76C-7D173C6330C2} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{133FA073-1F6C-4501-ACCD-3E9F66730491} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}

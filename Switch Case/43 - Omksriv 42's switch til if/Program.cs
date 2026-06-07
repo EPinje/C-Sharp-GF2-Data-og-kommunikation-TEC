@@ -4,26 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _42___Drinks
+namespace _43___Omksriv_42_s_switch_til_if
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Jonas Christian Larsen
-            //Opgave 42 - Drinks
-            //06.06.2026
-
-            /*  
-                Opgavebeskrivelse
-                    5 drinks
-                        Menu med udvalg og priser
-                        Mulighed for bestilling af flere drinks
-
-                    Skal indeholde:
-                    Switch-case samt en do-while løkke
-            */
-
             //Variable til senere brug
             string AperolSpritz = "Aperol Spritz", Cosmopolitan = "Cosmopolitan", Daiquiri = "Daiquiri", Isbjørn = "Isbjørn", PinaColada = "Pina Colada"; //Navne på drinks
             string empty = ""; //Brugt til at henstille tekst x antal tegn
@@ -55,7 +41,7 @@ namespace _42___Drinks
             {
                 //Menu
                 Console.Clear(); //Renser skærmen
-                Console.WriteLine($"{empty, 13}MENU"); //$ lader os indsætte variabler i {}     -       kommaet efterfulgt af et tal henstiller teksten x antal tegn        -       empty variablen bruges, fordi at jeg ikke kan henstille uden en variabel
+                Console.WriteLine($"{empty,13}MENU"); //$ lader os indsætte variabler i {}     -       kommaet efterfulgt af et tal henstiller teksten x antal tegn        -       empty variablen bruges, fordi at jeg ikke kan henstille uden en variabel
 
                 Console.WriteLine($"\n1. {AperolSpritz,-13}{AperolSpritzPris,10} dkk");
                 Console.WriteLine($"2. {Cosmopolitan,-13}{CosmopolitanPris,10} dkk");
@@ -69,41 +55,39 @@ namespace _42___Drinks
                 string Input = Console.ReadLine();
                 Console.Clear(); //Renser skærmen, så menuskiftet står ud
 
-                switch (Input) //switch kigger på input fra brugeren og vælger derefter, hvilken case der er relevant
+                if (Input == "1")
                 {
-                    case ("1"):
-                        Console.Write($"Hvor mange {AperolSpritz} vil du købe? ");
-                        Input = Console.ReadLine();
-                        brugerInputCheck = int.TryParse(Input, out AperolSpritzAntal); //TryParse tjekker om brugerens input er et heltal, hvis ikke bliver den indledende bool false, hvis det er, smides inputtet ind i variablen efter out
-                        break;
-
-                    case ("2"):
-                        Console.Write($"Hvor mange {Cosmopolitan}s vil du købe? ");
-                        Input = Console.ReadLine();
-                        brugerInputCheck = int.TryParse(Input, out CosmopolitanAntal);
-                        break;
-
-                    case ("3"):
-                        Console.Write($"Hvor mange {Daiquiri}s vil du købe? ");
-                        Input = Console.ReadLine();
-                        brugerInputCheck = int.TryParse(Input, out DaiquiriAntal);
-                        break;
-
-                    case ("4"):
-                        Console.Write($"Hvor mange {Isbjørn}e vil du købe? ");
-                        Input = Console.ReadLine();
-                        brugerInputCheck = int.TryParse(Input, out IsbjørnAntal);
-                        break;
-
-                    case ("5"):
-                        Console.Write($"Hvor mange {PinaColada}s vil du købe? ");
-                        Input = Console.ReadLine();
-                        brugerInputCheck = int.TryParse(Input, out PinaColadaAntal);
-                        break;
-
-                    case ("6"): //Hvis brugeren vil afslutte, bliver while betingelsen false og løkken afsluttes
-                        afslutProgram = false;
-                        break;
+                    Console.Write($"Hvor mange {AperolSpritz} vil du købe? ");
+                    Input = Console.ReadLine();
+                    brugerInputCheck = int.TryParse(Input, out AperolSpritzAntal); //TryParse tjekker om brugerens input er et heltal, hvis ikke bliver den indledende bool false, hvis det er, smides inputtet ind i variablen efter out
+                }
+                else if (Input == "2")
+                {
+                    Console.Write($"Hvor mange {Cosmopolitan}s vil du købe? ");
+                    Input = Console.ReadLine();
+                    brugerInputCheck = int.TryParse(Input, out CosmopolitanAntal);
+                }
+                else if (Input == "3")
+                {
+                    Console.Write($"Hvor mange {Daiquiri}s vil du købe? ");
+                    Input = Console.ReadLine();
+                    brugerInputCheck = int.TryParse(Input, out DaiquiriAntal);
+                }
+                else if (Input == "4")
+                {
+                    Console.Write($"Hvor mange {Isbjørn}e vil du købe? ");
+                    Input = Console.ReadLine();
+                    brugerInputCheck = int.TryParse(Input, out IsbjørnAntal);
+                }
+                else if (Input == "5")
+                {
+                    Console.Write($"Hvor mange {PinaColada}s vil du købe? ");
+                    Input = Console.ReadLine();
+                    brugerInputCheck = int.TryParse(Input, out PinaColadaAntal);
+                }
+                else if (Input == "6")
+                {
+                    afslutProgram = false; //Hvis brugeren vil afslutte, bliver while betingelsen false og løkken afsluttes
                 }
 
                 Console.WriteLine();
@@ -115,8 +99,6 @@ namespace _42___Drinks
                         Console.Write("Tak for bestillingen.\nTryk på en tast for at gå tilbage til menuen");
                     else
                         Console.Write("Ugyldigt input. Tryk på en tast for at komme tilbage til menuen");
-
-                    brugerInputCheck = false; //Sørger for at checket er false til næste cyklus ellers er det muligt at man rammer den forkerte udskrift
 
                     Console.ReadKey();
                 }
@@ -134,14 +116,14 @@ namespace _42___Drinks
             double SamletBeløb = AperolSpritzTotalPris + CosmopolitanTotalPris + DaiquiriTotalPris + IsbjørnTotalPris + PinaColadaTotalPris;
 
             //Kvittering
-            Console.WriteLine($"{empty, 10}Kvittering\n");
-            Console.WriteLine($"{AperolSpritzAntal, 3} {AperolSpritz,-13}{AperolSpritzTotalPris,10} dkk");
+            Console.WriteLine($"{empty,10}Kvittering\n");
+            Console.WriteLine($"{AperolSpritzAntal,3} {AperolSpritz,-13}{AperolSpritzTotalPris,10} dkk");
             Console.WriteLine($"{CosmopolitanAntal,3} {Cosmopolitan,-13}{CosmopolitanTotalPris,10} dkk");
             Console.WriteLine($"{DaiquiriAntal,3} {Daiquiri,-13}{DaiquiriTotalPris,10} dkk");
             Console.WriteLine($"{IsbjørnAntal,3} {Isbjørn,-13}{IsbjørnTotalPris,10} dkk");
             Console.WriteLine($"{PinaColadaAntal,3} {PinaColada,-13}{PinaColadaTotalPris,10} dkk");
 
-            Console.WriteLine($"\n{empty, 2}I alt {SamletBeløb, 19} dkk");
+            Console.WriteLine($"\n{empty,2}I alt {SamletBeløb,19} dkk");
 
             Console.ReadKey();
         }
