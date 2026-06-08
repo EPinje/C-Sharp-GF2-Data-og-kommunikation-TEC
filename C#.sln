@@ -154,6 +154,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44.1 - Trekantsareal med vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45 - Menu til cirkusbilletter", "Switch Case\45 - Menu til cirkusbilletter\45 - Menu til cirkusbilletter.csproj", "{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays", "Arrays", "{BD4BAB5C-C309-4D47-BF17-C41A39E6569F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays og foreach", "Arrays og foreach", "{A77693B9-4130-4802-992D-5ED1CBD9FC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foreach (tasteopgave)", "Arrays\Arrays og foreach\Foreach (tasteopgave)\Foreach (tasteopgave).csproj", "{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1 - Array og for (tasteopgave)", "Arrays\Arrays og foreach\1 - Array og for (tasteopgave)\1 - Array og for (tasteopgave).csproj", "{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2 - Temperaturer og ugedage i Arrays", "Arrays\Arrays og foreach\2 - Temperaturer og ugedage i Arrays\2 - Temperaturer og ugedage i Arrays.csproj", "{6AFD42B0-37FB-4E87-BAFA-396AC131124F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -420,6 +430,18 @@ Global
 		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -490,6 +512,10 @@ Global
 		{2FAA910F-47C4-404C-B76C-7D173C6330C2} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 		{133FA073-1F6C-4501-ACCD-3E9F66730491} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 		{D898A632-CE8F-48AF-B6A0-205D89DA2DE7} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{A77693B9-4130-4802-992D-5ED1CBD9FC63} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
+		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
+		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
+		{6AFD42B0-37FB-4E87-BAFA-396AC131124F} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
