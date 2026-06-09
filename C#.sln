@@ -163,6 +163,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "56 - Gennemsnit af temperat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46 - Billetsalg for svømmehal", "Switch Case\46 - Billetsalg for svømmehal\46 - Billetsalg for svømmehal.csproj", "{2557FCF6-47BE-4EFF-B058-FB6584E30147}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "58 - foreach og .Sort() (tasteopgave)", "Arrays\58 - foreach og .Sort() (tasteopgave)\58 - foreach og .Sort() (tasteopgave).csproj", "{67CE0B0C-AF57-4269-A0DE-41AC5689C044}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -449,6 +451,10 @@ Global
 		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -525,6 +531,7 @@ Global
 		{6AFD42B0-37FB-4E87-BAFA-396AC131124F} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
 		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
 		{2557FCF6-47BE-4EFF-B058-FB6584E30147} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
+		{67CE0B0C-AF57-4269-A0DE-41AC5689C044} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
