@@ -89,11 +89,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16 - Areal og omkreds af en
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17 - Avanceret trekantsprogram", "variabler, Math funktion og rutediagram\17 - Avanceret trekantsprogram\17 - Avanceret trekantsprogram.csproj", "{BB2725AE-958C-4F27-A86B-0A57FA3C3D24}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B73A683-73D7-4FBA-9499-959B1A26EA13}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26 - Brugernavn & Password", "variabler, Math funktion og rutediagram\26 - Brugernavn & Password\26 - Brugernavn & Password.csproj", "{C03A1BED-D3BF-4F7E-A2DD-2CBE49C5B891}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27 - Rabat ved køb over 1000 dkk", "variabler, Math funktion og rutediagram\27 - Rabat ved køb over 1000 dkk\27 - Rabat ved køb over 1000 dkk.csproj", "{19615FE0-463B-4263-A365-0C6A898AF195}"
@@ -163,6 +158,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1 - Array og for (tasteopgave)", "Arrays\Arrays og foreach\1 - Array og for (tasteopgave)\1 - Array og for (tasteopgave).csproj", "{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2 - Temperaturer og ugedage i Arrays", "Arrays\Arrays og foreach\2 - Temperaturer og ugedage i Arrays\2 - Temperaturer og ugedage i Arrays.csproj", "{6AFD42B0-37FB-4E87-BAFA-396AC131124F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "56 - Gennemsnit af temperaturer målt over en uge", "Arrays\56 - Gennemsnit af temperaturer målt over en uge\56 - Gennemsnit af temperaturer målt over en uge.csproj", "{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46 - Billetsalg for svømmehal", "Switch Case\46 - Billetsalg for svømmehal\46 - Billetsalg for svømmehal.csproj", "{2557FCF6-47BE-4EFF-B058-FB6584E30147}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -442,6 +441,14 @@ Global
 		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AFD42B0-37FB-4E87-BAFA-396AC131124F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2557FCF6-47BE-4EFF-B058-FB6584E30147}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -516,6 +523,8 @@ Global
 		{FB3D6768-0F1D-47BB-BE2D-CC601C940CC7} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
 		{FFDA601D-0C8F-42A0-8D0D-1FC4DD4BB6BE} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
 		{6AFD42B0-37FB-4E87-BAFA-396AC131124F} = {A77693B9-4130-4802-992D-5ED1CBD9FC63}
+		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
+		{2557FCF6-47BE-4EFF-B058-FB6584E30147} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
