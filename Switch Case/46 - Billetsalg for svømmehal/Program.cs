@@ -14,7 +14,7 @@ namespace _46___Billetsalg_for_svømmehal
             //46 - Billetsalg for svømmehal
             //09.06.2026
 
-            string o = "";
+            string tomString = "";
 
             string[] billetType = new string[]
             {   "Voksne",
@@ -28,11 +28,11 @@ namespace _46___Billetsalg_for_svømmehal
             };
 
             double[] priser = new double[] {42, 23, 0, 15, 10, 330, 175, 135};
-
             int[] stk = new int[8];
+            double[] priserxstk = new double[8];
+            double total = 0;
 
-
-            Console.WriteLine($"\n{o,35}Velkommen til Ballerup Svømmehal");
+            Console.WriteLine($"\n{tomString,35}Velkommen til Ballerup Svømmehal");
 
             Console.WriteLine("\n\nBrug tallene til venstre og tryk enter for at navigere fundt i menuerne");
             Console.WriteLine("Hvis du befinder dig i en af de indre menuer kan du bruge alle andre input til at gå tilbage til den forrige menu");
@@ -41,8 +41,6 @@ namespace _46___Billetsalg_for_svømmehal
             Console.WriteLine("\n\n1. Billetbestilling");
             Console.Write("\n\nTryk enter for at bekræfte dine input: ");
             string input = Console.ReadLine();
-
-            Console.Clear();
 
             bool loop = true;
 
@@ -54,72 +52,118 @@ namespace _46___Billetsalg_for_svømmehal
 
                     do
                     {
+                        Console.Write("\x1b[3J");
+                        Console.Clear();
+
                         Console.WriteLine($"Hvilken type billet ønsker du at købe?\n");
 
                         for (int i = 0; i <= 7; i++)
                         {
-                            Console.WriteLine($"{i + 1}. {billetType[i]}\n{o,3}Pris: {priser[i]} dkk\n");
+                            Console.WriteLine($"{i + 1}. {billetType[i]}\n{tomString,3}Pris: {priser[i]} dkk\n");
                         }
                             Console.WriteLine("9. Betaling");
 
                             Console.WriteLine($"\nHvis du bestiller den samme type billet to gange overskrides den ældste bestilling af den nyeste!\n");
                             input = Console.ReadLine();
 
+                            Console.Write("\x1b[3J");
                             Console.Clear();
 
-                        switch (input)
+                            switch (input)
                         {
                             case ("1"):
                                 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[0] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("2"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[1] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("3"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[2] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("4"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[3] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("5"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[4] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("6"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[5] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("7"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[6] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("8"):
 
-                                Console.WriteLine($"Hvor mange stk. skal du bruge?\n");
+                                Console.Write($"Hvor mange stk. skal du bruge? ");
                                 stk[7] = Convert.ToInt32(Console.ReadLine());
                                 break;
 
                             case ("9"):
 
-                                break;
+                                for (int i = 0; i <= 7; i++)
+                                    {
+                                        priserxstk[i] = stk[i] * priser[i];
+                                        total = total + priserxstk[i];
+                                    }
+
+                                Console.WriteLine("Vil du bekræfte købet af:\n");
+
+                                for (int i = 0; i <= 7; i++)
+                                    {
+                                        if (stk[i] > 0)
+                                        Console.WriteLine($"Billettype: {billetType[i]}\nStk.: {stk[i]}\nPris: {priserxstk[i]} dkk\n");
+                                    }
+
+                                    Console.WriteLine($"Samlet pris: {total} dkk");
+
+                                    Console.Write("j/n? ");
+                                    input = Console.ReadLine();
+
+                                    switch (input)
+                                    {
+                                        case ("j"):
+                                            Console.WriteLine($"{tomString, 15}Kvittering:\n");
+
+                                            for (int i = 0; i <= 7; i++)
+                                            {
+                                                if (stk[i] > 0)
+                                                    Console.WriteLine($"Billettype: {billetType[i]}\nStk.: {stk[i]}\nPris: {priserxstk[i]} dkk\n");
+                                            }
+
+                                            Console.WriteLine($"Samlet pris: {total} dkk");
+                                            break;
+
+                                        case ("n"):
+                                            break;
+                                    }
+                                         
+
+                                    Console.ReadKey();
+
+
+
+                                    break;
 
                             default:
                                 
@@ -128,6 +172,8 @@ namespace _46___Billetsalg_for_svømmehal
 
                     }
                     while (loop);
+
+                    break;
 
                     default:
                         loop = false;
