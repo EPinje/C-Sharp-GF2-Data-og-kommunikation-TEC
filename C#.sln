@@ -165,6 +165,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46 - Billetsalg for svømme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "58 - foreach og .Sort() (tasteopgave)", "Arrays\58 - foreach og .Sort() (tasteopgave)\58 - foreach og .Sort() (tasteopgave).csproj", "{67CE0B0C-AF57-4269-A0DE-41AC5689C044}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46.1 - Noter", "Switch Case\46.1 - Noter\46.1 - Noter.csproj", "{A853CC71-2506-4120-BCB3-EF0EBD56939A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -455,6 +457,10 @@ Global
 		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67CE0B0C-AF57-4269-A0DE-41AC5689C044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A853CC71-2506-4120-BCB3-EF0EBD56939A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A853CC71-2506-4120-BCB3-EF0EBD56939A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A853CC71-2506-4120-BCB3-EF0EBD56939A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A853CC71-2506-4120-BCB3-EF0EBD56939A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -532,6 +538,7 @@ Global
 		{7AF8A2BF-5921-4D18-8FAB-A3917ECEA650} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
 		{2557FCF6-47BE-4EFF-B058-FB6584E30147} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 		{67CE0B0C-AF57-4269-A0DE-41AC5689C044} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
+		{A853CC71-2506-4120-BCB3-EF0EBD56939A} = {60E8A5E6-A615-4670-91E0-38D136EBEBC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
