@@ -409,7 +409,6 @@ namespace _46___Billetsalg_for_svømmehal
 
                         break; //case 1 sluttes
 
-
                     //Lukker programmet
                     case ("0"):
                         loop = false;
