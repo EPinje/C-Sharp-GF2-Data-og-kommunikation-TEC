@@ -34,7 +34,7 @@ namespace _46___Billetsalg_for_svømmehal
                 //Variable brugt til layout af den ydre menu
                 string velkomst = "Velkommen til Ballerup Svømmehal";
                 string navigationsInfo = "Brug tallene til venstre for at navigere rundt i menuerne.";
-                int stregLængde = navigationsInfo.Length; //med .Length tages længden af navigationsInfo og gemmes som int
+                int stregLængde = navigationsInfo.Length; //med .Length tages længden af antal tegn i navigationsInfo og gemmes som int
                 string streg = new string('─', stregLængde); //new string med et enkelt tegn sat op som her i '', gentager tegnet med det antal, der står efter kommaet. Derefter gemmes det som string.
 
                 //Ydre menu
@@ -78,6 +78,7 @@ namespace _46___Billetsalg_for_svømmehal
                             $"10-turskort til {doku}",
                             "10-turskort til Børn (7-15 år)"
                             };
+
                             //Billetpriser
                             double[] priser = { 42, 23, 0, 15, 10, 330, 175, 135 }; //rækkefølgen passer til variablene i billetType
 
@@ -224,6 +225,7 @@ namespace _46___Billetsalg_for_svømmehal
                                         Console.Clear();
                                     }
 
+                                    string TryParseInput= "";
                                     bool TryParseCheck = true;
                                     do //tjek af om input er int
                                     {
@@ -243,8 +245,6 @@ namespace _46___Billetsalg_for_svømmehal
                                             streg = new string('─', $"Billettype: {billetType[index]}\n".Length);
                                         else //else sker, hvis alle if, else if var false
                                             streg = new string('─', "Hvor mange stk. skal du bruge ?".Length);
-
-                                        string TryParseInput = "";
 
                                         //Fejlmeddelelse
                                         if (!TryParseCheck)
@@ -283,19 +283,12 @@ namespace _46___Billetsalg_for_svømmehal
                                     }
 
                                     //Layout af udskrift
-                                    string PadRight = "".PadRight(1); //PadRight styrer, hvor mange tegns mellemrum man ønsker de forskellige info skal have fra "Samlet pris:". Tekst i bekræftelsen og kvitteringen følger med, når den ændres her
-                                    string samletPris = "Samlet pris:" + PadRight; //samles i en variabel, så de nemmere kan bruges flere steder
-                                    int længdePlinje = samletPris.Length + dokuDel1.Length; //den længste tekst styrer linjen
-                                    string linje = new string('─', længdePlinje);
+                                    string PadRight = "".PadRight(1); //tekst i bekræftelsen og kvitteringen følger med, når PadRight ændres her. Hvis flere større mellemrum ønskes i layout øges tallet i parentesen
+                                    string samletPris ="Samlet pris:" + PadRight; //samles i en variabel, så de nemmere kan bruges flere steder
+                                    string linje = new string('─', samletPris.Length + dokuDel1.Length); //den længste tekst styrer linjens længde
 
-                                    string Kvit = "Kvittering:";
-                                    string Godf = "God fornøjelse.";
-
-                                    int IKvit = Kvit.Length;
-                                    int IGodf = Godf.Length;
-
-                                    string KvitCentreret = Kvit.PadLeft((længdePlinje + IKvit) / 2);
-                                    string GodfCentreret = Godf.PadLeft((længdePlinje + IGodf) / 2);
+                                    string KvitCentreret = "Kvittering:".PadLeft((samletPris.Length + dokuDel1.Length + "Kvittering:".Length) / 2);
+                                    string GodfCentreret = "God fornøjelse.".PadLeft((samletPris.Length + dokuDel1.Length + "God fornøjelse.".Length) / 2);
 
                                     //Array tilpasses
                                     doku = dokuDel1 + dokuDel2.PadLeft(dokuDel2.Length + samletPris.Length);
