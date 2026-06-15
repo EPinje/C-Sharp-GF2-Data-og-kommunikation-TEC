@@ -183,6 +183,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "47.2 - Strings udvidet med 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "47 - Tjek hvilken tekst er længst", "Tekststrengopgaver\47 - Tjek hvilken tekst er længst\47 - Tjek hvilken tekst er længst.csproj", "{74213A59-8573-424D-9DD2-A07D632AD1F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "48 - Fjernelse af mellemrum fra tekst", "Tekststrengopgaver\48 - Fjernelse af mellemrum fra tekst\48 - Fjernelse af mellemrum fra tekst.csproj", "{DD876A35-0E3E-415D-83B7-10F9AA598FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "49 - Spejlvendt tekst", "Tekststrengopgaver\49 - Spejlvendt tekst\49 - Spejlvendt tekst.csproj", "{1DE4B303-4BC3-48EF-9798-EA13F2063499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "50 - Søgning efter tekst", "Tekststrengopgaver\50 - Søgning efter tekst\50 - Søgning efter tekst.csproj", "{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "57 - Karaktergennemsnit med inputkrav", "Arrays\57 - Karaktergennemsnit med inputkrav\57 - Karaktergennemsnit med inputkrav.csproj", "{E5852474-7DCE-4812-A700-DEB25230F251}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -505,6 +513,22 @@ Global
 		{74213A59-8573-424D-9DD2-A07D632AD1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74213A59-8573-424D-9DD2-A07D632AD1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74213A59-8573-424D-9DD2-A07D632AD1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD876A35-0E3E-415D-83B7-10F9AA598FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD876A35-0E3E-415D-83B7-10F9AA598FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD876A35-0E3E-415D-83B7-10F9AA598FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD876A35-0E3E-415D-83B7-10F9AA598FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE4B303-4BC3-48EF-9798-EA13F2063499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE4B303-4BC3-48EF-9798-EA13F2063499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE4B303-4BC3-48EF-9798-EA13F2063499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE4B303-4BC3-48EF-9798-EA13F2063499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5852474-7DCE-4812-A700-DEB25230F251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5852474-7DCE-4812-A700-DEB25230F251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5852474-7DCE-4812-A700-DEB25230F251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5852474-7DCE-4812-A700-DEB25230F251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -590,6 +614,10 @@ Global
 		{13D7813F-B00D-4257-A895-DF7325A04686} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
 		{E9FEE441-B890-4A6E-A492-B261178A1CFD} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
 		{74213A59-8573-424D-9DD2-A07D632AD1F7} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
+		{DD876A35-0E3E-415D-83B7-10F9AA598FC3} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
+		{1DE4B303-4BC3-48EF-9798-EA13F2063499} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
+		{A6220E8A-EE54-497C-9DDA-CEEA49C35DCE} = {993502B9-F33F-4559-9F0B-B428EBD18B19}
+		{E5852474-7DCE-4812-A700-DEB25230F251} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
