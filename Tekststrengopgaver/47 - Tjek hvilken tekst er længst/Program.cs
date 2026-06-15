@@ -17,9 +17,9 @@ namespace _47___Tjek_hvilken_tekst_er_længst
             string tekst2 = Console.ReadLine();
 
             if (tekst1.Length > tekst2.Length)
-                Console.WriteLine($"\nTeksten: {tekst1} er længst");
+                Console.WriteLine($"\nTeksten: \"{tekst1}\" er længst");
             else
-                Console.WriteLine($"\nTeksten {tekst2} er længst");
+                Console.WriteLine($"\nTeksten \"{tekst2}\" er længst");
 
             Console.ReadKey();
         }
