@@ -12,30 +12,36 @@ namespace _46___Billetsalg_for_svømmehal
         static void Main(string[] args)
         {
             //Jonas Christian Larsen
-            //
-            //.2026
+            //46 - Billetsalg for svømmehal
+            //17.06.2026
 
-            Console.OutputEncoding = Encoding.UTF8; //specialtegn, som æ, ø og å, kan bruges i programmet
+            Console.OutputEncoding = Encoding.UTF8; //specialtegn som æ, ø og å, kan bruges i programmet
 
             //Titel på konsolvinduet
-            Console.Title = "";
+            Console.Title = "Ballerup Svømmehal";
 
-            //Arrays
-            //De oprettes her, så de ikke nulstilles, når der navigeres i menuen
-            int[] stk = new int[8]; //når variablene i arrayet ikke deklareres med det samme, skal man oprette et nyt objekt med new, hvor man angiver antallet af pladser, der skal reserveres til variablene                    
+            //Arrays for det ønskede antal billetter og antallet ganget med billetprisen
+            //De oprettes her for, at de ikke nulstilles, når der navigeres i menuen
+            int[] stk = new int[8]; //når variablene i arrayet ikke deklareres med det samme, skal man oprette et nyt objekt med new, hvor man angiver antallet af pladser, der skal reserveres til variable                    
             double[] priserxstk = new double[8];
 
-            //Boolsk værdi, som åbner og lukker den understående do-while
-            bool loop = true;
-            do //do gentages, så længe den boolske værdi i dens while's betingelse, er true
+            bool loop = true; //åbner og lukker den understående do-while
+            do //do gentages så længe dens while er true
             { //tuborgklammer indikerer, hvilken kode, der hører til den ovenstående metode
 
                 Console.Clear(); //renser konsolvinduet for tekst og flytter markøren op til det øverste venstre hjørne
 
+                //Variable brugt til layout af den ydre menu
+                string velkomst = "Velkommen til Ballerup Svømmehal";
+                string navigationsInfo = "Brug tallene til venstre for at navigere rundt i menuerne.";
+                int stregLængde = navigationsInfo.Length; //med .Length tages længden af antal tegn i navigationsInfo og gemmes som int
+                string streg = new string('─', stregLængde); //new string med et enkelt tegn sat op som her i '', gentager tegnet med det antal, der står efter kommaet. Derefter gemmes det som string.
+
                 //Ydre menu
-                Console.WriteLine(""); //WriteLine() laver udskrift på skærmen, tekst til udskrift står i "", ellers ses det indsatte som matematiske begreber
-                Console.WriteLine();                                                               //\n laver linjeskrift
-                                                                                                        //PadLeft/Rigt udfylder de resterende antal tegn med mellemrum, så overskriften fylder det, der svarer til halvdelen af stregens længde + halvdelen af overskriftens længde. PadLeft sætter tegnene til venstre for teksten
+                Console.WriteLine("\n" + velkomst.PadLeft((stregLængde + velkomst.Length) / 2) + "\n"); //WriteLine() laver udskrift på skærmen, tekst til udskrift står i "", ellers ses det indsatte som matematiske begreber
+                Console.WriteLine(streg);                                                               //\n laver linjeskrift
+                                                                                                        //.PadLeft/Rigt udfylder de resterende antal tegn med mellemrum så overskriften fylder det, der svarer til halvdelen af stregens længde + halvdelen af overskriftens længde. .PadLeft sætter tegnene til venstre for teksten.
+                                                                                                        //Navigationsinfo
                 Console.WriteLine($"\n{navigationsInfo}\n");
                 Console.WriteLine(streg);
                 Console.WriteLine("\n1. Billetbestilling");
@@ -43,14 +49,14 @@ namespace _46___Billetsalg_for_svømmehal
                 Console.WriteLine(streg);
                 Console.Write("\nTryk enter for at bekræfte dine input: ");
 
-                //Brugerinput
+                //Input
                 string input = Console.ReadLine(); //ReadLine() tager imod info fra brugeren. Inputtet bliver gemt i string variablen input
 
-                switch (input) //switch kigger på brugerens svar og vælger en case. default bruges, hvis ingen case matcher svaret
+                switch (input) //switch () kigger på brugerens svar og vælger en case. default bliver brugt, hvis ingen case matcher svaret
                 {
-                    case ("1"): //indre menu: 
+                    case ("1"): //indre menu: Info, antal billetter, bekræftelse og kvittering
 
-                        bool loop2 = true; //bruges til den understående do's, while
+                        bool loop2 = true;
                         do //omfanger hele case 1 undtagen dens break (afslutning)
                         {
                             Console.Clear();

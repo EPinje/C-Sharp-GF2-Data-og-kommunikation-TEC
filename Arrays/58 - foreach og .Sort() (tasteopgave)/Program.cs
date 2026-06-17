@@ -11,7 +11,6 @@ namespace _58___foreach_og.Sort____tasteopgave_
         static void Main(string[] args)
         {
             //Step 1: create an array of 3 strings.
-
             string[] pets = {"hund","kat","fugl","fisk"};
             Array.Sort(pets);
 

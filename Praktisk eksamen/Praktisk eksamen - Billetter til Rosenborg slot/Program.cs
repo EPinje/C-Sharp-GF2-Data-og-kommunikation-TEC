@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _46___Billetsalg_for_svømmehal
+namespace Billetter_til_Rosenborg_slot
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.Read();
+
             //Jonas Christian Larsen
-            //46 - Billetsalg for svømmehal
-            //11.06.2026
+            //Praktisk eksamen - Billetter til Rosenborg slot
+            //17.06.2026
 
             Console.OutputEncoding = Encoding.UTF8; //specialtegn som æ, ø og å, kan bruges i programmet
-            
+
             //Titel på konsolvinduet
-            Console.Title = "Ballerup Svømmehal";
+            Console.Title = "Rosenborg slot";
 
             //Variable: int bruges til hele tal, double til decimaltal, string indeholder tekst, bool sættes til at angive en af de to værdier true/false
             /*Operatorer: ! (Logical NOT) vender en betingelse om. F.eks. vil: while (!betingelse); gælde så længe betingelsen er false
@@ -26,10 +29,11 @@ namespace _46___Billetsalg_for_svømmehal
                           || (Logical OR) sætter flere betingelser, når kun en af dem skal være opfyldt
             */
 
-            //Arrays for det ønskede antal billetter og antallet ganget med billetprisen
+            //Arrays for det ønskede antal billetter
+            int[] stk = new int[3]; //når variablene i arrayet ikke deklareres med det samme, skal man oprette et nyt objekt med new, hvor man angiver antallet af pladser, der skal reserveres til variablene                 
+            //Array for antallet af billetter ganget med billetprisen
+            double[] priserxstk = new double[3];
             //De oprettes her for, at de ikke nulstilles, når der navigeres i menuen
-            int[] stk = new int[8]; //når variablene i arrayet ikke deklareres med det samme, skal man oprette et nyt objekt med new, hvor man angiver antallet af pladser, der skal reserveres til variablene                 
-            double[] priserxstk = new double[8];
 
             bool loop = true; //åbner og lukker den understående do-while
             do //do gentages så længe dens while er true
@@ -38,8 +42,8 @@ namespace _46___Billetsalg_for_svømmehal
                 Console.Clear(); //renser konsolvinduet for tekst og flytter markøren op til det øverste venstre hjørne
 
                 //Variable brugt til layout af den ydre menu
-                string velkomst = "Velkommen til Ballerup Svømmehal";
-                string navigationsInfo = "Brug tallene til venstre for at navigere rundt i menuerne.";
+                string velkomst = "Velkommen til Rosenborg slot";
+                string navigationsInfo = "Brug tallene eller bogstaverne i venstre side til at navigere rundt i menuerne.";
                 int stregLængde = navigationsInfo.Length; //med .Length tages længden af antal tegn i navigationsInfo og gemmes som int
                 string streg = new string('─', stregLængde); //new string med et enkelt tegn sat op som her i '', gentager tegnet med det antal, der står efter kommaet. Derefter gemmes det som string.
 
@@ -47,7 +51,7 @@ namespace _46___Billetsalg_for_svømmehal
                 Console.WriteLine("\n" + velkomst.PadLeft((stregLængde + velkomst.Length) / 2) + "\n"); //WriteLine() laver udskrift på skærmen, tekst til udskrift står i "", ellers ses det indsatte som matematiske begreber
                 Console.WriteLine(streg);                                                               //\n laver linjeskrift
                                                                                                         //.PadLeft/Rigt udfylder de resterende antal tegn med mellemrum så overskriften fylder det, der svarer til halvdelen af stregens længde + halvdelen af overskriftens længde. .PadLeft sætter tegnene til venstre for teksten.
-                //Navigationsinfo
+                                                                                                        //Navigationsinfo
                 Console.WriteLine($"\n{navigationsInfo}\n");
                 Console.WriteLine(streg);
                 Console.WriteLine("\n1. Billetbestilling");
@@ -67,33 +71,28 @@ namespace _46___Billetsalg_for_svømmehal
                         {
                             Console.Clear();
 
-                            //Strings oprettes, så de kan ændres undervejs
-                            string dokuDel1 = "Pensionister, efterlønsmodtagere, arbejdsledige, borgere på ledigheds-\n";
-                            string dokuDel2 = "ydelse, dagpengemodtagere og studerende (dokumentation påkrævet)";
-                            string doku = dokuDel1 + dokuDel2; 
-
                             //Grupper til de forskellige typer billetter
                             string[] billetType = //billetType er et array. Arrays er en nem måde at opbevare og genkalde flere variable effektivt
                             {
-                            "Voksne",
-                            doku,
-                            "Børn (under 7 år i følgeskab med en voksen)",
-                            "Børn (7-15 år)",
-                            "Skoleferiebillet Børn (7-15 år)",
-                            "10-turskort til voksne",
-                            $"10-turskort til {doku}",
-                            "10-turskort til Børn (7-15 år)"
+                            "Almindelig billet",
+                            "Almindelig billet med adgang til skatkammer med kronjuvelerne",
+                            "Adgang til kronjuvelerne alene"
+                            };
+                            string[] billetTypeForkortelse =
+                            {
+                            "AB.  ",
+                            "ABK. ",
+                            "BK.  "
                             };
 
                             //Billetpriser
-                            double[] priser = { 42, 23, 0, 15, 10, 330, 175, 135 }; //rækkefølgen passer til variablene i billetType
+                            double[] priser = { 75, 125, 25 }; //rækkefølgen passer til variablene i billetType
 
                             //Variabel til for-løkker
                             int i;
 
                             //Indre menu
-                            do //styrer  infosiderne
-                            {
+
                                 Console.Clear();
 
                                 //Billetinfo
@@ -103,124 +102,45 @@ namespace _46___Billetsalg_for_svømmehal
                                 streg = new string('─', "Hvis du bestiller den samme type billet to gange, overskrides den ældste bestilling, af samme type af den nyeste".Length); //stregen er sat til at være længden af den længste tekst i menuen
                                 Console.WriteLine(streg);
 
-                                for (i = 0; i <= 4; i++) //koden under for køres så længe i er mindre eller lig med 4, i stiger med 1 hver gang løkken gentages
+                                for (i = 0; i <= 2; i++) //koden under for køres så længe i er mindre eller lig med 2, i stiger med 1 hver gang løkken gentages
                                 {
-                                    doku = dokuDel1 + dokuDel2.PadLeft(dokuDel2.Length + $"{i + 1}. ".Length); //dukuDel2 tilpasses menuens layout
-                                    billetType[1] = doku; //arrayet opdateres
-                                    billetType[6] = $"10-turskort til {doku}";
+                                Console.WriteLine($"\n{billetTypeForkortelse[i]}{billetType[i]}\n     Pris: {priser[i]} dkk / {priser[i] / 7.4597:0.##} EUR"); //variable fra arrays udskrives i takt med at i stiger
+                                                                                                                                                   //$ åbner for at variable kan indsættes sammen med teksten i "", så længe de befinder sig inden i {}
+                                                                                                                                                   //prisen i euro udregnes ved at dividere den danske pris med 7,4597, fordi euro kursen er sat til at være 745,97
+                                                                                                                                                   //:0.## sætter decimalerne på udskriften til max at have to cifre
+                                {
 
-                                    Console.WriteLine($"\n{i + 1}. {billetType[i]}\n   Pris: {priser[i]} dkk"); //variable fra arrays udskrives i takt med at i stiger
-                                                                                                                //$ åbner for at variable kan indsættes sammen med teksten i "", så længe de befinder sig inden i {}
+                                }
                                 }
 
-                                Console.WriteLine("\n9. 10-Turskort");
-                                Console.WriteLine("\n10. Betaling");
-                                Console.WriteLine("\n0. Hovedmenu\n");
+                                Console.WriteLine("\n1.   Betaling");
+                                Console.WriteLine("\n0.   Hovedmenu\n");
                                 Console.WriteLine(streg);
                                 Console.SetCursorPosition(0, 28); //SetCursorPosition(x, y) sætter markøren efter koordinaterne. Næster tekst bliver udskrevet på linje 28
                                 Console.Write("Hvis du bestiller den samme type billet to gange, overskrides den ældste bestilling, af samme type af den nyeste.");
                                 Console.SetCursorPosition("Hvilken type billet ønsker du at købe? ".Length, 0); //.Length måler antal tegn i billetValg og placerer markøren det antal tegn langs x-aksen, derfor står brugerens input i toppen
-                                input = Console.ReadLine();
-
-                                //Side 2
-                                if (input == "9") //hvis der blev svaret 9, if
-                                {
-                                    Console.Clear();
-
-                                    Console.WriteLine("Hvilken type billet ønsker du at købe? \n");
-                                    Console.WriteLine(streg);
-
-                                    for (i = 5; i <= 7; i++)
-                                    {
-                                        Console.WriteLine($"\n{i + 1}. {billetType[i]}\n   Pris: {priser[i]} dkk");
-                                    }
-
-                                    Console.WriteLine("\n9. Enkeltbilletter");
-                                    Console.WriteLine("\n10. Betaling");
-                                    Console.WriteLine("\n0. Hovedmenu\n");
-                                    Console.WriteLine(streg);
-                                    Console.SetCursorPosition(0, 28);
-                                    Console.Write("Hvis du bestiller den samme type billet to gange, overskrides den ældste bestilling, af samme type af den nyeste.");
-                                    Console.SetCursorPosition("Hvilken type billet ønsker du at købe? ".Length, 0); //.Length måler antal tegn i billetValg og placerer markøren det antal tegn langs x-aksen, derfor står brugerens input i toppen
-                                    input = Console.ReadLine();
-
-                                }
-                            }
-                            while (input == "9"); //så længe, der tastes 9 gentages do
-
-                            //Dokumentationskrav
-                            string input2 = "0"; //input2 nulstilles
-                            if (input == "2" || input == "7") //hvis input er 2 eller 7 køres if
-                            {
-                                bool ugyldigtInput = true;
-                                do //er her i tilfælde af ugyldige input
-                                {
-                                    Console.Clear();
-
-                                    Console.WriteLine("Denne type billet kræver dokumentation.\n");
-                                    streg = new string('─', "Denne type billet kræver dokumentation.".Length);
-                                    Console.WriteLine(streg);
-                                    Console.WriteLine("\nFremvis dokumentation? \n");
-                                    Console.WriteLine(streg);
-                                    Console.WriteLine("\n1. Ja");
-                                    Console.WriteLine("2. Nej");
-                                    Console.SetCursorPosition("Fremvis dokumentation? ".Length, 4);
-                                    input2 = Console.ReadLine();
-
-                                    //Input checkes
-                                    switch (input2)
-                                    {
-                                        //Ja
-                                        case ("1"):
-                                            ugyldigtInput = true; //løkken åbnes
-                                            break; //break slutter en case
-
-                                        //Nej
-                                        case ("2"):
-                                            Console.Clear();
-                                            Console.WriteLine("Du skal kunne fremvise dokumentation for at bestille denne type billet.\n");
-                                            streg = new string('─', "Du skal kunne fremvise dokumentation for at bestille denne type billet.".Length);
-                                            Console.WriteLine(streg);
-                                            Console.Write("\nTryk enter for at gå tilbage til menuen.");
-                                            Console.ReadKey();
-                                            break;
-
-                                        //Ugyldigt input
-                                        default:
-                                            Console.Clear();
-                                            Console.WriteLine("Brug tallene i venstre side til at navigere med.\n");
-                                            streg = new string('─', "Brug tallene i venstre side til at navigere med.".Length);
-                                            Console.WriteLine(streg);
-                                            Console.Write("\nTryk enter for at gå tilbage.");
-                                            Console.ReadKey();
-                                            ugyldigtInput = false; //løkken gentages
-                                            break;
-                                    }
-                                }
-                                while (!ugyldigtInput); //hvis ugyldigtInput er false, gentages do
-                                if (input2 == "2")
-                                    continue; //hopper ned til den nuværende do's, while, og tjekker betingelsen
-                                              //lader brugeren passerer tilbage til billetbestillingen, da de ikke kunne fremvise dokumentation
-                            }
+                                input = Console.ReadLine().ToUpper(); //ToUpper konverterer små bogstaver til store i tilfældet af at brugeren har indtastet dem med småt, da switch er sat til de store
 
                             //Antal ønskede billetter
                             switch (input)
                             {
-                                case ("1"): //case "1" - "8" stables og fører til den samme kode
-                                case ("2"):
-                                case ("3"):
-                                case ("4"):
-                                case ("5"):
-                                case ("6"):
-                                case ("7"):
-                                case ("8"):
+                                case ("AB"): //de tre cases stables og fører til den samme kode
+                                case ("ABK"):
+                                case ("BK"):
 
-                                    int menuValg = Convert.ToInt32(input); //konverterer input til int
-                                    int index = menuValg - 1; //omdanner menuValg til et index, som passer med arrayet
+                                    //Index gives værdi efter brugerinput
+                                    int index; //indexet bruges til at vide, hvor i arrayet antallet af billetter skal gemmes og til at give info, hvis den samme billet bestilles to gange
+
+                                    if (input == "AB")
+                                        index = 0;
+                                    else if (input == "ABK")
+                                        index = 1;
+                                    else
+                                        index = 2;
 
                                     Console.Clear();
 
-                                    //Advarsel om at den samme billet er bestilt i forvejen
+                                    //Advarsel om at den samme type billet er bestilt i forvejen
                                     if (stk[index] > 0)
                                     {
                                         Console.WriteLine("Hvis du bestiller den samme type billet to gange, overskrides den ældste bestilling af den nyeste.\n");
@@ -231,34 +151,25 @@ namespace _46___Billetsalg_for_svømmehal
                                         Console.Clear();
                                     }
 
-                                    string TryParseInput= "";
+                                    string TryParseInput = "";
                                     bool TryParseCheck = true;
-                                    do //tjek af om input er int
+                                    do //tjekker af om input er int
                                     {
-                                        //Arrayet tilpasses menuen
-                                        doku = dokuDel1 + dokuDel2.PadLeft(dokuDel2.Length + "Billettype: ".Length);
-                                        billetType[1] = doku;
-                                        billetType[6] = $"10-turskort til {doku}";
-
                                         //Menu layout
                                         Console.WriteLine($"Billettype: {billetType[index]}\n");
-                                        //Der er 4 muligheder for, hvilken tekst, der kommer til at fylde flest tegn på en enkelt linje. if, else if, else tjekker, sætter linjen efter den, der er længst
-                                        if (index == 1)
-                                            streg = new string('─', dokuDel1.Length + "Billettype: ".Length);
-                                        else if (index == 6) //else if tjekker kun sin betingelse, hvis den forrige if eller else if's betingelse ikke var sand
-                                            streg = new string('─', $"10-turskort til {dokuDel1}".Length + "Billettype: ".Length);
-                                        else if ($"Billettype: {billetType[index]}".Length > "Hvor mange stk. skal du bruge? ".Length) 
+                                        //Der er 2 muligheder for, hvilken tekst, der kommer til at fylde flest tegn på en enkelt linje. if tjekker betingelsen, hvis betingelsen er false køres else, linjen sættes nu efter den tekst, der er længst
+                                        if ($"Billettype: {billetType[index]}".Length > "Hvor mange stk. skal du bruge? ".Length)
                                             streg = new string('─', $"Billettype: {billetType[index]}\n".Length);
                                         else //else sker, hvis alle if, else if var false
                                             streg = new string('─', "Hvor mange stk. skal du bruge ?".Length);
 
                                         //Fejlmeddelelse
-                                        if (!TryParseCheck)
+                                        if (!TryParseCheck || stk[index] < 0) //hvis brugeren ikke indtastede et helt tal ELLER et positivt tal, gives der en fejlmeddelelse
                                         {
-                                            streg = new string('─', "Det ønskede antal billetter skal indtastes som et helt tal. Hvis du har valgt en forkert billettype, kan du skrive 0.".Length);
+                                            streg = new string('─', "Det ønskede antal billetter skal indtastes som et positivt helt tal. Hvis du har valgt en forkert billettype, kan du skrive 0.".Length);
                                             Console.WriteLine(streg);
                                             Console.WriteLine($"\nDu har indtastet: {TryParseInput}");
-                                            Console.WriteLine("\nDet ønskede antal billetter skal indtastes som et helt tal. Hvis du har valgt en forkert billettype, kan du skrive 0.\n");
+                                            Console.WriteLine("\nDet ønskede antal billetter skal indtastes som et positivt helt tal. Hvis du har valgt en forkert billettype, kan du skrive 0.\n");
                                         }
 
                                         Console.WriteLine(streg);
@@ -270,36 +181,31 @@ namespace _46___Billetsalg_for_svømmehal
                                                                                                      //TryParseCheck bliver sand, hvis brugeren indtaster et gyldigt antal billeer
                                         Console.Clear(); //skærmen ryddes, hvis menuen skal gentages
                                     }
-                                    while (!TryParseCheck); //hvis brugeren ikke indtastede et helt tal, gives denne en ny chance
+                                    while (!TryParseCheck || stk[index] < 0); //hvis brugeren ikke indtastede et positivt helt tal, gives denne en ny chance
 
-                                    //Case "1" - "8" endes
+                                    //Case "1" - "3" endes
                                     break;
 
                                 //Bekræftelse
-                                case ("10"):
+                                case ("1"):
 
                                     //Totalpris
                                     double total = 0;
 
                                     //Priser udregnes
-                                    for (i = 0; i <= 7; i++)
+                                    for (i = 0; i <= 2; i++)
                                     {
                                         priserxstk[i] = stk[i] * priser[i]; //antal billetter ganges med billetprisen
-                                        total = total + priserxstk[i]; //priserne samles til et beløb
+                                        total = total += priserxstk[i]; //priserne samles til et beløb
                                     }
 
                                     //Layout af udskrift
                                     string PadRight = "".PadRight(1); //tekst i bekræftelsen og kvitteringen følger med, når PadRight ændres her. Hvis flere større mellemrum ønskes i layout øges tallet i parentesen
-                                    string samletPris ="Samlet pris:" + PadRight; //samles i en variabel, så de nemmere kan bruges flere steder
-                                    string linje = new string('─', samletPris.Length + dokuDel1.Length); //den længste tekst styrer linjens længde
+                                    string samletPris = "Samlet pris:" + PadRight; //samles i en variabel, så de nemmere kan bruges flere steder
+                                    string linje = new string('─', samletPris.Length + billetType[1].Length); //den længste tekst styrer linjens længde
 
-                                    string KvitCentreret = "Kvittering:".PadLeft((samletPris.Length + dokuDel1.Length + "Kvittering:".Length) / 2);
-                                    string GodfCentreret = "God fornøjelse.".PadLeft((samletPris.Length + dokuDel1.Length + "God fornøjelse.".Length) / 2);
-
-                                    //Array tilpasses
-                                    doku = dokuDel1 + dokuDel2.PadLeft(dokuDel2.Length + samletPris.Length);
-                                    billetType[1] = doku;
-                                    billetType[6] = $"10-turskort til {doku}";
+                                    string KvitCentreret = "Kvittering:".PadLeft((samletPris.Length + billetType[1].Length + "Kvittering:".Length) / 2);
+                                    string GodfCentreret = "God fornøjelse.".PadLeft((samletPris.Length + billetType[1].Length + "God fornøjelse.".Length) / 2);
 
                                     bool ugyldigtInput = true;
                                     do //ved ugylyldigt input i bekræftelsen
@@ -310,14 +216,14 @@ namespace _46___Billetsalg_for_svømmehal
                                         Console.WriteLine("Vil du bekræfte købet af:\n");
                                         Console.WriteLine(linje);
 
-                                        for (i = 0; i <= 7; i++)
+                                        for (i = 0; i <= 2; i++)
                                         {
                                             if (stk[i] > 0) //Kun billettyper, som er bestilt, vises
-                                                Console.WriteLine($"\n{"Billettype:".PadRight(samletPris.Length)}{billetType[i]}\n{"Stk.:".PadRight(samletPris.Length)}{stk[i]}\n{"Pris:".PadRight(samletPris.Length)}{priserxstk[i]} dkk");
+                                                Console.WriteLine($"\n{"Billettype:".PadRight(samletPris.Length)}{billetType[i]}\n{"Stk.:".PadRight(samletPris.Length)}{stk[i]}\n{"Pris:".PadRight(samletPris.Length)}{priserxstk[i]} dkk / {priser[i] / 7.4597:0.##} EUR");
                                         }
 
                                         Console.WriteLine("\n" + linje);
-                                        Console.WriteLine("\n" + samletPris + total);
+                                        Console.WriteLine($"\n{samletPris}{total} dkk / {total / 7.4597:0.##} EUR");
                                         Console.WriteLine("\n" + linje);
 
                                         Console.WriteLine("\n1. Ja");
@@ -342,13 +248,13 @@ namespace _46___Billetsalg_for_svømmehal
 
                                                 Console.WriteLine($"\n{KvitCentreret}\n");
                                                 Console.WriteLine(linje);
-                                                for (i = 0; i <= 7; i++)
+                                                for (i = 0; i <= 2; i++)
                                                 {
                                                     if (stk[i] > 0)
                                                         Console.WriteLine($"\n{"Billettype:".PadRight(samletPris.Length)}{billetType[i]}\n{"Stk.:".PadRight(samletPris.Length)}{stk[i]}\n{"Pris:".PadRight(samletPris.Length)}{priserxstk[i]} dkk");
                                                 }
                                                 Console.WriteLine("\n" + linje);
-                                                Console.WriteLine("\n" + samletPris + total);
+                                                Console.WriteLine($"\n{samletPris}{total} dkk / {total / 7.4597:0.##} EUR");
                                                 Console.WriteLine("\n" + linje);
 
                                                 Console.Write($"\n{GodfCentreret}");
@@ -396,7 +302,7 @@ namespace _46___Billetsalg_for_svømmehal
                                 //Ugyldigt input i billetmenuen
                                 default:
                                     Console.Clear();
-                                    Console.WriteLine("Brug tallene i venstre side til at navigere med.\n");
+                                    Console.WriteLine("Brug tallene eller bogstaverne i venstre side til at navigere med.\n");
                                     streg = new string('─', "Brug tallene i venstre side til at navigere med.".Length);
                                     Console.WriteLine(streg);
                                     Console.Write("\nTryk enter for at gå tilbage.");
