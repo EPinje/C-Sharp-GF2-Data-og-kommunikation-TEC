@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24B3BC92-76E7-4DE3-8A61-845463767B01}</ProjectGuid>
+    <ProjectGuid>{4CD9FB6A-274A-4A14-BEF5-95823CD8A569}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Skabelon__udvidet_</RootNamespace>
-    <AssemblyName>Skabelon %28udvidet%29</AssemblyName>
+    <RootNamespace>Natur_og_forlystelsespark</RootNamespace>
+    <AssemblyName>Natur og forlystelsespark</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
