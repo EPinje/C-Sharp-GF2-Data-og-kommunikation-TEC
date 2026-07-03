@@ -10,18 +10,6 @@ namespace _44._1___Trekantsareal_med_vinkler
     {
         static void Main(string[] args)
         {
-            using System;
-            using System.Collections.Generic;
-            using System.Linq;
-            using System.Text;
-            using System.Threading.Tasks;
-
-namespace _44___Arealberegning
-    {
-        internal class Program
-        {
-            static void Main(string[] args)
-            {
                 double a = 0, b = 0, c = 0;
                 double A = 0, B = 0, C = 90;
                 double cosA, sinA, tanA;
