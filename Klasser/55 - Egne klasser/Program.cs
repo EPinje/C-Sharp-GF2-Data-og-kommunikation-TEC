@@ -11,6 +11,8 @@ namespace _55___Egne_klasser
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             while (true)
             {
                 Clear();
@@ -19,7 +21,7 @@ namespace _55___Egne_klasser
                     "\n\n1. Rektangler" +
                     "\n2. Trekanter" +
                     "\n3. Cirkler" +
-                    "\n4. Cylinder" +
+                    "\n4. Cylindere" +
                     "\n5. Rumfanget af en kasse" +
                     "\n6. Afslut programmet");
                 
@@ -41,6 +43,14 @@ namespace _55___Egne_klasser
 
                     case "3":
                         SwitchCases.Cirkler();
+                        break;
+
+                    case "4":
+                        SwitchCases.Cylindere();
+                        break;
+
+                    case "5":
+                        SwitchCases.RumfangetAfEnKasse();
                         break;
 
                     default:
@@ -121,6 +131,36 @@ namespace _55___Egne_klasser
                 $"\n\nTryk enter for at returnere til hovedmenuen.");
             ReadKey();
         }
+        static public void Cylindere()
+        {
+            Clear();
+            WriteLine("Her kan du indtaste radius og højde på en cylinder og få udregnet dens overfladeareal og rumfang.");
+            string længdeEnhed = LængdeEnhed();
+
+            double r = IndhentMål("Indtast radius: ");
+            double h = IndhentMål("Indtast højden: ");
+
+            Clear();
+            Write($"Cylinderens overfladeareal er: {Matematik.CylinderOverfladeAreal(r, h):0.##} {længdeEnhed}\u00b2" +
+                $"\n\nCylinderens rumfang er: {Matematik.CylinderRumfang(r, h):0.##} {længdeEnhed}\u00B3" +
+                $"\n\nTryk enter for at returnere til hovedmenuen.");
+            ReadKey();
+        }
+        static public void RumfangetAfEnKasse()
+        {
+            Clear();
+            WriteLine("Her kan du indtaste bredden, længden og højden på en kasse og få dens rumfang udregnet.");
+            string længdeEnhed = LængdeEnhed();
+
+            double b = IndhentMål("Indtast bredden: ");
+            double l = IndhentMål("Indtast længden: ");
+            double h = IndhentMål("Indtast højden: ");
+
+            Clear();
+            Write($"Kassens rumfang er: {Matematik.KasseRumfang(b, l, h):0.##} {længdeEnhed}\u00b3" +
+                $"\n\nTryk enter for at returnere til hovedmenuen.");
+            ReadKey();
+        }
     }
     public class Matematik
     {
@@ -141,13 +181,28 @@ namespace _55___Egne_klasser
         }
         static public double CirkelOmkreds(double r)
         {
-            double omkreds = Math.PI * 2 * r;
+            double omkreds = Math.PI * r * 2;
             return omkreds;
         }
         static public double CirkelAreal(double r)
         {
             double areal = Math.PI * Math.Pow(r, 2);
             return areal;
+        }
+        static public double CylinderOverfladeAreal(double r, double h)
+        {
+            double overfladeAreal = CirkelOmkreds(r) * h + CirkelAreal(r) * 2;
+            return overfladeAreal;
+        }
+        static public double CylinderRumfang(double h, double r)
+        {
+            double rumfang = CirkelAreal(r) * h;
+            return rumfang;
+        }
+        static public double KasseRumfang(double l, double b, double h)
+        {
+            double rumfang = RektangelAreal(l, b) * h;
+            return rumfang;
         }
     }
 }

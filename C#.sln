@@ -201,8 +201,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Klasser", "Klasser", "{1780
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55 - Egne klasser", "Klasser\55 - Egne klasser\55 - Egne klasser.csproj", "{4581E7A1-C636-404C-95B3-D059BA33A9F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -553,10 +551,6 @@ Global
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -649,7 +643,6 @@ Global
 		{0A2A0B2A-EE18-4FF8-A346-00BA96AC2883} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
 		{4CD9FB6A-274A-4A14-BEF5-95823CD8A569} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3} = {1780B620-0F69-4861-90D8-DEAA1DECDD71}
-		{85D5B5C8-0DFE-4D9A-AC6B-9CC5B68B614E} = {1780B620-0F69-4861-90D8-DEAA1DECDD71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
