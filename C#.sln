@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.7.11819.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intro til C#", "Intro til C#", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Intro til C#", "01 - Intro til C#", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input, output & pseudokode intro", "Input, output & pseudokode intro", "{57B7A535-86DF-4EAA-958F-9A9B3631549B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Input, output & pseudokode intro", "02 - Input, output & pseudokode intro", "{57B7A535-86DF-4EAA-958F-9A9B3631549B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Første program - leg med ENTER", "Intro til C#\Første program - leg med ENTER\Første program - leg med ENTER.csproj", "{D3B6C390-7C30-43C3-94F9-7AC2378BD6F2}"
 EndProject
@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.2 - Convert (tast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 12.3 - Tal og tekst (tasteopgave)", "Input, output & pseudokode intro\Opgave 12.3 - Tal og tekst (tasteopgave)\Opgave 12.3 - Tal og tekst (tasteopgave).csproj", "{CC8FEC20-AF4F-4F3E-B900-EAB474A88D03}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operatorer", "Operatorer", "{D0487CB7-A584-4D1A-8254-482897D34277}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.1 - Operatorer", "02.1 - Operatorer", "{D0487CB7-A584-4D1A-8254-482897D34277}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 1 - Lommeregner", "Operatorer\Opgave 1 - Lommeregner\Opgave 1 - Lommeregner.csproj", "{57E96F45-FDF4-4C37-B035-F9B7EA847C03}"
 EndProject
@@ -53,7 +53,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 2 - Tal-sammenligner
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave 3 - Adgangskontrol", "Operatorer\Opgave 3 - Adgangskontrol\Opgave 3 - Adgangskontrol.csproj", "{CE178EC8-9D3A-4669-BAC6-C6F0C90264FB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "variabler, Math funktion og rutediagram", "variabler, Math funktion og rutediagram", "{4B810C5E-965B-43C6-963F-C046756F9E7E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - variabler, Math funktion og rutediagram", "03 - variabler, Math funktion og rutediagram", "{4B810C5E-965B-43C6-963F-C046756F9E7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 - Ændring af string", "variabler, Math funktion og rutediagram\13 - Ændring af string\13 - Ændring af string.csproj", "{86B1BBD7-C49A-4229-B8D4-590532CED563}"
 EndProject
@@ -93,7 +93,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26 - Brugernavn & Password"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27 - Rabat ved køb over 1000 dkk", "variabler, Math funktion og rutediagram\27 - Rabat ved køb over 1000 dkk\27 - Rabat ved køb over 1000 dkk.csproj", "{19615FE0-463B-4263-A365-0C6A898AF195}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "for loop", "for loop", "{062CCF45-70D3-46DD-A751-1CA239CA1E76}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - for loop", "04 - for loop", "{062CCF45-70D3-46DD-A751-1CA239CA1E76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "28 - Tæl fra 1 og op til 100", "for loop\28 - Tæl fra 1 og op til 100\28 - Tæl fra 1 og op til 100.csproj", "{9D5C060D-6F4E-4D42-BA2D-80FCAAC10C72}"
 EndProject
@@ -109,11 +109,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31.2 - Tabeller i kolonner"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31.3  - Tabeller i kolonner 2", "for loop\31.3  - Tabeller i kolonner 2\31.3  - Tabeller i kolonner 2.csproj", "{80A4C6A0-EB14-47FB-B5C7-D97EA7F3F283}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "while loop", "while loop", "{C09C7E39-D3BE-49FE-BF51-9A098A3D4618}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - while loop", "05 - while loop", "{C09C7E39-D3BE-49FE-BF51-9A098A3D4618}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33.1 - while passwword (tasteopgave)", "while loop\33.1 - while passwword (tasteopgave)\33.1 - while passwword (tasteopgave).csproj", "{97402CA4-B6C8-4E06-9261-82C9552EDA67}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "do-while", "do-while", "{FDD965BA-8671-4907-86DF-F3A7E943BA57}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - do-while", "06 - do-while", "{FDD965BA-8671-4907-86DF-F3A7E943BA57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33 - Oversæt while diagram til kode", "while loop\33 - Oversæt while diagram til kode\33 - Oversæt while diagram til kode.csproj", "{9195FC1F-8076-4279-BAA2-0E02A4124987}"
 EndProject
@@ -133,7 +133,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "38 - Køb af T-Shirt med do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "39 - Passord med do-while", "do-while loop & pseudokode fortsat\39 - Passord med do-while\39 - Passord med do-while.csproj", "{2C6EE835-A99F-4AF3-A6FE-19AF8D4CF42B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Switch Case", "Switch Case", "{60E8A5E6-A615-4670-91E0-38D136EBEBC7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Switch Case", "07 - Switch Case", "{60E8A5E6-A615-4670-91E0-38D136EBEBC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "40 - Menu med switch", "Switch Case\40 - Menu med switch\40 - Menu med switch.csproj", "{ABEE8EE3-0B9A-4818-BD8C-9CCBA2DEFB9C}"
 EndProject
@@ -149,7 +149,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44.1 - Trekantsareal med vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45 - Menu til cirkusbilletter", "Switch Case\45 - Menu til cirkusbilletter\45 - Menu til cirkusbilletter.csproj", "{D898A632-CE8F-48AF-B6A0-205D89DA2DE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays", "Arrays", "{BD4BAB5C-C309-4D47-BF17-C41A39E6569F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 - Arrays", "09 - Arrays", "{BD4BAB5C-C309-4D47-BF17-C41A39E6569F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays og foreach", "Arrays og foreach", "{A77693B9-4130-4802-992D-5ED1CBD9FC63}"
 EndProject
@@ -167,7 +167,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "58 - foreach og .Sort() (ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46.1 - Noter", "Switch Case\46.1 - Noter\46.1 - Noter.csproj", "{A853CC71-2506-4120-BCB3-EF0EBD56939A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tekststrengopgaver", "Tekststrengopgaver", "{993502B9-F33F-4559-9F0B-B428EBD18B19}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - Tekststrengopgaver", "08 - Tekststrengopgaver", "{993502B9-F33F-4559-9F0B-B428EBD18B19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Length", "Tekststrengopgaver\Length\Length.csproj", "{06546E22-326E-496D-8B70-700309745CCA}"
 EndProject
@@ -197,9 +197,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eksamen", "Eksamen", "{CE3F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Natur og forlystelsespark", "Praktisk eksamen\Natur og forlystelsespark\Natur og forlystelsespark.csproj", "{4CD9FB6A-274A-4A14-BEF5-95823CD8A569}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Klasser", "Klasser", "{1780B620-0F69-4861-90D8-DEAA1DECDD71}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.2 - Klasser", "08.2 - Klasser", "{1780B620-0F69-4861-90D8-DEAA1DECDD71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55 - Egne klasser", "Klasser\55 - Egne klasser\55 - Egne klasser.csproj", "{4581E7A1-C636-404C-95B3-D059BA33A9F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.1 - Metoder", "08.1 - Metoder", "{18C24442-FC24-4F83-8713-C6D0AA04B35B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Nice to Know", "10 - Nice to Know", "{1027D924-994D-47A1-B87A-C7F8CA69E295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.1 - Arrays – simpel lagerstyrring", "09.1 - Arrays – simpel lagerstyrring", "{04A2A004-AF99-49AF-AF65-691E8DAF22A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 - IndexOf & Substring", "11 - IndexOf & Substring", "{D6C993FF-B5DE-416C-B30A-E0C6E6138E48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 - Sikker IP-validering", "12 - Sikker IP-validering", "{BD4E2F6B-A047-4B52-B88C-F2B4A96E9E26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 - CIDR og Subnet", "13 - CIDR og Subnet", "{A7B2FBB3-A9C5-4480-9420-8812A8732C3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14 - Sikker inputvalidering", "14 - Sikker inputvalidering", "{74544EE8-8657-454C-A944-89E52417F157}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekstra opgaver", "Ekstra opgaver", "{E8929A50-2DC8-45A1-901A-49F293308AEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55 - Egne klasser", "Ekstra opgaver\08.2 - Klasser\55 - Egne klasser\55 - Egne klasser.csproj", "{4581E7A1-C636-404C-95B3-D059BA33A9F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -642,6 +658,14 @@ Global
 		{E5852474-7DCE-4812-A700-DEB25230F251} = {BD4BAB5C-C309-4D47-BF17-C41A39E6569F}
 		{0A2A0B2A-EE18-4FF8-A346-00BA96AC2883} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
 		{4CD9FB6A-274A-4A14-BEF5-95823CD8A569} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
+		{1780B620-0F69-4861-90D8-DEAA1DECDD71} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{18C24442-FC24-4F83-8713-C6D0AA04B35B} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{1027D924-994D-47A1-B87A-C7F8CA69E295} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{04A2A004-AF99-49AF-AF65-691E8DAF22A3} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{D6C993FF-B5DE-416C-B30A-E0C6E6138E48} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{BD4E2F6B-A047-4B52-B88C-F2B4A96E9E26} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{A7B2FBB3-A9C5-4480-9420-8812A8732C3E} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
+		{74544EE8-8657-454C-A944-89E52417F157} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3} = {1780B620-0F69-4861-90D8-DEAA1DECDD71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
