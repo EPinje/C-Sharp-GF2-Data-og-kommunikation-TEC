@@ -193,7 +193,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "57 - Karaktergennemsnit med
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktisk eksamen - Billetter til Rosenborg slot", "Praktisk eksamen\Praktisk eksamen - Billetter til Rosenborg slot\Praktisk eksamen - Billetter til Rosenborg slot.csproj", "{0A2A0B2A-EE18-4FF8-A346-00BA96AC2883}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eksamen", "Eksamen", "{CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 - Eksamen", "11 - Eksamen", "{CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Natur og forlystelsespark", "Praktisk eksamen\Natur og forlystelsespark\Natur og forlystelsespark.csproj", "{4CD9FB6A-274A-4A14-BEF5-95823CD8A569}"
 EndProject
@@ -213,9 +213,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 - CIDR og Subnet", "13 -
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14 - Sikker inputvalidering", "14 - Sikker inputvalidering", "{74544EE8-8657-454C-A944-89E52417F157}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekstra opgaver", "Ekstra opgaver", "{E8929A50-2DC8-45A1-901A-49F293308AEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Ekstra opgaver", "10 - Ekstra opgaver", "{E8929A50-2DC8-45A1-901A-49F293308AEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55 - Egne klasser", "Ekstra opgaver\08.2 - Klasser\55 - Egne klasser\55 - Egne klasser.csproj", "{4581E7A1-C636-404C-95B3-D059BA33A9F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 -  Afsluttende projekt", "12 -  Afsluttende projekt", "{8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander", "Afsluttende projekt\Informationsstander\Informationsstander.csproj", "{BE4A292A-048A-47C3-9554-62CD9A0D6411}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -567,6 +571,10 @@ Global
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4A292A-048A-47C3-9554-62CD9A0D6411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4A292A-048A-47C3-9554-62CD9A0D6411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4A292A-048A-47C3-9554-62CD9A0D6411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4A292A-048A-47C3-9554-62CD9A0D6411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -667,6 +675,7 @@ Global
 		{A7B2FBB3-A9C5-4480-9420-8812A8732C3E} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{74544EE8-8657-454C-A944-89E52417F157} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{4581E7A1-C636-404C-95B3-D059BA33A9F3} = {1780B620-0F69-4861-90D8-DEAA1DECDD71}
+		{BE4A292A-048A-47C3-9554-62CD9A0D6411} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
