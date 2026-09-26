@@ -12,28 +12,18 @@ namespace Informationsstander
         {
             //Informationsstander
 
-            //Arrays
-            int[] telefonnummer = new int[50];
-            telefonnummer[0] = 50607080;
-            telefonnummer[1] = 50607081;
-            telefonnummer[2] = 50607082;
-            telefonnummer[3] = 50607083;
-            telefonnummer[4] = 50607084;
-            telefonnummer[5] = 50607085;
-            telefonnummer[6] = 50607086;
-            telefonnummer[7] = 50607087;
-            telefonnummer[8] = 50607088;
-            telefonnummer[9] = 50607089;
-            telefonnummer[10] = 50607090;
-            telefonnummer[11] = 50607091;
-            telefonnummer[12] = 50607092;
-            telefonnummer[13] = 50607093;
-            telefonnummer[14] = 50607094;
-            telefonnummer[15] = 50607095;
-            telefonnummer[16] = 50607096;
-            telefonnummer[17] = 50607097;
-            telefonnummer[18] = 50607098;
-            telefonnummer[19] = 50607099;
+            //Variables
+            int arrayIndex = 19;
+            bool SlutProgram = false;
+
+            //Arrays med brugerinfo
+
+            string[] telefonnummer = new string[50];
+            for (int i = 0; i <= 19; i++)
+            {
+                string telefonnummerGenerator = (50607080 + i).ToString();
+                telefonnummer[i] = telefonnummerGenerator;
+            }
 
             string[] navn = new string[50];
             navn[0] = "Sebastion Stein";
@@ -44,50 +34,141 @@ namespace Informationsstander
             string[] adresse = new string[50];
             adresse[0] = "Købmagergade 33";
 
-            int[] postnummer = new int[50];
-            postnummer[0] = 1000;
+            string[] postnummer = new string[50];
+            postnummer[0] = "1000";
             
             string[] by = new string[50];
             by[0] = "København K";
 
-            string[] email = new string[50];
-            email[0] = "sebastianstein@gmail.com";
+            string[] e_mail = new string[50];
+            e_mail[0] = "sebastianstein@gmail.com";
 
-            int[] frekvensForNyhedsbrev = new int[50];
-            frekvensForNyhedsbrev[0] = 12;
+            int[] frekvensNyhedsbrev = new int[50];
+            frekvensNyhedsbrev[0] = 12;
 
-            //Variables
-            int arrayposition = 20;
-
-            //Hovedmenu
-            Console.Clear();
-            Console.WriteLine("Charlie Mørk Information Systems\n");
-            Console.WriteLine("Tilmelding til nyhedsbrevet (tryk enter)");
-            Console.WriteLine("Administrator adgamg (A)");
-            string input = Console.ReadLine();
-
-            Console.Clear();
-            switch (input.ToLower())
+            do
             {
-                //Brugergrænseflade
-                case (""):
-                    Console.WriteLine("Indtast telefonnummer");
-                    telefonnummer[arrayposition] = Convert.ToInt16(Console.ReadLine());
+                //Hovedmenu
+                Console.Clear();
+                Console.SetCursorPosition(15, 0);
+                Console.WriteLine("Charlie Mørk Information Systems");
+                Console.WriteLine("\n──────────────────────────────────────────────────────────────");
+                Console.SetCursorPosition(0, 5);
+                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                Console.WriteLine("\nTilmelding til nyhedsbrevet (Tryk ENTER)");
+                Console.WriteLine("\n──────────────────────────────────────────────────────────────");
+                Console.SetCursorPosition(0, 12);
+                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                Console.Write("\nAdministrator adgamg (A) ");
+                string input = Console.ReadLine();
 
-                    if (telefonnummer[arrayposition])
-                    break;
-                
-                //Administrator menu
-                case ("a"):
-                
-                    break;
+                Console.Clear();
+                switch (input)
+                {
+                    //Brugergrænseflade
+                    case (""):
+                        Console.WriteLine("Her kan du udfylde dine informationer");
 
-                //Fejlmeddelelse
-                default:
-                    Console.WriteLine("Du har indtastet et ugyldigt input.\n\n Tryk enter for at gå tilbage");
-                    Console.ReadKey();
-                    break;
+                        Console.Write("\nTelefonnummer: ");
+                        string telefonnummerInput = Console.ReadLine();
+
+                        int index = Array.IndexOf(telefonnummer, telefonnummerInput);
+
+                        if (index == -1)
+                        {
+                            arrayIndex += 1;
+                            telefonnummer[arrayIndex] = telefonnummerInput;
+
+                            Console.Write("\nFor- og efternavn: ");
+                            navn[arrayIndex] = Console.ReadLine();
+
+                            Console.Write("\nAlder: ");
+                            alder[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("\nAdresse: ");
+                            adresse[arrayIndex] = Console.ReadLine();
+
+                            Console.Write("\nPostnummer: ");
+                            postnummer[arrayIndex] = Console.ReadLine();
+
+                            Console.Write("\nBy: ");
+                            by[arrayIndex] = Console.ReadLine();
+
+                            Console.Write("\nE-mail: ");
+                            e_mail[arrayIndex] = Console.ReadLine();
+
+                            Console.WriteLine("\nHvor ofte vil du modtage nyhedsbreve fra os?");
+                            Console.WriteLine("Hver måned, hver tredje måned eller hver 12. måned?");
+                            Console.Write("Angiv med 1, 3 eller 12: ");
+                            frekvensNyhedsbrev[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("\nTak for din tilmelding");
+                            Console.Write("\nTryk enter for at afslutte");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Nummeret er allerede tilmeldt.");
+                            Console.Write("Tryk enter for at vende tilbage til hovedmenuen.");
+                            Console.ReadKey();
+                        }
+                        break;
+
+                    //Administrator menu
+                    case ("A"):
+
+                        Console.WriteLine("Find brugere (F)");
+                        Console.WriteLine("\nVis alle brugere (A)\n");
+                        input = Console.ReadLine();
+
+                        switch (input.ToUpper())
+                        {
+                            case ("F"):
+                                break;
+
+                            case ("A"):
+
+                                int arrayIndex2 = 0;
+                                while (telefonnummer[arrayIndex2] != null)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Brugerdatabase");
+                                    Console.WriteLine("Navn: " + navn[arrayIndex2]);
+                                    Console.WriteLine("Telefonnummer: " + telefonnummer[arrayIndex2]);
+                                    Console.WriteLine("Alder: " + alder[arrayIndex2]);
+                                    Console.WriteLine("E-mail: " + e_mail[arrayIndex2]);
+                                    Console.WriteLine("Adresse: " + adresse[arrayIndex2]);
+                                    Console.WriteLine("Postnummer: " + postnummer[arrayIndex2]);
+                                    Console.WriteLine("By: " + by[arrayIndex2]);
+                                    Console.WriteLine($"Frekvens: " + frekvensNyhedsbrev[arrayIndex2]);
+
+                                    Console.WriteLine("Sideskift");
+                                    Console.ReadKey();
+                                    arrayIndex2++;
+                                }
+
+                                break;
+
+                            default:
+                                Console.WriteLine("Dit input matcher ikke et punkt i menuen");
+                                Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                                break;
+                        }
+                            
+
+
+                        break;
+
+                    //Fejlmeddelelse
+                    default:
+                        Console.WriteLine("Du har indtastet et ugyldigt input");
+                        Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                        Console.ReadKey();
+                        break;
+                }
+
             }
+            while (SlutProgram == false);
         }
     }
 }

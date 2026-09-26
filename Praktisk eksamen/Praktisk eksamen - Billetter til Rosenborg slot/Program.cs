@@ -12,8 +12,6 @@ namespace Billetter_til_Rosenborg_slot
     {
         static void Main(string[] args)
         {
-            Console.Read();
-
             //Jonas Christian Larsen
             //Praktisk eksamen - Billetter til Rosenborg slot
             //17.06.2026
