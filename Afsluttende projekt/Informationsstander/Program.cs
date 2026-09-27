@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,34 +19,43 @@ namespace Informationsstander
 
             //Arrays med brugerinfo
 
-            string[] telefonnummer = new string[50];
-            for (int i = 0; i <= 19; i++)
+            string[] telefonnumre = new string[50];
+            string[] navne = new string[50];
+            int[] aldre = new int[50];
+            string[] adresser = new string[50];
+            string[] postnumre = new string[50];
+            string[] byer = new string[50];
+            string[] e_mails = new string[50];
+            int[] frekvenserNyhedsbrev = new int[50];
+
+            for (int i = 0; i < 20; i++)
             {
-                string telefonnummerGenerator = (50607080 + i).ToString();
-                telefonnummer[i] = telefonnummerGenerator;
+                string test_Telefonnummer = (20304050 + i*10).ToString();
+                string test_Navn = "Test_Bruger_" + (i + 1);
+                int test_Aldre = (20 + i);
+                string test_Adresse = "Test_Adresse_" + (i + 1);
+                string test_Postnummer = (2000 + i*100).ToString();
+                string test_By = "Test_By_" + (i + 1);
+                string test_E_mail = $"{test_Navn}@domæne.dk";
+
+                int test_FrekvensNyhedsbrev;
+                if (i < 7)
+                    test_FrekvensNyhedsbrev = 12;
+                else if (i < 14)
+                    test_FrekvensNyhedsbrev = 3;
+                else
+                    test_FrekvensNyhedsbrev = 1;
+
+                telefonnumre[i] = test_Telefonnummer;
+                navne[i] = test_Navn;
+                aldre[i] = test_Aldre;
+                adresser[i] = test_Adresse;
+                postnumre[i] = test_Postnummer;
+                byer[i] = test_By;
+                e_mails[i] = test_E_mail;
+                frekvenserNyhedsbrev[i] = test_FrekvensNyhedsbrev;
             }
-
-            string[] navn = new string[50];
-            navn[0] = "Sebastion Stein";
-
-            int[] alder = new int[50];
-            alder[0] = 33;
-
-            string[] adresse = new string[50];
-            adresse[0] = "Købmagergade 33";
-
-            string[] postnummer = new string[50];
-            postnummer[0] = "1000";
             
-            string[] by = new string[50];
-            by[0] = "København K";
-
-            string[] e_mail = new string[50];
-            e_mail[0] = "sebastianstein@gmail.com";
-
-            int[] frekvensNyhedsbrev = new int[50];
-            frekvensNyhedsbrev[0] = 12;
-
             do
             {
                 //Hovedmenu
@@ -53,54 +63,52 @@ namespace Informationsstander
                 Console.SetCursorPosition(15, 0);
                 Console.WriteLine("Charlie Mørk Information Systems");
                 Console.WriteLine("\n──────────────────────────────────────────────────────────────");
-                Console.SetCursorPosition(0, 5);
                 Console.WriteLine("──────────────────────────────────────────────────────────────");
-                Console.WriteLine("\nTilmelding til nyhedsbrevet (Tryk ENTER)");
-                Console.WriteLine("\n──────────────────────────────────────────────────────────────");
-                Console.SetCursorPosition(0, 12);
+                Console.SetCursorPosition(11, 6);
+                Console.WriteLine("Tilmelding til nyhedsbrevet (Tryk ENTER)");
+                Console.WriteLine("\n\n──────────────────────────────────────────────────────────────");
                 Console.WriteLine("──────────────────────────────────────────────────────────────");
-                Console.Write("\nAdministrator adgamg (A) ");
+                Console.SetCursorPosition(19, 13);
+                Console.Write("Administrator adgang (A) ");
                 string input = Console.ReadLine();
+                input = input.ToUpper();
 
-                Console.Clear();
                 switch (input)
                 {
                     //Brugergrænseflade
                     case (""):
+                        Console.Clear();
                         Console.WriteLine("Her kan du udfylde dine informationer");
-
                         Console.Write("\nTelefonnummer: ");
                         string telefonnummerInput = Console.ReadLine();
 
-                        int index = Array.IndexOf(telefonnummer, telefonnummerInput);
-
+                        int index = Array.IndexOf(telefonnumre, telefonnummerInput);
                         if (index == -1)
                         {
-                            arrayIndex += 1;
-                            telefonnummer[arrayIndex] = telefonnummerInput;
+                            telefonnumre[arrayIndex++] = telefonnummerInput;
 
                             Console.Write("\nFor- og efternavn: ");
-                            navn[arrayIndex] = Console.ReadLine();
+                            navne[arrayIndex] = Console.ReadLine();
 
                             Console.Write("\nAlder: ");
-                            alder[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+                            aldre[arrayIndex] = Convert.ToInt32(Console.ReadLine());
 
                             Console.Write("\nAdresse: ");
-                            adresse[arrayIndex] = Console.ReadLine();
+                            adresser[arrayIndex] = Console.ReadLine();
 
                             Console.Write("\nPostnummer: ");
-                            postnummer[arrayIndex] = Console.ReadLine();
+                            postnumre[arrayIndex] = Console.ReadLine();
 
                             Console.Write("\nBy: ");
-                            by[arrayIndex] = Console.ReadLine();
+                            byer[arrayIndex] = Console.ReadLine();
 
                             Console.Write("\nE-mail: ");
-                            e_mail[arrayIndex] = Console.ReadLine();
+                            e_mails[arrayIndex] = Console.ReadLine();
 
                             Console.WriteLine("\nHvor ofte vil du modtage nyhedsbreve fra os?");
                             Console.WriteLine("Hver måned, hver tredje måned eller hver 12. måned?");
                             Console.Write("Angiv med 1, 3 eller 12: ");
-                            frekvensNyhedsbrev[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+                            frekvenserNyhedsbrev[arrayIndex] = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine("\nTak for din tilmelding");
                             Console.Write("\nTryk enter for at afslutte");
@@ -108,8 +116,9 @@ namespace Informationsstander
                         }
                         else
                         {
-                            Console.WriteLine("Nummeret er allerede tilmeldt.");
-                            Console.Write("Tryk enter for at vende tilbage til hovedmenuen.");
+                            Console.Clear();
+                            Console.WriteLine($"Nummeret {telefonnummerInput} er allerede tilmeldt");
+                            Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
                             Console.ReadKey();
                         }
                         break;
@@ -117,47 +126,112 @@ namespace Informationsstander
                     //Administrator menu
                     case ("A"):
 
-                        Console.WriteLine("Find brugere (F)");
-                        Console.WriteLine("\nVis alle brugere (A)\n");
-                        input = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Adgangskode: ");
+                        string password = Console.ReadLine();
 
-                        switch (input.ToUpper())
+                        if (password == "Ab12345!")
                         {
-                            case ("F"):
-                                break;
+                            Console.Clear();
+                            Console.WriteLine("Brugerdatabase");
+                            Console.WriteLine("\nFind brugere (F)");
+                            Console.WriteLine("\nVis alle brugere (A)\n");
+                            string input2 = Console.ReadLine();
+                            input2 = input2.ToUpper();
 
-                            case ("A"):
+                            int[] arraySøgteIndexer = new int[50];
+                            int arraySøgeIndexTæller = 0;
 
-                                int arrayIndex2 = 0;
-                                while (telefonnummer[arrayIndex2] != null)
+                            if (input2 == "F")
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Søg ved hjælp af telefonnummer, fornavn eller efternavn");
+                                Console.Write("\nIndtast søgerord: ");
+                                string søgeord = Console.ReadLine();
+
+                                for (int i = 0; i < 50; i++)
                                 {
-                                    Console.Clear();
-                                    Console.WriteLine("Brugerdatabase");
-                                    Console.WriteLine("Navn: " + navn[arrayIndex2]);
-                                    Console.WriteLine("Telefonnummer: " + telefonnummer[arrayIndex2]);
-                                    Console.WriteLine("Alder: " + alder[arrayIndex2]);
-                                    Console.WriteLine("E-mail: " + e_mail[arrayIndex2]);
-                                    Console.WriteLine("Adresse: " + adresse[arrayIndex2]);
-                                    Console.WriteLine("Postnummer: " + postnummer[arrayIndex2]);
-                                    Console.WriteLine("By: " + by[arrayIndex2]);
-                                    Console.WriteLine($"Frekvens: " + frekvensNyhedsbrev[arrayIndex2]);
+                                    if (telefonnumre[i] != null)
+                                    {
+                                        if (telefonnumre[i].StartsWith(søgeord) || navne[i].StartsWith(søgeord) || navne[i].Contains(" " + søgeord))
+                                        {
+                                            arraySøgteIndexer[arraySøgeIndexTæller] = i;
+                                            arraySøgeIndexTæller++;
+                                        }
+                                    }
+                                }
+                            }
+                            else if (input2 == "A")
+                            { }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Du har indtastet et ugyldigt input");
+                                Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                                Console.ReadKey();
+                                break;
+                            }
 
-                                    Console.WriteLine("Sideskift");
-                                    Console.ReadKey();
+                            int arrayIndex2 = 0;
+                            bool slutVisning = false;
+
+                            while (!slutVisning)
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"{"Navn",-20} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
+                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+                                for (int i = 0; i < 10; i++)
+                                {
+                                    if (arrayIndex2 < arraySøgeIndexTæller && input2 == "F")
+                                    {
+                                        Console.WriteLine($"{navne[arraySøgteIndexer[arrayIndex2]],-20} │ {telefonnumre[arraySøgteIndexer[arrayIndex2]],-8} │ {aldre[arraySøgteIndexer[arrayIndex2]],-5} │ {e_mails[arraySøgteIndexer[arrayIndex2]],-30} │ {adresser[arraySøgteIndexer[arrayIndex2]],-25} │ {postnumre[arraySøgteIndexer[arrayIndex2]],-7} │ {byer[arraySøgteIndexer[arrayIndex2]],-20} │ {frekvenserNyhedsbrev[arraySøgteIndexer[arrayIndex2]]}");
+                                    }
+                                    else if (input2 == "A")
+                                    {
+                                        Console.WriteLine($"{navne[arrayIndex2],-20} │ {telefonnumre[arrayIndex2],-8} │ {aldre[arrayIndex2],-5} │ {e_mails[arrayIndex2],-30} │ {adresser[arrayIndex2],-25} │ {postnumre[arrayIndex2],-7} │ {byer[arrayIndex2],-20} │ {frekvenserNyhedsbrev[arrayIndex2]}");
+                                    }
                                     arrayIndex2++;
                                 }
 
-                                break;
+                                if (arrayIndex2 <= 10)
+                                {
+                                    Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
+                                }
+                                else
+                                {
+                                    Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
+                                }
 
-                            default:
-                                Console.WriteLine("Dit input matcher ikke et punkt i menuen");
-                                Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
-                                break;
+                                string input3 = Console.ReadLine();
+                                input3 = input3.ToUpper();
+
+                                if (input3 == "")
+                                {
+                                }
+                                else if (input3 == "F" && arrayIndex2 > 10)
+                                {
+                                    arrayIndex2 -= 20;
+                                }
+                                else if (input3 == "A")
+                                {
+                                    slutVisning = true;
+                                }
+                                else
+                                {
+                                    Console.SetCursorPosition(100, 13);
+                                    Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
+                                    Console.ReadKey();
+                                    arrayIndex2 -= 10;
+                                }
+                            }
                         }
-                            
-
-
-                        break;
+                        else
+                        {
+                            Console.WriteLine("Den indtastede adgangskode er forkert");
+                            Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                            Console.ReadKey();
+                        }
+                        break;//case med administrator menu afsluttes
 
                     //Fejlmeddelelse
                     default:
@@ -166,7 +240,6 @@ namespace Informationsstander
                         Console.ReadKey();
                         break;
                 }
-
             }
             while (SlutProgram == false);
         }
