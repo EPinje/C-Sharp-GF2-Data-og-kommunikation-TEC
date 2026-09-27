@@ -15,7 +15,7 @@ namespace Informationsstander
 
             //Variables
             int arrayIndex = 19;
-            bool SlutProgram = false;
+            
 
             //Arrays med brugerinfo
 
@@ -55,8 +55,9 @@ namespace Informationsstander
                 e_mails[i] = test_E_mail;
                 frekvenserNyhedsbrev[i] = test_FrekvensNyhedsbrev;
             }
-            
-            do
+
+            bool SlutProgram = false;
+            while (!SlutProgram)
             {
                 //Hovedmenu
                 Console.Clear();
@@ -85,7 +86,8 @@ namespace Informationsstander
                         int index = Array.IndexOf(telefonnumre, telefonnummerInput);
                         if (index == -1)
                         {
-                            telefonnumre[arrayIndex++] = telefonnummerInput;
+                            arrayIndex++;
+                            telefonnumre[arrayIndex] = telefonnummerInput;
 
                             Console.Write("\nFor- og efternavn: ");
                             navne[arrayIndex] = Console.ReadLine();
@@ -182,13 +184,19 @@ namespace Informationsstander
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
                                 for (int i = 0; i < 10; i++)
                                 {
-                                    if (arrayIndex2 < arraySøgeIndexTæller && input2 == "F")
+                                    if (input2 == "F")
                                     {
-                                        Console.WriteLine($"{navne[arraySøgteIndexer[arrayIndex2]],-20} │ {telefonnumre[arraySøgteIndexer[arrayIndex2]],-8} │ {aldre[arraySøgteIndexer[arrayIndex2]],-5} │ {e_mails[arraySøgteIndexer[arrayIndex2]],-30} │ {adresser[arraySøgteIndexer[arrayIndex2]],-25} │ {postnumre[arraySøgteIndexer[arrayIndex2]],-7} │ {byer[arraySøgteIndexer[arrayIndex2]],-20} │ {frekvenserNyhedsbrev[arraySøgteIndexer[arrayIndex2]]}");
+                                        if (arrayIndex2 < arraySøgeIndexTæller)
+                                        {
+                                            Console.WriteLine($"{navne[arraySøgteIndexer[arrayIndex2]],-20} │ {telefonnumre[arraySøgteIndexer[arrayIndex2]],-8} │ {aldre[arraySøgteIndexer[arrayIndex2]],-5} │ {e_mails[arraySøgteIndexer[arrayIndex2]],-30} │ {adresser[arraySøgteIndexer[arrayIndex2]],-25} │ {postnumre[arraySøgteIndexer[arrayIndex2]],-7} │ {byer[arraySøgteIndexer[arrayIndex2]],-20} │ {frekvenserNyhedsbrev[arraySøgteIndexer[arrayIndex2]]}");
+                                        }
                                     }
                                     else if (input2 == "A")
                                     {
-                                        Console.WriteLine($"{navne[arrayIndex2],-20} │ {telefonnumre[arrayIndex2],-8} │ {aldre[arrayIndex2],-5} │ {e_mails[arrayIndex2],-30} │ {adresser[arrayIndex2],-25} │ {postnumre[arrayIndex2],-7} │ {byer[arrayIndex2],-20} │ {frekvenserNyhedsbrev[arrayIndex2]}");
+                                        if (navne[arrayIndex2] != null)
+                                        {
+                                            Console.WriteLine($"{navne[arrayIndex2],-20} │ {telefonnumre[arrayIndex2],-8} │ {aldre[arrayIndex2],-5} │ {e_mails[arrayIndex2],-30} │ {adresser[arrayIndex2],-25} │ {postnumre[arrayIndex2],-7} │ {byer[arrayIndex2],-20} │ {frekvenserNyhedsbrev[arrayIndex2]}");
+                                        }
                                     }
                                     arrayIndex2++;
                                 }
@@ -241,7 +249,6 @@ namespace Informationsstander
                         break;
                 }
             }
-            while (SlutProgram == false);
         }
     }
 }
