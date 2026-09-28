@@ -18,7 +18,7 @@ namespace Informationsstander
                 //Der er oprettet en brugergrænseflade, hvor man kan tilmelde sig nyhedsbrevet og indtaste sine oplysninger. Her krydstjekkes telefonnummeret med brugerinformation fra databasen, så man undgår at det samme bruges flere steder
                 //Der er en agdangssikret menu til administratorer, hvor man kan søge efter specifik brugerinformation, se den fulde database eller få udregnet statistik på brugere
 
-            //Programmets opbygning
+            //Programmets opbygning (pseudokode)
 
                 //Hovemenu
 
@@ -29,7 +29,6 @@ namespace Informationsstander
                                 //Hvis nummeret ikke findes
                                     //Alle brugerinformationer kan indtastes
                                 //Hvis nummeret findes
-                                    //Fejlmeddelelse
                                     //Brugeren sendes tilbage til hovedmenuen
                         
                         //Administrator menu
@@ -39,18 +38,13 @@ namespace Informationsstander
                                 //Visning af alle brugere
                                 //Statistik
                                     //Gennemsnitsalder
-                                //Fejlmeddelelse
 
                                 //Søgefunktion og visning af alle brugere falder igennem til samme database
                                     //Søgte match vises
                                     //Eller alle brugere vises
-            //
+                                        //Sideskift med maks 14 linjer per side
 
-            //Variable
-            int arrayIndex = 19;
-
-            //Arrays med brugerinfo
-
+            //Arrays til brugerinformation
             string[] telefonnumre = new string[50];
             string[] navne = new string[50];
             int[] aldre = new int[50];
@@ -60,6 +54,9 @@ namespace Informationsstander
             string[] e_mails = new string[50];
             int[] frekvenserNyhedsbrev = new int[50];
 
+            //De første 20 brugere autogenereres
+            //Det sker ved at variable fyldes med midlertidigt indhold
+            //Disse variable optages derefter i arrayerne
             for (int i = 0; i < 20; i++)
             {
                 string test_Telefonnummer = (20304050 + i*10).ToString();
@@ -87,9 +84,11 @@ namespace Informationsstander
                 e_mails[i] = test_E_mail;
                 frekvenserNyhedsbrev[i] = test_FrekvensNyhedsbrev;
             }
+            //varianlen her bruges gennem hele programmet til at holde styr på, hvor mange brugere, der er tilmeldt nyhedsbrevet
+            int tilmeldteBrugere = 19;
 
-            bool SlutProgram = false;
-            while (!SlutProgram)
+            bool informationsstanderTændt = true;
+            while (informationsstanderTændt)
             {
                 //Hovedmenu
                 Console.Clear();
@@ -115,33 +114,33 @@ namespace Informationsstander
                         Console.Write("\nTelefonnummer: ");
                         string telefonnummerInput = Console.ReadLine();
 
-                        int index = Array.IndexOf(telefonnumre, telefonnummerInput);
-                        if (index == -1)
+                        int erNummerIArray = Array.IndexOf(telefonnumre, telefonnummerInput);
+                        if (erNummerIArray == -1)
                         {
-                            telefonnumre[++arrayIndex] = telefonnummerInput;
+                            telefonnumre[++tilmeldteBrugere] = telefonnummerInput;
 
                             Console.Write("\nFor- og efternavn: ");
-                            navne[arrayIndex] = Console.ReadLine();
+                            navne[tilmeldteBrugere] = Console.ReadLine();
 
                             Console.Write("\nAlder: ");
-                            aldre[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+                            aldre[tilmeldteBrugere] = Convert.ToInt32(Console.ReadLine());
 
                             Console.Write("\nAdresse: ");
-                            adresser[arrayIndex] = Console.ReadLine();
+                            adresser[tilmeldteBrugere] = Console.ReadLine();
 
                             Console.Write("\nPostnummer: ");
-                            postnumre[arrayIndex] = Console.ReadLine();
+                            postnumre[tilmeldteBrugere] = Console.ReadLine();
 
                             Console.Write("\nBy: ");
-                            byer[arrayIndex] = Console.ReadLine();
+                            byer[tilmeldteBrugere] = Console.ReadLine();
 
                             Console.Write("\nE-mail: ");
-                            e_mails[arrayIndex] = Console.ReadLine();
+                            e_mails[tilmeldteBrugere] = Console.ReadLine();
 
                             Console.WriteLine("\nHvor ofte vil du modtage nyhedsbreve fra os?");
                             Console.WriteLine("Hver måned, hver tredje måned eller hver 12. måned?");
                             Console.Write("Angiv med 1, 3 eller 12: ");
-                            frekvenserNyhedsbrev[arrayIndex] = Convert.ToInt32(Console.ReadLine());
+                            frekvenserNyhedsbrev[tilmeldteBrugere] = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine("\nTak for din tilmelding");
                             Console.Write("\nTryk enter for at afslutte");
@@ -170,41 +169,40 @@ namespace Informationsstander
                             Console.WriteLine("\nFind brugere (F)");
                             Console.WriteLine("\nVis alle brugere (A)");
                             Console.WriteLine("\nVis statistik / Gennemsnitsalder (S)\n");
-                            string input2 = Console.ReadLine();
-                            input2 = input2.ToUpper();
+                            string adminMenuValg = Console.ReadLine();
+                            adminMenuValg = adminMenuValg.ToUpper();
 
-                            int[] arraySøgteIndexer = new int[50];
-                            int arraySøgeIndexTæller = 0;
+                            int[] brugerSøgeordMatcher = new int[50];
+                            int brugereMatchet = 0;
 
-                            if (input2 == "F")
+                            if (adminMenuValg == "F")
                             {
                                 Console.Clear();
                                 Console.WriteLine("Søg ved hjælp af telefonnummer, fornavn eller efternavn");
                                 Console.Write("\nIndtast søgerord: ");
                                 string søgeord = Console.ReadLine();
 
-                                for (int i = 0; i <= arrayIndex; i++)
+                                for (int i = 0; i <= tilmeldteBrugere; i++)
                                 {
                                     if (telefonnumre[i].StartsWith(søgeord) || navne[i].StartsWith(søgeord) || navne[i].Contains(" " + søgeord))
                                     {
-                                        arraySøgteIndexer[arraySøgeIndexTæller++] = i;
+                                        brugerSøgeordMatcher[brugereMatchet++] = i;
                                     }
                                 }
                             }
-                            else if (input2 == "A")
+                            else if (adminMenuValg == "A")
                             { }
-                            else if (input2 == "S")
+                            else if (adminMenuValg == "S")
                             {
                                 Console.Clear();
-                                int aldreAddition = 0;
-                                for (int i = 0; i <= arrayIndex; i++)
+                                int aldreSammenlagt = 0;
+                                for (int i = 0; i <= tilmeldteBrugere; i++)
                                 {
-                                    aldreAddition += aldre[i];
+                                    aldreSammenlagt += aldre[i];
                                 }
-                                int aldreGennemsnit = aldreAddition / arrayIndex + 1;
+                                int gennemsnitsAlder = aldreSammenlagt / tilmeldteBrugere + 1;
 
-                                Console.WriteLine($"Fundne brugere: {arrayIndex + 1}");
-                                Console.Write($"Gennemsnitsalder: {aldreGennemsnit} år");
+                                Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år");
                                 Console.ReadKey();
                             }
                             else
@@ -216,34 +214,36 @@ namespace Informationsstander
                                 break;
                             }
 
-                            int arrayIndex2 = 0;
-                            bool slutVisning = false;
+                            int udskrevneBrugere = 0;
+                            bool visDatabase = true;
 
-                            while (!slutVisning && input2 != "S")
+                            while (visDatabase && adminMenuValg != "S")
                             {
                                 Console.Clear();
+                                Console.WriteLine($"{$"Brugeredatabase", -25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}", 123}");
+                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
                                 Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
-                                for (int i = 0; i < 10; i++)
+                                for (int i = 0; i < 8; i++)
                                 {
-                                    if (input2 == "F")
+                                    if (adminMenuValg == "F")
                                     {
-                                        if (arrayIndex2 < arraySøgeIndexTæller)
+                                        if (udskrevneBrugere < brugereMatchet)
                                         {
-                                            Console.WriteLine($"{navne[arraySøgteIndexer[arrayIndex2]],-25} │ {telefonnumre[arraySøgteIndexer[arrayIndex2]],-8} │ {aldre[arraySøgteIndexer[arrayIndex2]],-5} │ {e_mails[arraySøgteIndexer[arrayIndex2]],-30} │ {adresser[arraySøgteIndexer[arrayIndex2]],-25} │ {postnumre[arraySøgteIndexer[arrayIndex2]],-7} │ {byer[arraySøgteIndexer[arrayIndex2]],-20} │ {frekvenserNyhedsbrev[arraySøgteIndexer[arrayIndex2]]}");
+                                            Console.WriteLine($"{navne[brugerSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugerSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugerSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugerSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugerSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugerSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugerSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugerSøgeordMatcher[udskrevneBrugere]]}");
                                         }
                                     }
-                                    else if (input2 == "A")
+                                    else if (adminMenuValg == "A")
                                     {
-                                        if (arrayIndex2 <= arrayIndex)
+                                        if (udskrevneBrugere <= tilmeldteBrugere)
                                         {
-                                            Console.WriteLine($"{navne[arrayIndex2],-25} │ {telefonnumre[arrayIndex2],-8} │ {aldre[arrayIndex2],-5} │ {e_mails[arrayIndex2],-30} │ {adresser[arrayIndex2],-25} │ {postnumre[arrayIndex2],-7} │ {byer[arrayIndex2],-20} │ {frekvenserNyhedsbrev[arrayIndex2]}");
+                                            Console.WriteLine($"{navne[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
                                         }
                                     }
-                                    arrayIndex2++;
+                                    udskrevneBrugere++;
                                 }
 
-                                if (arrayIndex2 <= 10)
+                                if (udskrevneBrugere <= 8)
                                 {
                                     Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
                                 }
@@ -252,26 +252,26 @@ namespace Informationsstander
                                     Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
                                 }
 
-                                string input3 = Console.ReadLine();
-                                input3 = input3.ToUpper();
+                                string navigation = Console.ReadLine();
+                                navigation = navigation.ToUpper();
 
-                                if (input3 == "")
+                                if (navigation == "")
                                 {
                                 }
-                                else if (input3 == "F" && arrayIndex2 > 10)
+                                else if (navigation == "F" && udskrevneBrugere > 8)
                                 {
-                                    arrayIndex2 -= 20;
+                                    udskrevneBrugere -= 16;
                                 }
-                                else if (input3 == "A")
+                                else if (navigation == "A")
                                 {
-                                    slutVisning = true;
+                                    visDatabase = false;
                                 }
                                 else
                                 {
                                     Console.SetCursorPosition(100, 13);
                                     Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
                                     Console.ReadKey();
-                                    arrayIndex2 -= 10;
+                                    udskrevneBrugere -= 8;
                                 }
                             }
                         }
