@@ -127,7 +127,8 @@ namespace Informationsstander_4
 
                         if (nytNummer)
                         {
-                            telefonnummer[arrayPosition += 1] = telefonnummerInput;
+                            telefonnummer[arrayPosition] = telefonnummerInput;
+                            arrayPosition++;
                         }
                         else
                         {
