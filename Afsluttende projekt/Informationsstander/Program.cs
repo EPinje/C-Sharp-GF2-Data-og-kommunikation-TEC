@@ -181,15 +181,17 @@ namespace Informationsstander
                                 Console.WriteLine("Søg ved hjælp af telefonnummer, fornavn eller efternavn");
                                 Console.Write("\nIndtast søgerord: ");
                                 string søgeord = Console.ReadLine();
+                                søgeord = søgeord.ToUpper();
 
                                 for (int i = 0; i <= tilmeldteBrugere; i++)
                                 {
-                                    if (telefonnumre[i].StartsWith(søgeord) || navne[i].StartsWith(søgeord) || navne[i].Contains(" " + søgeord))
+                                    if (telefonnumre[i].ToUpper().StartsWith(søgeord) || navne[i].ToUpper().StartsWith(søgeord) || navne[i].ToUpper().Contains(" " + søgeord))
                                     {
                                         brugerSøgeordMatcher[brugereMatchet++] = i;
                                     }
                                 }
                             }
+
                             else if (adminMenuValg == "A")
                             { }
                             else if (adminMenuValg == "S")
