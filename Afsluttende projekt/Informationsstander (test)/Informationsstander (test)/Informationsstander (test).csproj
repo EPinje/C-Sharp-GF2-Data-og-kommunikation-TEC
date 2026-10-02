@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7EB416B6-48DA-4B05-9A72-1554CCBE4065}</ProjectGuid>
+    <ProjectGuid>{9A2BD315-C888-47A1-A061-2731D1ACB008}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Informationsstander_4</RootNamespace>
-    <AssemblyName>Informationsstander 4</AssemblyName>
+    <RootNamespace>Informationsstander__test_</RootNamespace>
+    <AssemblyName>Informationsstander %28test%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

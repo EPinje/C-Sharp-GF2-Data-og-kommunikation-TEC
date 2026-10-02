@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Informationsstander 2")]
+[assembly: AssemblyTitle("Informationsstander - minimalt noteret")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Informationsstander 2")]
-[assembly: AssemblyCopyright("Copyright ©  2026")]
+[assembly: AssemblyCompany("IT Center Nord")]
+[assembly: AssemblyProduct("Informationsstander - minimalt noteret")]
+[assembly: AssemblyCopyright("Copyright © IT Center Nord 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f23a123e-2484-4593-8f32-49a6443ec8ca")]
+[assembly: Guid("73068433-e042-4a61-b9fd-0d861fe90e96")]
 
 // Version information for an assembly consists of the following four values:
 //

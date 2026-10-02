@@ -1,51 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Informationsstander
+namespace Informationsstander___minimalt_noteret
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             //Informationsstander
-
-            //Programmet er en model til en informationsstander, hvor man skal kunne tilmelde sig et nyhedsbrev og tilgå data om de tilmeldte brugere
-                
-                //Der er oprettet en brugergrænseflade, hvor man kan tilmelde sig nyhedsbrevet og indtaste sine oplysninger. Her krydstjekkes telefonnummeret med brugerinformation fra databasen, så man undgår at det samme bruges flere steder
-                //Der er en agdangssikret menu til administratorer, hvor man kan søge efter specifik brugerinformation, se den fulde database eller få udregnet statistik på brugere
-
-            //Programmets opbygning (pseudokode)
-
-            //Arrays tilbrugerdat
-            //variabel til at holde styr på antal tilmeldte brugere
-
-                //Hovemenu
-
-                    //Brugergrænseflade
-
-                        //Brugeren indtaster et telefonnummer
-                            //Telefonnummeret krydstjekkes med databasen
-                                //Hvis nummeret ikke findes
-                                    //Alle brugerinformationer kan indtastes
-                                //Hvis nummeret findes
-                                    //Brugeren sendes tilbage til hovedmenuen
-                        
-                        //Administrator menu
-                            //Adgangskode
-                                //Søgefunktion
-                                    //Telefonnummer eller navn
-                                //Visning af alle brugere
-                                //Statistik
-                                    //Gennemsnitsalder
-
-                                //Søgefunktion og visning af alle brugere falder igennem til samme database
-                                    //Søgte match vises
-                                    //Eller alle brugere vises
-                                        //Sideskift med maks 14 linjer per side
 
             //Arrays til brugerinformation
             string[] telefonnumre = new string[50];
@@ -259,8 +224,6 @@ namespace Informationsstander
             e_mails[19] = "kraftig@lugt.gul";
             frekvenserNyhedsbrev[19] = 3;
 
-            //varianlen her bruges gennem hele programmet til at holde styr på, hvor mange brugere, der er tilmeldt nyhedsbrevet
-            //den forøges hver gang en ny person tilmelder sig
             int tilmeldteBrugere = 19;
 
             bool informationsstanderTændt = true;
@@ -279,7 +242,7 @@ namespace Informationsstander
                 Console.SetCursorPosition(19, 13);
                 Console.Write("Administrator adgang (A) ");
                 string input = Console.ReadLine();
-                input = input.ToUpper(); //ToUpper() laver input om til store bogstaver, så switchen under fungere uanset om der bruges store eller små bogstaver
+                input = input.ToUpper();
 
                 switch (input)
                 {
@@ -290,17 +253,11 @@ namespace Informationsstander
                         Console.Write("\nTelefonnummer: ");
                         string telefonnummerInput = Console.ReadLine();
 
-                        //IndexOF tjekker om det indtastede telefonnummer er til stede i arrayet telefonnumre[]
-                        //Hvis det findes puttes pladsen, hvor det blev fundet, i en int variabel
-                        //Hvis det ikke findes gemmes -1 
                         int erNummerIArray = Array.IndexOf(telefonnumre, telefonnummerInput);
-                        //Sådan tjekkes om de må komme ind i if og tilmelde sig nyhedsbrevet
 
-                        //Brugeren kan i if tilmelde sig med sine oplysninger
+                        //Brugeroplysninger
                         if (erNummerIArray == -1)
                         {
-                            //Telefonnummeret gemmes i et array
-                            //++ lægger 1 til tilmeldte brugere, gennem variablen fra linje 264                 //++ på venstre side ligger 1 til før der gemmes, havde den været på højre side ville der gemmes først og derefter blive lagt 1 til
                             telefonnumre[++tilmeldteBrugere] = telefonnummerInput;
 
                             Console.Write("\nFornavn: ");
@@ -353,6 +310,7 @@ namespace Informationsstander
                         Console.Write("Adgangskode: ");
                         string adgangskode = Console.ReadLine();
 
+                        //Adgangskrav
                         if (adgangskode == "Ab12345!")
                         {
                             Console.Clear();
@@ -363,23 +321,14 @@ namespace Informationsstander
                             string adminMenuValg = Console.ReadLine();
                             adminMenuValg = adminMenuValg.ToUpper();
 
-                            //Nogle arrays og variable defineres tidligere end de bruges. Hvis de laves inde i en if eller while, alt indenfor {}, kan de ikke bruges udenfor dette aflukkede område.
-                            //Jeg laver en reference til hvilken linje de bruges på
-
-                            //Disse to er lavet til senere at hive frem, hvilke pladser de eftersøgte brugere ligger på, når de skal vises fra databasen
-
-                            //Arrayet bruges til at gemme, hvilke pladser de eftersøgte brugere har
                             int[] brugereSøgeordMatcher = new int[50];
-                            //Variablen bruges til at holde styr på hvor mange brugere, der er puttet i arrayet
                             int brugereMatchet = 0;
 
-                            //Menu til at søge efter brugere
+                            //Søgefunktion
                             if (adminMenuValg == "F")
                             {
-                                //Defineres inde i while-løkken
                                 string søgerEfter = "";
 
-                                //Denne while er til, at man sendes tilbage, hvis man ikke har indtastet rigtigt i forhold til menuen
                                 bool indputCheck = true;
                                 while (indputCheck)
                                 {
@@ -393,7 +342,6 @@ namespace Informationsstander
                                     søgerEfter = Console.ReadLine();
                                     søgerEfter = søgerEfter.ToUpper();
 
-                                    //Hvis der ikke er tastet et af de godkendte bogstaver, != betyder ikke lig med
                                     if (søgerEfter != "T" && søgerEfter != "F" && søgerEfter != "E" && søgerEfter != "P")
                                     {
                                         Console.Clear();
@@ -404,42 +352,27 @@ namespace Informationsstander
                                     }
                                 }
 
-                                //Step 2 i søgningen
                                 Console.Clear();
                                 Console.Write("Indtast søgerord: ");
                                 string søgeord = Console.ReadLine();
                                 søgeord = søgeord.ToUpper();
 
-                                //Løkken er sat til at kører lige så mange gange, som der er tilmeldte brugere - variable på linje 264
                                 for (int i = 0; i <= tilmeldteBrugere; i++)
                                 {
-                                    //StartsWith tjekker om arrayet starter med det søgte ord
-                                    //Der tjekkes først om søgeordet passer med telefonnummeret i arrayet
-                                    //Hvis det ikke gør kigges der om fornavn osv. gør
                                     if (telefonnumre[i].ToUpper().StartsWith(søgeord) || fornavn[i].ToUpper().StartsWith(søgeord) || efternavn[i].ToUpper().StartsWith(søgeord) || postnumre[i].ToUpper().StartsWith(søgeord))
                                     {
-                                        //Hver gang for-løkken gennemløbes, tjekkes der systematisk en bruger af af gangen
-                                        //Hvis programmet er nået herind betyder det, at brugeren skal vises, for de matcher med søgeordet
-
-                                        //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret - linje 61-260
-                                        //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises og det sker efter at i bliver gemt i arrayet (++ til højre)
-                                        //Så arrayet gemmer i på pladsen, som brugereMatchet har af værdi
-                                        brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er defineret på linje 372 og 374, forklaring af hvad de skal bruges til - linje 369
+                                        brugereSøgeordMatcher[brugereMatchet++] = i;
                                     }
                                 }
                             }
 
-                            //A er kun her for at den ikke tælles med i else
-                            //Den skal hoppe videre til while - linje 476
+                            //Fuld databasevisning hopper til while
                             else if (adminMenuValg == "A")
                             { }
 
                             //Statistik - aldersgennemsnit
                             else if (adminMenuValg == "S")
                             {
-                                //Hele arrayet med aldre køres igennem i en for-løkkn, hvor værdierne bliver lagt sammen og gemt i int variablen
-                                //Den samlede alder divideres med antallet af brugere og resultatet udskrives
-
                                 Console.Clear();
                                 int aldreSammenlagt = 0;
                                 for (int i = 0; i <= tilmeldteBrugere; i++)
@@ -452,7 +385,7 @@ namespace Informationsstander
                                 Console.ReadKey();
                             }
 
-                            //Fejlmeddelelse, hvis der ikke er valgt søg, vis eller statistik
+                            //Fejlmeddelelse
                             else
                             {
                                 Console.Clear();
@@ -462,47 +395,31 @@ namespace Informationsstander
                                 break;
                             }
 
+                            //Databasevisning
 
-                            //Database med udskrift af brugere
-
-                            //Variablen her regulerer, hvilken side man befinder sig på
-                            //Og sørger for at programmet ikke crasher, fordi at der udskrives fra array pladser, der er over de 50, som arraysne er defineret med
                             int udskrevneBrugere = 0;
-
-                            //Holder databasen kørene indtil, der vælges at afslutte
                             bool visDatabase = true;
 
-                            //boolen skal være sand og der skal ikke være valgt statistik, for så skal de springe databasen over
                             while (visDatabase && adminMenuValg != "S")
                             {
-                                //Layout
                                 Console.Clear();
-                                Console.WriteLine($"{$"Brugeredatabase", -25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}", 123}");
+                                Console.WriteLine($"{$"Brugeredatabase",-25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}",123}");
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
                                 Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}"); //, tal (f.eks. , 25) sørger for at hvis teksten i {} er mindre end 25 tegn. så udfyldes resten af pladsen til 25 tegn med mellemrum
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
 
-                                    //De korrekte brugere udskrives - maks 8 pr. side
-                                    for (int i = 0; i < 8; i++)
+                                for (int i = 0; i < 8; i++)
                                 {
-                                    //Søgefunktion
-                                    //Her udskrives alle de brugere, der er matchet med søgeordet
+                                    //Søgning matches
                                     if (adminMenuValg == "F")
                                     {
-                                        //brugereMatchet - linje 427
-                                        //udskrevneBrugere - linje 470
-
-                                        //Udskrevne brugere skal være mindre end brugere, der har mathchet med søgeresultatet
                                         if (udskrevneBrugere < brugereMatchet)
                                         {
-                                            //Vi udskriver først fra arrayet fornavn, på pladsen der er gemt i arrayet brugereSøgeordMatcher på den plads, der mather med hvor mange brugere, der allerede er vist i databasen
-                                            //Der sættes et mellemrum, efternavn tilføjes og vi sørger for at det minimum fylder 25 tegn med mellemrummende til højre
-                                            //Så er der │ til layout og så resten af informationerne
                                             Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
                                         }
                                     }
 
-                                    //Alle brugere vises i kronologisk
+                                    //Alle brugere vises
                                     else if (adminMenuValg == "A")
                                     {
                                         if (udskrevneBrugere <= tilmeldteBrugere)
@@ -510,12 +427,10 @@ namespace Informationsstander
                                             Console.WriteLine($"{fornavn[udskrevneBrugere] + " " + efternavn[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
                                         }
                                     }
-                                    //Der holdes styr på, hvilken side man befinder sig på
-                                    //Side 4 = udskrevneBrugere/8
                                     udskrevneBrugere++;
                                 }
 
-                                //Hvis man befinder sig på første side, får man ikke vist muligheden for at gå tilbage til forrige side
+                                //Navigation i menuen
                                 if (udskrevneBrugere <= 8)
                                 {
                                     Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
@@ -525,13 +440,9 @@ namespace Informationsstander
                                     Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
                                 }
 
-                                //Input om valget fra ovenstående
                                 string navigation = Console.ReadLine();
                                 navigation = navigation.ToUpper();
 
-                                //Tjekker hvilken linje markøren står på efter brugeren indtaster i ReadLine
-                                //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang
-                                //-1 fordi at enter laver et linjeskift for langt, det ville være linje 15
                                 int fejlmeddelelseLinje = Console.CursorTop - 1;
 
                                 //Næste side
@@ -540,26 +451,20 @@ namespace Informationsstander
                                 }
 
                                 //Forrige side
-
-                                //Der sørges for at inputtet både er F og at vi ikke befinder os på første side for ellers vil udregningen lave rod i, hvilke brugere, der vises
                                 else if (navigation == "F" && udskrevneBrugere > 8)
                                 {
-                                    //Når løkken gentages, så trækkes der 16 fra de udskrevne brugere gemt i variablen
-                                    //Der er 8 på hver side. Hvis 8 trækkes fra ville den starte med samme side igen.
-                                    //16 viser forrige side
                                     udskrevneBrugere -= 16;
                                 }
+
                                 //Databasefremvisningen afsluttes
                                 else if (navigation == "A")
                                 {
-                                    //while-løkken gentages ikke
                                     visDatabase = false;
                                 }
 
                                 //Fejlmeddelelse
                                 else
                                 {
-                                    //Meddelelsen kommer på linjen man indtastede forket
                                     Console.SetCursorPosition(100, fejlmeddelelseLinje);
                                     Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
                                     Console.ReadKey();
