@@ -44,14 +44,14 @@ namespace Informationsstander___minimalt_noteret
             e_mails[1] = "ramakantjoshi@wuhuu.peace";
             frekvenserNyhedsbrev[1] = 3;
 
-            telefonnumre[2] = "50403020";
-            fornavn[2] = "Thike M.";
-            efternavn[2] = "A.";
-            aldre[2] = 27;
+            telefonnumre[2] = "20304050";
+            fornavn[2] = "Cirkeline";
+            efternavn[2] = "Kartoffel";
+            aldre[2] = 68;
             adresser[2] = "Rebæk Søpark 535";
             postnumre[2] = "2650";
             byer[2] = "Hvidovre";
-            e_mails[2] = "thikema@yahooiamacowboy.yehaa";
+            e_mails[2] = "engolf@ostemad.yehaa";
             frekvenserNyhedsbrev[2] = 3;
 
             telefonnumre[3] = "30558690";
