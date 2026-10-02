@@ -86,7 +86,7 @@ namespace Informationsstander
             e_mails[1] = "ramakantjoshi@wuhuu.peace";
             frekvenserNyhedsbrev[1] = 3;
 
-            telefonnumre[2] = "20304050";
+            telefonnumre[2] = "20304060";
             fornavn[2] = "Cirkeline";
             efternavn[2] = "Kartoffel";
             aldre[2] = 68;
@@ -369,236 +369,257 @@ namespace Informationsstander
                         Console.Write("Adgangskode: ");
                         string adgangskode = Console.ReadLine();
 
-                        //Database - søgefunktion, fuld visning og statistik
-                        if (adgangskode == "Ab12345!")
+                        //I if er der adgang til database, søgefunktion, fuld visning, statistik og nedlukning af programmet
+                        if (adgangskode == "Ab12345!") //Adganskoden tjekkes
                         {
-                            //Navigationsvalg
-                            Console.Clear();
-                            Console.WriteLine("Brugerdatabase");
-                            Console.WriteLine("\nFind brugere med søgefunktion (F)");
-                            Console.WriteLine("\nVis alle brugere (A)");
-                            Console.WriteLine("\nVis statistik / Gennemsnitsalder (S)\n");
-                            string adminMenuValg = Console.ReadLine();
-                            adminMenuValg = adminMenuValg.ToUpper();
-
-                            //De to nedenstående, array og variabel,
-                            //er lavet til senere at hive frem,
-                            //hvilke pladser de eftersøgte brugere ligger på i deres arrays, når de skal vises fra databasen
-
-                            //Arrayet bruges til at gemme, hvilke pladser de eftersøgte brugere har
-                            int[] brugereSøgeordMatcher = new int[50000];
-                            //Variablen bruges til at holde styr på hvor mange brugere, der er puttet i arrayet
-                            int brugereMatchet = 0;
-
-                            //Søgefunktion
-                            if (adminMenuValg == "F")
+                            bool adminMenuRun = true;
+                            while (adminMenuRun)
                             {
-                                //Tildeles værdi inde i while-løkken, men deklareres her da den skal bruges udenfor
-                                string søgerEfter = "";
+                                //Administrerende menu
+                                Console.Clear();
+                                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("\nFind brugere med søgefunktion (F)");
+                                Console.WriteLine("\nVis alle brugere (A)");
+                                Console.WriteLine("\nVis statistik / Gennemsnitsalder (S)");
+                                Console.WriteLine("\nReturner til hovedmenuen (R)");
+                                Console.WriteLine("\nLuk programmet (L)");
+                                Console.WriteLine("\n──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("──────────────────────────────────────────────────────────────\n");
+                                string adminMenuValg = Console.ReadLine();
+                                adminMenuValg = adminMenuValg.ToUpper();
 
-                                //Denne while er til, at man køres i loop, hvis man ikke har indtastet rigtigt i forhold til menuen
-                                bool indputCheck = false;
-                                while (!indputCheck)
+                                //De to nedenstående, array og variabel,
+                                //er lavet til senere at hive frem,
+                                //hvilke pladser de eftersøgte brugere ligger på i deres arrays, når de skal vises fra databasen
+
+                                //Arrayet bruges til at gemme, hvilke pladser de eftersøgte brugere har
+                                int[] brugereSøgeordMatcher = new int[50000];
+                                //Variablen bruges til at holde styr på hvor mange brugere, der er puttet i arrayet
+                                int brugereMatchet = 0;
+
+                                //Søgefunktion
+                                if (adminMenuValg == "F")
                                 {
-                                    indputCheck = true;
-                                    Console.Clear();
-                                    Console.WriteLine("Hvad vil du søge gennem?");
-                                    Console.WriteLine("\nTelefonnummer (T)");
-                                    Console.WriteLine("Fornavn (F)");
-                                    Console.WriteLine("Efternavn (E)");
-                                    Console.WriteLine("Postnummer (P)\n");
-                                    søgerEfter = Console.ReadLine();
-                                    søgerEfter = søgerEfter.ToUpper();
+                                    //Tildeles værdi inde i while-løkken, men deklareres her da den skal bruges udenfor
+                                    string søgerEfter = "";
 
-                                    //Hvis, der ikke er tastet et af de godkendte bogstaver køres koden, != betyder ikke lig med, f.eks. if (søgerEfter ikke er lig med "T")
-                                    if (søgerEfter != "T" && søgerEfter != "F" && søgerEfter != "E" && søgerEfter != "P")
+                                    //Denne while er til, at man køres i loop, hvis man ikke har indtastet rigtigt i forhold til menuen
+                                    bool indputCheck = false;
+                                    while (!indputCheck)
                                     {
+                                        indputCheck = true;
                                         Console.Clear();
-                                        Console.WriteLine("Du skal indtaste et af bogstaverne fra parenteserne i menuen!");
-                                        Console.Write("Tryk ENTER for at prøve igen");
-                                        Console.ReadKey();
-                                        indputCheck = false;
-                                        //inputCheck bliver true igen i starten af while
+                                        Console.WriteLine("Hvad vil du søge gennem?");
+                                        Console.WriteLine("\nTelefonnummer (T)");
+                                        Console.WriteLine("Fornavn (F)");
+                                        Console.WriteLine("Efternavn (E)");
+                                        Console.WriteLine("Postnummer (P)\n");
+                                        søgerEfter = Console.ReadLine();
+                                        søgerEfter = søgerEfter.ToUpper();
+
+                                        //Hvis, der ikke er tastet et af de godkendte bogstaver køres koden, != betyder ikke lig med, f.eks. if (søgerEfter ikke er lig med "T")
+                                        if (søgerEfter != "T" && søgerEfter != "F" && søgerEfter != "E" && søgerEfter != "P")
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("Du skal indtaste et af bogstaverne fra parenteserne i menuen!");
+                                            Console.Write("Tryk ENTER for at prøve igen");
+                                            Console.ReadKey();
+                                            indputCheck = false;
+                                            //inputCheck bliver true igen i starten af while
+                                        }
                                     }
-                                }
 
-                                //Søgeord indtastes
-                                Console.Clear();
-                                Console.Write("Indtast søgerord: ");
-                                string søgeord = Console.ReadLine();
-                                søgeord = søgeord.ToUpper();
+                                    //Søgeord indtastes
+                                    Console.Clear();
+                                    Console.Write("Indtast søgerord: ");
+                                    string søgeord = Console.ReadLine();
+                                    søgeord = søgeord.ToUpper();
 
-                                //Søgeordet krydstjekkes med databasen
-                                //Brugere der skal fremvises gemmes i et array
-                                //Søgefunktionen er lavet til at kunne vise flere brugere på en gang, hvis de stemmer overens med søgeordet
+                                    //Søgeordet krydstjekkes med databasen
+                                    //Brugere der skal fremvises gemmes i et array
+                                    //Søgefunktionen er lavet til at kunne vise flere brugere på en gang, hvis de stemmer overens med søgeordet
 
-                                //For-løkken er sat til at køre lige så mange gange, som der er tilmeldte brugere - variablen er fra linje 271 (antal brugere der er tilmeldt)
-                                for (int i = 0; i <= tilmeldteBrugere; i++)
-                                {
-                                    //StartsWith tjekker om arrayet starter med det søgte ord
-                                    //Der tjekkes først om søgeordet passer med telefonnummeret i arrayet
-                                    //Hvis det ikke gør, kigges der om fornavn osv. gør
-                                    if (telefonnumre[i].ToUpper().StartsWith(søgeord) || fornavn[i].ToUpper().StartsWith(søgeord) || efternavn[i].ToUpper().StartsWith(søgeord) || postnumre[i].ToUpper().StartsWith(søgeord))
+                                    //For-løkken er sat til at køre lige så mange gange, som der er tilmeldte brugere - variablen er fra linje 271 (antal brugere der er tilmeldt)
+                                    for (int i = 0; i <= tilmeldteBrugere; i++)
                                     {
-                                        //Hver gang for-løkken gennemløbes, tjekkes der systematisk en bruger af af gangen
-                                        //Hvis programmet er nået herind betyder det, at brugeren skal vises fra databasen, fordi de matcher med søgeordet
+                                        //Der tjekkes først efter, hvad der søges efter OG derefter, om det der står i arrayet, starter med søgeordet
+                                        //StartsWith tjekker om arrayet starter med det søgte ord
+                                        //Hvis det første led (telefonnummer) ikke gør tjekkes det næste /fornavn)
+                                        if (søgerEfter == "T" && telefonnumre[i].ToUpper().StartsWith(søgeord) || søgerEfter == "F" && fornavn[i].ToUpper().StartsWith(søgeord) || søgerEfter == "E" && efternavn[i].ToUpper().StartsWith(søgeord) || søgerEfter == "P" && postnumre[i].ToUpper().StartsWith(søgeord))
+                                        {
+                                            //Hver gang for-løkken gennemløbes, tjekkes der systematisk en bruger af af gangen
+                                            //Hvis programmet er nået herind betyder det, at brugeren skal vises fra databasen, fordi de matcher med søgeordet
 
-                                        //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret - linje 68-267
-                                        //Arrayet gemmer i på pladsen, som brugereMatchet har af værdi
-                                        //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
-                                        brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er deklareret på linje 389 og 391, forklaring af hvad de skal bruges til - linje 384
+                                            //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret - linje 68-267
+                                            //Arrayet gemmer i på pladsen, som brugereMatchet har af værdi
+                                            //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
+                                            brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variabel - se linje 384
+                                        }
                                     }
+                                    //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
+                                    brugereMatchet--;
                                 }
-                                //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
-                                brugereMatchet--;
-                            }
 
-                            //Vis alle brugere
-                            else if (adminMenuValg == "A")      //Er her kun for, at valget "A" ikke ender i else
-                            { }                                 //Den skal hoppe videre til while - linje 501
+                                //Vis alle brugere
+                                else if (adminMenuValg == "A")      //Er her kun for, at valget "A" ikke ender i else
+                                { }                                 //Den skal hoppe videre til databasevisningen
 
-                            //Statistik - aldersgennemsnit
-                            else if (adminMenuValg == "S")
-                            {
-                                //Hele arrayet med aldre køres igennem i en for-løkkn, hvor værdierne bliver lagt sammen og gemt i en int variabel
-                                //Den samlede alder divideres med antallet af brugere og resultatet udskrives
-
-                                Console.Clear();
-                                int aldreSammenlagt = 0;
-                                for (int i = 0; i <= tilmeldteBrugere; i++)
+                                //Statistik - aldersgennemsnit
+                                else if (adminMenuValg == "S")
                                 {
-                                    aldreSammenlagt += aldre[i];
+                                    //Hele arrayet med aldre køres igennem i en for-løkkn, hvor værdierne bliver lagt sammen og gemt i en int variabel
+                                    //Den samlede alder divideres med antallet af brugere og resultatet udskrives
+
+                                    Console.Clear();
+                                    int aldreSammenlagt = 0;
+                                    for (int i = 0; i <= tilmeldteBrugere; i++)
+                                    {
+                                        aldreSammenlagt += aldre[i];
+                                    }
+                                    int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
+
+                                    Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år"); //Tilmeldte brugere starter på 0, så for at finde det rigtige antal brugere lægges 1 til
+                                    Console.ReadKey();
                                 }
-                                int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
 
-                                Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år"); //Tilmeldte brugere starter på 0, så for at finde det rigtige antal brugere lægges 1 til
-                                Console.ReadKey();
-                            }
+                                //Returnering til hovedmenuen
+                                else if (adminMenuValg == "R")
+                                {
+                                    //while til admin menuen åbnes
+                                    adminMenuRun = false;
+                                }
 
-                            //Fejlmeddelelse, hvis der ikke er valgt søg, vis eller statistik lige efter adgangskoden - linje 373
-                            else
-                            {
-                                Console.Clear();
-                                Console.WriteLine("Du har indtastet et ugyldigt input");
-                                Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
-                                Console.ReadKey();
-                                break;
-                            }
+                                //Programmet slukkes
+                                else if (adminMenuValg == "L")
+                                {
+                                    //Alle while-løkker åbner
+                                    adminMenuRun = false;
+                                    informationsstanderTændt = false;
+                                }
 
-                            //Udskrift af brugere fra databasen
+                                //Fejlmeddelelse, hvis der ikke er valgt en af muligheden fra den administrerende menu
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Du har indtastet et ugyldigt input");
+                                    Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                                    Console.ReadKey();
+                                }
 
-                            //Der vises maksimalt 8 brugere per side. Det er muligt at lave sideskift både til næste side og til forrige og man køres i en while-løkke indtil man vælger at afslutte
-                            //Brugerne der udskrives matches med søgeresultatet eller alle vises, hvis det er valgt tidligere
+                                //Udskrift af brugere fra databasen
 
-                            //Variablen her regulerer, hvilken side man befinder sig på
-                            //Og sørger for at programmet ikke crasher, fordi at der udskrives fra array pladser, der er overskrider 50, som er de tildelte pladser arraysne har på nuværende tidspunkt
-                            int udskrevneBrugere = 0;
+                                //Der vises maksimalt 8 brugere per side. Det er muligt at lave sideskift både til næste side og til forrige og man køres i en while-løkke indtil man vælger at afslutte
+                                //Brugerne der udskrives matches med søgeresultatet eller alle vises, hvis det er valgt tidligere
 
-                            //Holder databasen kørene indtil, der vælges at afslutte
-                            bool visDatabase = true;
+                                //Variablen her regulerer, hvilken side man befinder sig på
+                                //Og sørger for at programmet ikke crasher, fordi at der udskrives fra array pladser, der er overskrider 50, som er de tildelte pladser arraysne har på nuværende tidspunkt
+                                int udskrevneBrugere = 0;
 
-                            //boolen skal være sand OG der skal ikke være valgt statistik, for så skal de springe databasen over
-                            while (visDatabase && adminMenuValg != "S")
-                            {
-                                //Layout
-                                Console.Clear();                                                                                        //Et komma efterfult af et tal inde i to tuborgklammer {}, sørger for at hvis udskriften ikke fylder nok tegn udfyldes resten med mellemrum. F.eks. {"farvel", 25} sætter 22 mellemrum til venstre for farvel. Et minus sætter mellemrummene til højre: {"Hej, -25}
-                                Console.WriteLine($"{$"Brugeredatabase", -25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}", 123}");    //Sådan skabes layoutet, så der er plads til forskellige navne, adresser osv.
-                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
-                                Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
-                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+                                //Databasen vises kun, hvis der er valgt søg eller vis alle i menuen
+                                bool visDatabase = adminMenuValg == "F" || adminMenuValg == "A";
+                                while (visDatabase)
+                                {
+                                    //Layout
+                                    Console.Clear();                                                                                      //Et komma efterfult af et tal inde i to tuborgklammer {}, sørger for at hvis udskriften ikke fylder nok tegn udfyldes resten med mellemrum. F.eks. {"farvel", 25} sætter 22 mellemrum til venstre for farvel. Et minus sætter mellemrummene til højre: {"Hej, -25}
+                                    Console.WriteLine($"{$"Brugeredatabase",-25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}",123}");    //Sådan skabes layoutet, så der er plads til forskellige navne, adresser osv.
+                                    Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+                                    Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
+                                    Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
 
                                     //De korrekte brugere udskrives
                                     for (int i = 0; i < 8; i++)         //maks 8 pr. side
-                                {
-                                    //Søgeresultater vises
-                                    if (adminMenuValg == "F")
                                     {
-                                        //Her udskrives alle de brugere, der er matchet med søgeordet
-
-                                        //Udskrevne brugere skal være mindre end brugere, der har mathchet med søgeresultatet
-                                        if (udskrevneBrugere <= brugereMatchet)                                                          //udskrevneBrugere - linje 495 < brugereMatchet - linje 391 og 449
+                                        //Søgeresultater vises
+                                        if (adminMenuValg == "F")
                                         {
-                                            //Vi udskriver først fra arrayet fornavn, på pladsen, der er gemt i arrayet brugereSøgeordMatcher, på den plads, der matcher med, hvor mange brugere der allerede er vist i databasen (udskrevneBrugere)
-                                            //Der sættes et mellemrum, efternavn tilføjes, og vi sørger for, at det minimum fylder 25 tegn med mellemrummende til højre. Læg mærke til at hele fornavn + efternavn er i samme {}. Derfor gælder -25 for det fulde navn
-                                            //Så er der │ til layout og så resten af informationerne
-                                            Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
+                                            //Her udskrives alle de brugere, der er matchet med søgeordet
+
+                                            //Udskrevne brugere skal være mindre end brugere, der har mathchet med søgeresultatet
+                                            if (udskrevneBrugere <= brugereMatchet)                                                          //udskrevneBrugere - linje 517 < brugereMatchet - linje 399 og 457
+                                            {
+                                                //Vi udskriver først fra arrayet fornavn, på pladsen, der er gemt i arrayet brugereSøgeordMatcher, på den plads, der matcher med, hvor mange brugere der allerede er vist i databasen (udskrevneBrugere)
+                                                //Der sættes et mellemrum, efternavn tilføjes, og vi sørger for, at det minimum fylder 25 tegn med mellemrummende til højre. Læg mærke til at hele fornavn + efternavn er i samme {}. Derfor gælder -25 for det fulde navn
+                                                //Så er der │ til layout og så resten af informationerne
+                                                Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
+                                            }
                                         }
+
+                                        //Alle brugere vises i kronologisk rækkefølge
+                                        else if (adminMenuValg == "A")
+                                        {
+                                            //Resonnement er det samme som i ovenstående if
+                                            if (udskrevneBrugere <= tilmeldteBrugere)
+                                            {
+                                                Console.WriteLine($"{fornavn[udskrevneBrugere] + " " + efternavn[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
+                                            }
+                                        }
+
+                                        udskrevneBrugere++; //Holder styr på, hvilken side man befinder sig på
+                                                            //F.eks. er side 4 = udskrevneBrugere/8
                                     }
 
-                                    //Alle brugere vises i kronologisk rækkefølge
-                                    else if (adminMenuValg == "A")
+                                    //Sideskift og afslutning
+                                    //Menuen sættes til, at man kun får mulighed for at navigere rundt i databasevisningen så længe, at der er brugere til udskrift
+                                    bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
+                                    //Første side, alle brugere udskrevet
+                                    if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises) //Der er kun vises 8 brugere på en side OG der tjekkes at der ikke er flere brugere, der skal udskrives
                                     {
-                                        //Resonnement er det samme som i ovenstående if
-                                        if (udskrevneBrugere <= tilmeldteBrugere)
-                                        {
-                                            Console.WriteLine($"{fornavn[udskrevneBrugere] + " " + efternavn[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
-                                        }
+                                        Console.Write("\nAfslut visningen (A) ");
+                                    }
+                                    //Første side med mulighed for at gå til side 2
+                                    else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
+                                    {
+                                        Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
+                                    }
+                                    //Mulighed for både at gå frem og tilbage, side 2 begynder fra 9 udskrevne brugere
+                                    else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
+                                    {
+                                        Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
+                                    }
+                                    //Man kan kun gå tilbage
+                                    else
+                                    {
+                                        Console.Write("\nForrige side (F)   Afslut visningen (A) ");
                                     }
 
-                                    udskrevneBrugere++; //Holder styr på, hvilken side man befinder sig på
-                                                        //F.eks. er side 4 = udskrevneBrugere/8
-                                }
+                                    //Input om valget fra ovenstående
+                                    string navigation = Console.ReadLine();
+                                    navigation = navigation.ToUpper();
 
-                                //Sideskift og afslutning
-                                //Menuen sættes til, at man kun får mulighed for at navigere rundt i databasevisningen så længe, at der er brugere til udskrift
-                                bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
-                                //Første side, alle brugere udskrevet
-                                if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises) //Der er kun vises 8 brugere på en side OG der tjekkes at der ikke er flere brugere, der skal udskrives
-                                {
-                                    Console.Write("\nAfslut visningen (A) ");
-                                }
-                                //Første side med mulighed for at gå til side 2
-                                else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
-                                {
-                                    Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
-                                }
-                                //Mulighed for både at gå frem og tilbage, side 2 begynder fra 9 udskrevne brugere
-                                else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
-                                {
-                                    Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
-                                }
-                                //Man kan kun gå tilbage
-                                else
-                                {
-                                    Console.Write("\nForrige side (F)   Afslut visningen (A) ");
-                                }
+                                    //Tjekker hvilken linje markøren står på efter brugeren har indtastet i ReadLine
+                                    //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang - linje 618
+                                    int fejlmeddelelseLinje = Console.CursorTop - 1;                        //-1 er fordi at ENTER, når inputtet bekræftes, laver et linjeskift, så markøren står på linje 15
 
-                                //Input om valget fra ovenstående
-                                string navigation = Console.ReadLine();
-                                navigation = navigation.ToUpper();
+                                    //Næste side
+                                    if (navigation == "" && derErFlereBrugereDerSkalVises) //Vi tjekker at der er flere brugere, så man får fejlmeddelelsen i else, hvis man trykker ENTER på sidste side
+                                    {
+                                    }
 
-                                //Tjekker hvilken linje markøren står på efter brugeren har indtastet i ReadLine
-                                //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang - linje 598
-                                int fejlmeddelelseLinje = Console.CursorTop - 1;                        //-1 er fordi at ENTER, når inputtet bekræftes, laver et linjeskift, så markøren står på linje 15
+                                    //Forrige side
+                                    else if (navigation == "F" && udskrevneBrugere > 8) //Der sørges for at inputtet både er F OG at vi ikke befinder os på første side for ellers vil udregningen lave rod i, hvilke brugere, der vises
+                                    {
+                                        //Når løkken gentages, så trækkes der 16 fra tallet, der er gemt i variablen
+                                        //Der er 8 på hver side. Hvis 8 trækkes fra ville den starte med samme side igen.
+                                        //16 viser forrige side
+                                        udskrevneBrugere -= 16;
+                                    }
 
-                                //Næste side
-                                if (navigation == "" && derErFlereBrugereDerSkalVises) //Vi tjekker at der er flere brugere, så man får fejlmeddelelsen i else, hvis man trykker ENTER på sidste side
-                                {
-                                }
+                                    //Databasefremvisningen afsluttes
+                                    else if (navigation == "A")
+                                    {
+                                        visDatabase = false; //while-løkken gentages ikke
+                                    }
 
-                                //Forrige side
-                                else if (navigation == "F" && udskrevneBrugere > 8) //Der sørges for at inputtet både er F OG at vi ikke befinder os på første side for ellers vil udregningen lave rod i, hvilke brugere, der vises
-                                {
-                                    //Når løkken gentages, så trækkes der 16 fra tallet, der er gemt i variablen
-                                    //Der er 8 på hver side. Hvis 8 trækkes fra ville den starte med samme side igen.
-                                    //16 viser forrige side
-                                    udskrevneBrugere -= 16;
-                                }
-
-                                //Databasefremvisningen afsluttes
-                                else if (navigation == "A")
-                                {
-                                    visDatabase = false; //while-løkken gentages ikke
-                                }
-
-                                //Fejlmeddelelse
-                                else
-                                {
-                                    //Meddelelsen kommer på linjen, hvor man indtastede forket
-                                    Console.SetCursorPosition(100, fejlmeddelelseLinje);
-                                    Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
-                                    Console.ReadKey();
-                                    udskrevneBrugere -= 8; //Samme 8 brugere vises igen
+                                    //Fejlmeddelelse
+                                    else
+                                    {
+                                        //Meddelelsen kommer på linjen, hvor man indtastede forket
+                                        Console.SetCursorPosition(100, fejlmeddelelseLinje);
+                                        Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
+                                        Console.ReadKey();
+                                        udskrevneBrugere -= 8; //Samme 8 brugere vises igen
+                                    }
                                 }
                             }
                         }

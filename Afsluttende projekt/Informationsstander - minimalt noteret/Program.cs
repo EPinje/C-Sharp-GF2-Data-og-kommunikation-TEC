@@ -311,176 +311,195 @@ namespace Informationsstander___minimalt_noteret
                         Console.Clear();
                         Console.Write("Adgangskode: ");
                         string adgangskode = Console.ReadLine();
-
-                        //Database - søgefunktion, fuld visning og statistik
                         if (adgangskode == "Ab12345!")
                         {
-                            Console.Clear();
-                            Console.WriteLine("Brugerdatabase");
-                            Console.WriteLine("\nFind brugere med søgefunktion (F)");
-                            Console.WriteLine("\nVis alle brugere (A)");
-                            Console.WriteLine("\nVis statistik / Gennemsnitsalder (S)\n");
-                            string adminMenuValg = Console.ReadLine();
-                            adminMenuValg = adminMenuValg.ToUpper();
-
-                            int[] brugereSøgeordMatcher = new int[50000];
-                            int brugereMatchet = 0;
-
-                            //Søgefunktion
-                            if (adminMenuValg == "F")
+                            //Database - søgefunktion, fuld visning og statistik
+                            bool adminMenuRun = true;
+                            while (adminMenuRun)
                             {
-                                string søgerEfter = "";
-                                bool indputCheck = true;
-                                while (!indputCheck)
-                                {
-                                    indputCheck = true;
-                                    Console.Clear();
-                                    Console.WriteLine("Hvad vil du søge gennem? ved hjælp af telefonnummer, fornavn eller efternavn");
-                                    Console.WriteLine("\nTelefonnummer (T)");
-                                    Console.WriteLine("Fornavn (F)");
-                                    Console.WriteLine("Efternavn (E)");
-                                    Console.WriteLine("Postnummer (P)\n");
-                                    søgerEfter = Console.ReadLine();
-                                    søgerEfter = søgerEfter.ToUpper();
+                                Console.Clear();
+                                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("\nFind brugere med søgefunktion (F)");
+                                Console.WriteLine("\nVis alle brugere (A)");
+                                Console.WriteLine("\nVis statistik / Gennemsnitsalder (S)");
+                                Console.WriteLine("\nReturner til hovedmenuen (R)");
+                                Console.WriteLine("\nLuk programmet (L)");
+                                Console.WriteLine("\n──────────────────────────────────────────────────────────────");
+                                Console.WriteLine("──────────────────────────────────────────────────────────────\n");
+                                string adminMenuValg = Console.ReadLine();
+                                adminMenuValg = adminMenuValg.ToUpper();
 
-                                    if (søgerEfter != "T" && søgerEfter != "F" && søgerEfter != "E" && søgerEfter != "P")
+                                int[] brugereSøgeordMatcher = new int[50000];
+                                int brugereMatchet = 0;
+
+                                //Søgefunktion
+                                if (adminMenuValg == "F")
+                                {
+                                    string søgerEfter = "";
+                                    bool indputCheck = false;
+                                    while (!indputCheck)
                                     {
+                                        indputCheck = true;
                                         Console.Clear();
-                                        Console.WriteLine("Du skal indtaste et af bogstaverne fra parenteserne i menuen!");
-                                        Console.Write("Tryk ENTER for at prøve igen");
-                                        Console.ReadKey();
-                                        indputCheck = false;
+                                        Console.WriteLine("Hvad vil du søge gennem? ved hjælp af telefonnummer, fornavn eller efternavn");
+                                        Console.WriteLine("\nTelefonnummer (T)");
+                                        Console.WriteLine("Fornavn (F)");
+                                        Console.WriteLine("Efternavn (E)");
+                                        Console.WriteLine("Postnummer (P)\n");
+                                        søgerEfter = Console.ReadLine();
+                                        søgerEfter = søgerEfter.ToUpper();
+
+                                        if (søgerEfter != "T" && søgerEfter != "F" && søgerEfter != "E" && søgerEfter != "P")
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("Du skal indtaste et af bogstaverne fra parenteserne i menuen!");
+                                            Console.Write("Tryk ENTER for at prøve igen");
+                                            Console.ReadKey();
+                                            indputCheck = false;
+                                        }
                                     }
-                                }
 
-                                //Søgeord indtastes
-                                Console.Clear();
-                                Console.Write("Indtast søgerord: ");
-                                string søgeord = Console.ReadLine();
-                                søgeord = søgeord.ToUpper();
+                                    //Søgeord indtastes
+                                    Console.Clear();
+                                    Console.Write("Indtast søgerord: ");
+                                    string søgeord = Console.ReadLine();
+                                    søgeord = søgeord.ToUpper();
 
-                                for (int i = 0; i <= tilmeldteBrugere; i++)
-                                {
-                                    if (telefonnumre[i].ToUpper().StartsWith(søgeord) || fornavn[i].ToUpper().StartsWith(søgeord) || efternavn[i].ToUpper().StartsWith(søgeord) || postnumre[i].ToUpper().StartsWith(søgeord))
+                                    for (int i = 0; i <= tilmeldteBrugere; i++)
                                     {
-                                        brugereSøgeordMatcher[brugereMatchet++] = i;
+                                        if (søgerEfter == "T" && telefonnumre[i].ToUpper().StartsWith(søgeord) || søgerEfter == "F" && fornavn[i].ToUpper().StartsWith(søgeord) || søgerEfter == "E" && efternavn[i].ToUpper().StartsWith(søgeord) || søgerEfter == "P" && postnumre[i].ToUpper().StartsWith(søgeord))
+                                        {
+                                            brugereSøgeordMatcher[brugereMatchet++] = i;
+                                        }
                                     }
+                                    brugereMatchet--;
                                 }
-                                brugereMatchet--;
-                            }
 
-                            //Vis alle brugere
-                            else if (adminMenuValg == "A")
-                            { }
+                                //Vis alle brugere
+                                else if (adminMenuValg == "A")
+                                { }
 
-                            //Statistik - aldersgennemsnit
-                            else if (adminMenuValg == "S")
-                            {
-                                Console.Clear();
-                                int aldreSammenlagt = 0;
-                                for (int i = 0; i <= tilmeldteBrugere; i++)
+                                //Statistik - aldersgennemsnit
+                                else if (adminMenuValg == "S")
                                 {
-                                    aldreSammenlagt += aldre[i];
+                                    Console.Clear();
+                                    int aldreSammenlagt = 0;
+                                    for (int i = 0; i <= tilmeldteBrugere; i++)
+                                    {
+                                        aldreSammenlagt += aldre[i];
+                                    }
+                                    int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
+
+                                    Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år");
+                                    Console.ReadKey();
                                 }
-                                int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
 
-                                Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år");
-                                Console.ReadKey();
-                            }
+                                //Returnering til hovedmenuen
+                                else if (adminMenuValg == "R")
+                                {
+                                    adminMenuRun = false;
+                                }
 
-                            //Fejlmeddelelse - søg, vis eller statistik
-                            else
-                            {
-                                Console.Clear();
-                                Console.WriteLine("Du har indtastet et ugyldigt input");
-                                Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
-                                Console.ReadKey();
-                                break;
-                            }
+                                //Programmet slukkes
+                                else if (adminMenuValg == "L")
+                                {
+                                    adminMenuRun = false;
+                                    informationsstanderTændt = false;
+                                }
 
-                            //Udskrift af brugere fra databasen
+                                //Fejlmeddelelse - administrator menu
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Du har indtastet et ugyldigt input");
+                                    Console.Write("\nTryk enter for at vende tilbage til menuen");
+                                    Console.ReadKey();
+                                }
 
-                            int udskrevneBrugere = 0;
-                            bool visDatabase = true;
-                            while (visDatabase && adminMenuValg != "S")
-                            {
-                                //Layout
-                                Console.Clear();
-                                Console.WriteLine($"{$"Brugeredatabase", -25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}", 123}");
-                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
-                                Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
-                                Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+                                //Udskrift af brugere fra databasen
+                                int udskrevneBrugere = 0;
+                                bool visDatabase = adminMenuValg == "F" || adminMenuValg == "A";
+                                while (visDatabase)
+                                {
+                                    //Layout
+                                    Console.Clear();
+                                    Console.WriteLine($"{$"Brugeredatabase",-25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}",123}");
+                                    Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
+                                    Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
+                                    Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
 
                                     for (int i = 0; i < 8; i++)
-                                {
-                                    //Søgeresultater vises
-                                    if (adminMenuValg == "F")
                                     {
-                                        if (udskrevneBrugere <= brugereMatchet)
+                                        //Søgeresultater vises
+                                        if (adminMenuValg == "F")
                                         {
-                                            Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
+                                            if (udskrevneBrugere <= brugereMatchet)
+                                            {
+                                                Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
+                                            }
                                         }
+
+                                        //Alle brugere vises
+                                        else if (adminMenuValg == "A")
+                                        {
+                                            if (udskrevneBrugere <= tilmeldteBrugere)
+                                            {
+                                                Console.WriteLine($"{fornavn[udskrevneBrugere] + " " + efternavn[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
+                                            }
+                                        }
+                                        udskrevneBrugere++;
                                     }
 
-                                    //Alle brugere vises
-                                    else if (adminMenuValg == "A")
+                                    //Sideskift og afslutning
+                                    bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
+                                    if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises)
                                     {
-                                        if (udskrevneBrugere <= tilmeldteBrugere)
-                                        {
-                                            Console.WriteLine($"{fornavn[udskrevneBrugere] + " " + efternavn[udskrevneBrugere],-25} │ {telefonnumre[udskrevneBrugere],-8} │ {aldre[udskrevneBrugere],-5} │ {e_mails[udskrevneBrugere],-30} │ {adresser[udskrevneBrugere],-25} │ {postnumre[udskrevneBrugere],-7} │ {byer[udskrevneBrugere],-20} │ {frekvenserNyhedsbrev[udskrevneBrugere]}");
-                                        }
+                                        Console.Write("\nAfslut visningen (A) ");
                                     }
-                                    udskrevneBrugere++;
-                                }
+                                    else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
+                                    {
+                                        Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
+                                    }
+                                    else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
+                                    {
+                                        Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
+                                    }
+                                    else
+                                    {
+                                        Console.Write("\nForrige side (F)   Afslut visningen (A) ");
+                                    }
 
-                                //Sideskift og afslutning
-                                bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
-                                if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises)
-                                {
-                                    Console.Write("\nAfslut visningen (A) ");
-                                }
-                                else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
-                                {
-                                    Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
-                                }
-                                else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
-                                {
-                                    Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
-                                }
-                                else
-                                {
-                                    Console.Write("\nForrige side (F)   Afslut visningen (A) ");
-                                }
+                                    string navigation = Console.ReadLine();
+                                    navigation = navigation.ToUpper();
 
-                                string navigation = Console.ReadLine();
-                                navigation = navigation.ToUpper();
+                                    int fejlmeddelelseLinje = Console.CursorTop - 1;
 
-                                int fejlmeddelelseLinje = Console.CursorTop - 1;
+                                    //Næste side
+                                    if (navigation == "" && derErFlereBrugereDerSkalVises)
+                                    {
+                                    }
 
-                                //Næste side
-                                if (navigation == "" && derErFlereBrugereDerSkalVises)
-                                {
-                                }
+                                    //Forrige side
+                                    else if (navigation == "F" && udskrevneBrugere > 8)
+                                    {
+                                        udskrevneBrugere -= 16;
+                                    }
 
-                                //Forrige side
-                                else if (navigation == "F" && udskrevneBrugere > 8)
-                                {
-                                    udskrevneBrugere -= 16;
-                                }
+                                    //Databasefremvisningen afsluttes
+                                    else if (navigation == "A")
+                                    {
+                                        visDatabase = false;
+                                    }
 
-                                //Databasefremvisningen afsluttes
-                                else if (navigation == "A")
-                                {
-                                    visDatabase = false;
-                                }
-
-                                //Fejlmeddelelse
-                                else
-                                {
-                                    Console.SetCursorPosition(100, fejlmeddelelseLinje);
-                                    Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
-                                    Console.ReadKey();
-                                    udskrevneBrugere -= 8;
+                                    //Fejlmeddelelse
+                                    else
+                                    {
+                                        Console.SetCursorPosition(100, fejlmeddelelseLinje);
+                                        Console.Write("Ugyldigt input (Tryk ENTER for nyt input)");
+                                        Console.ReadKey();
+                                        udskrevneBrugere -= 8;
+                                    }
                                 }
                             }
                         }
