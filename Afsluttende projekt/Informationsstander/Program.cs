@@ -52,7 +52,7 @@ namespace Informationsstander
 
             //Koden starter herfra
 
-            //Nogle arrays og variable defineres tidligere end de bruges. Hvis de laves inde i en if eller while, alt indenfor {}, kan de ikke bruges udenfor dette aflukkede område
+            //Nogle arrays og variable deklareres (laves) tidligere end de bruges, så deres scope (rækkevidde) udvides. Hvis de deklareres inde i en if eller while, alt indenfor to tuborgklammer {}, kan de og deres tildelte værdier ikke bruges udenfor dette aflukkede område
 
             //Arrays til brugerinformation
             string[] telefonnumre = new string[50];
@@ -393,7 +393,7 @@ namespace Informationsstander
                             //Søgefunktion
                             if (adminMenuValg == "F")
                             {
-                                //Defineres inde i while-løkken, men skal bruges udenfor
+                                //Tildeles værdi inde i while-løkken, men deklareres her da den skal bruges udenfor
                                 string søgerEfter = "";
 
                                 //Denne while er til, at man køres i loop, hvis man ikke har indtastet rigtigt i forhold til menuen
@@ -446,7 +446,7 @@ namespace Informationsstander
                                         //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret - linje 68-267
                                         //Arrayet gemmer i på pladsen, som brugereMatchet har af værdi
                                         //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
-                                        brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er defineret på linje 389 og 391, forklaring af hvad de skal bruges til - linje 384
+                                        brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er deklareret på linje 389 og 391, forklaring af hvad de skal bruges til - linje 384
                                     }
                                 }
                             }
@@ -489,7 +489,7 @@ namespace Informationsstander
                             //Brugerne der udskrives matches med søgeresultatet eller alle vises, hvis det er valgt tidligere
 
                             //Variablen her regulerer, hvilken side man befinder sig på
-                            //Og sørger for at programmet ikke crasher, fordi at der udskrives fra array pladser, der er over de 50, som arraysne er defineret med
+                            //Og sørger for at programmet ikke crasher, fordi at der udskrives fra array pladser, der er overskrider 50, som er de tildelte pladser arraysne har på nuværende tidspunkt
                             int udskrevneBrugere = 0;
 
                             //Holder databasen kørene indtil, der vælges at afslutte
