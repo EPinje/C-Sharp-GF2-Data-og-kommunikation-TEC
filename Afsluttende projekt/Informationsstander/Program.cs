@@ -448,9 +448,9 @@ namespace Informationsstander
                                         //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
                                         brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er deklareret på linje 389 og 391, forklaring af hvad de skal bruges til - linje 384
                                     }
-                                    //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
-                                    brugereMatchet--;
                                 }
+                                //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
+                                brugereMatchet--;
                             }
 
                             //Vis alle brugere
