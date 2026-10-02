@@ -309,7 +309,6 @@ namespace Informationsstander
                         {
                             //Telefonnummeret gemmes i et array
                             //++ lægger 1 til variablen før der gemmes, før indeholdt den 19 for de 20 personer i toppen, nu 20, som også er pladsen, som den person, der tilmelder sig, skal have gemt sine data på      -       ++ på venstre side af variablen ligger 1 til før der gemmes, havde den været på højre side ville der gemmes først og derefter blive lagt 1 til
-                            //tilmeldteBrugere skabes på linje 271
                             telefonnumre[++tilmeldteBrugere] = telefonnummerInput;
 
                             //ReadLine gemmes i arrays på samme måde som telefonnummeret
@@ -440,7 +439,7 @@ namespace Informationsstander
                                     //Brugere der skal fremvises gemmes i et array
                                     //Søgefunktionen er lavet til at kunne vise flere brugere på en gang, hvis de stemmer overens med søgeordet
 
-                                    //For-løkken er sat til at køre lige så mange gange, som der er tilmeldte brugere - variablen er fra linje 271 (antal brugere der er tilmeldt)
+                                    //For-løkken er sat til at køre lige så mange gange, som der er tilmeldte brugere
                                     for (int i = 0; i <= tilmeldteBrugere; i++)
                                     {
                                         //Der tjekkes først efter, hvad der søges efter OG derefter, om det der står i arrayet, starter med søgeordet
@@ -451,10 +450,10 @@ namespace Informationsstander
                                             //Hver gang for-løkken gennemløbes, tjekkes der systematisk en bruger af af gangen
                                             //Hvis programmet er nået herind betyder det, at brugeren skal vises fra databasen, fordi de matcher med søgeordet
 
-                                            //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret - linje 68-267
+                                            //i representerer pladsen brugeren har i de arrays, hvor deres informationer er lagret
                                             //Arrayet gemmer i på pladsen, som brugereMatchet har af værdi
                                             //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
-                                            brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variabel - se linje 384
+                                            brugereSøgeordMatcher[brugereMatchet++] = i;
                                         }
                                     }
                                     //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
@@ -536,7 +535,7 @@ namespace Informationsstander
                                             //Her udskrives alle de brugere, der er matchet med søgeordet
 
                                             //Udskrevne brugere skal være mindre end brugere, der har mathchet med søgeresultatet
-                                            if (udskrevneBrugere <= brugereMatchet)                                                          //udskrevneBrugere - linje 517 < brugereMatchet - linje 399 og 457
+                                            if (udskrevneBrugere <= brugereMatchet)
                                             {
                                                 //Vi udskriver først fra arrayet fornavn, på pladsen, der er gemt i arrayet brugereSøgeordMatcher, på den plads, der matcher med, hvor mange brugere der allerede er vist i databasen (udskrevneBrugere)
                                                 //Der sættes et mellemrum, efternavn tilføjes, og vi sørger for, at det minimum fylder 25 tegn med mellemrummende til højre. Læg mærke til at hele fornavn + efternavn er i samme {}. Derfor gælder -25 for det fulde navn
@@ -588,7 +587,7 @@ namespace Informationsstander
                                     navigation = navigation.ToUpper();
 
                                     //Tjekker hvilken linje markøren står på efter brugeren har indtastet i ReadLine
-                                    //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang - linje 618
+                                    //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang
                                     int fejlmeddelelseLinje = Console.CursorTop - 1;                        //-1 er fordi at ENTER, når inputtet bekræftes, laver et linjeskift, så markøren står på linje 15
 
                                     //Næste side
