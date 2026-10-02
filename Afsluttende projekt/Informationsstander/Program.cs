@@ -34,18 +34,18 @@ namespace Informationsstander
                                 //Hvis nummeret findes
                                     //Brugeren sendes tilbage til hovedmenuen
                         
-                        //Administrator menu
-                            //Adgangskode
-                                //Søgefunktion
-                                    //Telefonnummer eller navn
-                                //Visning af alle brugere
-                                //Statistik
-                                    //Gennemsnitsalder
+                    //Administrator menu
+                        //Adgangskode
+                            //Søgefunktion
+                                //Telefonnummer eller navn
+                            //Visning af alle brugere
+                            //Statistik
+                               //Gennemsnitsalder
 
-                                //Søgefunktion og visning af alle brugere falder igennem til samme database
-                                    //Søgte match vises
-                                    //Eller alle brugere vises
-                                        //Sideskift med maks 14 linjer per side
+                            //Søgefunktion og visning af alle brugere falder igennem til samme database
+                                //Søgte match vises
+                                //Eller alle brugere vises
+                                    //Sideskift med maks 14 linjer per side
 
             //Arrays til brugerinformation
             string[] telefonnumre = new string[50];
