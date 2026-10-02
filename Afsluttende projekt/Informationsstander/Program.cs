@@ -55,15 +55,15 @@ namespace Informationsstander
             //Nogle arrays og variable deklareres (laves) tidligere end de bruges, så deres scope (rækkevidde) udvides. Hvis de deklareres inde i en if eller while, alt indenfor to tuborgklammer {}, kan de og deres tildelte værdier ikke bruges udenfor dette aflukkede område
 
             //Arrays til brugerinformation
-            string[] telefonnumre = new string[50];
-            string[] fornavn = new string[50];
-            string[] efternavn = new string[50];
-            int[] aldre = new int[50];
-            string[] adresser = new string[50];
-            string[] postnumre = new string[50];
-            string[] byer = new string[50];
-            string[] e_mails = new string[50];
-            int[] frekvenserNyhedsbrev = new int[50];
+            string[] telefonnumre = new string[50000];
+            string[] fornavn = new string[50000];
+            string[] efternavn = new string[50000];
+            int[] aldre = new int[50000];
+            string[] adresser = new string[50000];
+            string[] postnumre = new string[50000];
+            string[] byer = new string[50000];
+            string[] e_mails = new string[50000];
+            int[] frekvenserNyhedsbrev = new int[50000];
 
             //Udfyldning af første 20 brugere
             telefonnumre[0] = "71908671";
@@ -308,7 +308,7 @@ namespace Informationsstander
                         if (erNummerIArray == -1)
                         {
                             //Telefonnummeret gemmes i et array
-                            //++ lægger 1 til variablen før der gemmes, før indeholdt den 20 for de 20 personer i toppen, nu 21, som også er pladsen, som den person, der tilmelder sig nu, skal have gemt sine data på      -       ++ på venstre side af variablen ligger 1 til før der gemmes, havde den været på højre side ville der gemmes først og derefter blive lagt 1 til
+                            //++ lægger 1 til variablen før der gemmes, før indeholdt den 19 for de 20 personer i toppen, nu 20, som også er pladsen, som den person, der tilmelder sig, skal have gemt sine data på      -       ++ på venstre side af variablen ligger 1 til før der gemmes, havde den været på højre side ville der gemmes først og derefter blive lagt 1 til
                             //tilmeldteBrugere skabes på linje 271
                             telefonnumre[++tilmeldteBrugere] = telefonnummerInput;
 
@@ -386,7 +386,7 @@ namespace Informationsstander
                             //hvilke pladser de eftersøgte brugere ligger på i deres arrays, når de skal vises fra databasen
 
                             //Arrayet bruges til at gemme, hvilke pladser de eftersøgte brugere har
-                            int[] brugereSøgeordMatcher = new int[50];
+                            int[] brugereSøgeordMatcher = new int[50000];
                             //Variablen bruges til at holde styr på hvor mange brugere, der er puttet i arrayet
                             int brugereMatchet = 0;
 
@@ -448,12 +448,14 @@ namespace Informationsstander
                                         //Variablen brugereMatchet bliver kun større, hvis der er en bruger der skal vises. Og det sker efter at i bliver gemt i arrayet (++ til højre)
                                         brugereSøgeordMatcher[brugereMatchet++] = i; //Array og variable er deklareret på linje 389 og 391, forklaring af hvad de skal bruges til - linje 384
                                     }
+                                    //Variablen ændres til at passe med indeks i arrays, som tæller fra 0 og ikke 1
+                                    brugereMatchet--;
                                 }
                             }
 
                             //Vis alle brugere
                             else if (adminMenuValg == "A")      //Er her kun for, at valget "A" ikke ender i else
-                            { }                                 //Den skal hoppe videre til while - linje 499
+                            { }                                 //Den skal hoppe videre til while - linje 501
 
                             //Statistik - aldersgennemsnit
                             else if (adminMenuValg == "S")
@@ -467,7 +469,7 @@ namespace Informationsstander
                                 {
                                     aldreSammenlagt += aldre[i];
                                 }
-                                int gennemsnitsAlder = aldreSammenlagt / tilmeldteBrugere + 1;
+                                int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
 
                                 Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år"); //Tilmeldte brugere starter på 0, så for at finde det rigtige antal brugere lægges 1 til
                                 Console.ReadKey();
@@ -514,7 +516,7 @@ namespace Informationsstander
                                         //Her udskrives alle de brugere, der er matchet med søgeordet
 
                                         //Udskrevne brugere skal være mindre end brugere, der har mathchet med søgeresultatet
-                                        if (udskrevneBrugere < brugereMatchet)                                                          //udskrevneBrugere - linje 493 < brugereMatchet - linje 391 og 449
+                                        if (udskrevneBrugere <= brugereMatchet)                                                          //udskrevneBrugere - linje 495 < brugereMatchet - linje 391 og 449
                                         {
                                             //Vi udskriver først fra arrayet fornavn, på pladsen, der er gemt i arrayet brugereSøgeordMatcher, på den plads, der matcher med, hvor mange brugere der allerede er vist i databasen (udskrevneBrugere)
                                             //Der sættes et mellemrum, efternavn tilføjes, og vi sørger for, at det minimum fylder 25 tegn med mellemrummende til højre. Læg mærke til at hele fornavn + efternavn er i samme {}. Derfor gælder -25 for det fulde navn
@@ -537,14 +539,28 @@ namespace Informationsstander
                                                         //F.eks. er side 4 = udskrevneBrugere/8
                                 }
 
-                                //Hvis man befinder sig på første side, får man ikke vist muligheden for at gå tilbage til forrige side
-                                if (udskrevneBrugere <= 8)
+                                //Sideskift og afslutning
+                                //Menuen sættes til, at man kun får mulighed for at navigere rundt i databasevisningen så længe, at der er brugere til udskrift
+                                bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
+                                //Første side, alle brugere udskrevet
+                                if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises) //Der er kun vises 8 brugere på en side OG der tjekkes at der ikke er flere brugere, der skal udskrives
+                                {
+                                    Console.Write("\nAfslut visningen (A) ");
+                                }
+                                //Første side med mulighed for at gå til side 2
+                                else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
                                 {
                                     Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
                                 }
-                                else
+                                //Mulighed for både at gå frem og tilbage, side 2 begynder fra 9 udskrevne brugere
+                                else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
                                 {
                                     Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
+                                }
+                                //Man kan kun gå tilbage
+                                else
+                                {
+                                    Console.Write("\nForrige side (F)   Afslut visningen (A) ");
                                 }
 
                                 //Input om valget fra ovenstående
@@ -552,11 +568,11 @@ namespace Informationsstander
                                 navigation = navigation.ToUpper();
 
                                 //Tjekker hvilken linje markøren står på efter brugeren har indtastet i ReadLine
-                                //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang - linje 582
+                                //Bruges til at fejlmeddelelsen udskrives på samme linje hver gang - linje 598
                                 int fejlmeddelelseLinje = Console.CursorTop - 1;                        //-1 er fordi at ENTER, når inputtet bekræftes, laver et linjeskift, så markøren står på linje 15
 
                                 //Næste side
-                                if (navigation == "")
+                                if (navigation == "" && derErFlereBrugereDerSkalVises) //Vi tjekker at der er flere brugere, så man får fejlmeddelelsen i else, hvis man trykker ENTER på sidste side
                                 {
                                 }
 

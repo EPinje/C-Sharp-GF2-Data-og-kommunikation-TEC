@@ -13,15 +13,15 @@ namespace Informationsstander___minimalt_noteret
             //Informationsstander
 
             //Arrays til brugerinformation
-            string[] telefonnumre = new string[50];
-            string[] fornavn = new string[50];
-            string[] efternavn = new string[50];
-            int[] aldre = new int[50];
-            string[] adresser = new string[50];
-            string[] postnumre = new string[50];
-            string[] byer = new string[50];
-            string[] e_mails = new string[50];
-            int[] frekvenserNyhedsbrev = new int[50];
+            string[] telefonnumre = new string[50000];
+            string[] fornavn = new string[50000];
+            string[] efternavn = new string[50000];
+            int[] aldre = new int[50000];
+            string[] adresser = new string[50000];
+            string[] postnumre = new string[50000];
+            string[] byer = new string[50000];
+            string[] e_mails = new string[50000];
+            int[] frekvenserNyhedsbrev = new int[50000];
 
             //Udfyldning af første 20 brugere
             telefonnumre[0] = "71908671";
@@ -323,7 +323,7 @@ namespace Informationsstander___minimalt_noteret
                             string adminMenuValg = Console.ReadLine();
                             adminMenuValg = adminMenuValg.ToUpper();
 
-                            int[] brugereSøgeordMatcher = new int[50];
+                            int[] brugereSøgeordMatcher = new int[50000];
                             int brugereMatchet = 0;
 
                             //Søgefunktion
@@ -366,6 +366,7 @@ namespace Informationsstander___minimalt_noteret
                                         brugereSøgeordMatcher[brugereMatchet++] = i;
                                     }
                                 }
+                                brugereMatchet--;
                             }
 
                             //Vis alle brugere
@@ -381,7 +382,7 @@ namespace Informationsstander___minimalt_noteret
                                 {
                                     aldreSammenlagt += aldre[i];
                                 }
-                                int gennemsnitsAlder = aldreSammenlagt / tilmeldteBrugere + 1;
+                                int gennemsnitsAlder = aldreSammenlagt / (tilmeldteBrugere + 1);
 
                                 Console.Write($"Fundne brugere: {tilmeldteBrugere + 1}  │  Gennemsnitsalder: {gennemsnitsAlder} år");
                                 Console.ReadKey();
@@ -415,7 +416,7 @@ namespace Informationsstander___minimalt_noteret
                                     //Søgeresultater vises
                                     if (adminMenuValg == "F")
                                     {
-                                        if (udskrevneBrugere < brugereMatchet)
+                                        if (udskrevneBrugere <= brugereMatchet)
                                         {
                                             Console.WriteLine($"{fornavn[brugereSøgeordMatcher[udskrevneBrugere]] + " " + efternavn[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {telefonnumre[brugereSøgeordMatcher[udskrevneBrugere]],-8} │ {aldre[brugereSøgeordMatcher[udskrevneBrugere]],-5} │ {e_mails[brugereSøgeordMatcher[udskrevneBrugere]],-30} │ {adresser[brugereSøgeordMatcher[udskrevneBrugere]],-25} │ {postnumre[brugereSøgeordMatcher[udskrevneBrugere]],-7} │ {byer[brugereSøgeordMatcher[udskrevneBrugere]],-20} │ {frekvenserNyhedsbrev[brugereSøgeordMatcher[udskrevneBrugere]]}");
                                         }
@@ -433,13 +434,22 @@ namespace Informationsstander___minimalt_noteret
                                 }
 
                                 //Sideskift og afslutning
-                                if (udskrevneBrugere <= 8)
+                                bool derErFlereBrugereDerSkalVises = (adminMenuValg == "F" && udskrevneBrugere <= brugereMatchet || adminMenuValg == "A" && udskrevneBrugere <= tilmeldteBrugere);
+                                if (udskrevneBrugere <= 8 && !derErFlereBrugereDerSkalVises)
+                                {
+                                    Console.Write("\nAfslut visningen (A) ");
+                                }
+                                else if (udskrevneBrugere <= 8 && derErFlereBrugereDerSkalVises)
                                 {
                                     Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
                                 }
-                                else
+                                else if (udskrevneBrugere > 8 && derErFlereBrugereDerSkalVises)
                                 {
                                     Console.Write("\nForrige side (F)   Næste side (ENTER)   Afslut visningen (A) ");
+                                }
+                                else
+                                {
+                                    Console.Write("\nForrige side (F)   Afslut visningen (A) ");
                                 }
 
                                 string navigation = Console.ReadLine();
@@ -448,7 +458,7 @@ namespace Informationsstander___minimalt_noteret
                                 int fejlmeddelelseLinje = Console.CursorTop - 1;
 
                                 //Næste side
-                                if (navigation == "")
+                                if (navigation == "" && derErFlereBrugereDerSkalVises)
                                 {
                                 }
 
