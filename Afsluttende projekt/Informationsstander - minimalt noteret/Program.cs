@@ -255,7 +255,7 @@ namespace Informationsstander___minimalt_noteret
 
                         int erNummerIArray = Array.IndexOf(telefonnumre, telefonnummerInput);
 
-                        //Brugeroplysninger
+                        //Tilmelding og dataindsamling
                         if (erNummerIArray == -1)
                         {
                             telefonnumre[++tilmeldteBrugere] = telefonnummerInput;
@@ -293,6 +293,7 @@ namespace Informationsstander___minimalt_noteret
                             Console.Write("\nTryk enter for at afslutte");
                             Console.ReadKey();
                         }
+
                         //Fejlmeddelelse
                         else
                         {
@@ -306,11 +307,12 @@ namespace Informationsstander___minimalt_noteret
                     //Administrator menu
                     case ("A"):
 
+                        //Adgangskrav
                         Console.Clear();
                         Console.Write("Adgangskode: ");
                         string adgangskode = Console.ReadLine();
 
-                        //Adgangskrav
+                        //Database - søgefunktion, fuld visning og statistik
                         if (adgangskode == "Ab12345!")
                         {
                             Console.Clear();
@@ -328,9 +330,8 @@ namespace Informationsstander___minimalt_noteret
                             if (adminMenuValg == "F")
                             {
                                 string søgerEfter = "";
-
                                 bool indputCheck = true;
-                                while (indputCheck)
+                                while (!indputCheck)
                                 {
                                     indputCheck = true;
                                     Console.Clear();
@@ -352,6 +353,7 @@ namespace Informationsstander___minimalt_noteret
                                     }
                                 }
 
+                                //Søgeord indtastes
                                 Console.Clear();
                                 Console.Write("Indtast søgerord: ");
                                 string søgeord = Console.ReadLine();
@@ -366,7 +368,7 @@ namespace Informationsstander___minimalt_noteret
                                 }
                             }
 
-                            //Fuld databasevisning hopper til while
+                            //Vis alle brugere
                             else if (adminMenuValg == "A")
                             { }
 
@@ -385,7 +387,7 @@ namespace Informationsstander___minimalt_noteret
                                 Console.ReadKey();
                             }
 
-                            //Fejlmeddelelse
+                            //Fejlmeddelelse - søg, vis eller statistik
                             else
                             {
                                 Console.Clear();
@@ -395,22 +397,22 @@ namespace Informationsstander___minimalt_noteret
                                 break;
                             }
 
-                            //Databasevisning
+                            //Udskrift af brugere fra databasen
 
                             int udskrevneBrugere = 0;
                             bool visDatabase = true;
-
                             while (visDatabase && adminMenuValg != "S")
                             {
+                                //Layout
                                 Console.Clear();
-                                Console.WriteLine($"{$"Brugeredatabase",-25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}",123}");
+                                Console.WriteLine($"{$"Brugeredatabase", -25} {$"Tilmeldte brugere: {tilmeldteBrugere + 1}", 123}");
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
-                                Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}"); //, tal (f.eks. , 25) sørger for at hvis teksten i {} er mindre end 25 tegn. så udfyldes resten af pladsen til 25 tegn med mellemrum
+                                Console.WriteLine($"{"Navn",-25} │ {"Telefon",-8} │ {"Alder",-5} │ {"E- mail",-30} │ {"Adresse",-25} │ {"Postnr.",-7} │ {"By",-20} │ {"Frekvens"}");
                                 Console.WriteLine("─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────");
 
-                                for (int i = 0; i < 8; i++)
+                                    for (int i = 0; i < 8; i++)
                                 {
-                                    //Søgning matches
+                                    //Søgeresultater vises
                                     if (adminMenuValg == "F")
                                     {
                                         if (udskrevneBrugere < brugereMatchet)
@@ -430,7 +432,7 @@ namespace Informationsstander___minimalt_noteret
                                     udskrevneBrugere++;
                                 }
 
-                                //Navigation i menuen
+                                //Sideskift og afslutning
                                 if (udskrevneBrugere <= 8)
                                 {
                                     Console.Write("\nNæste side (ENTER)   Afslut visningen (A) ");
@@ -481,7 +483,9 @@ namespace Informationsstander___minimalt_noteret
                             Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
                             Console.ReadKey();
                         }
-                        break;//case med administrator menu afsluttes
+
+                        //case med administrator menu afsluttes
+                        break;
 
                     //Fejlmeddelelse, hovedmenu
                     default:
