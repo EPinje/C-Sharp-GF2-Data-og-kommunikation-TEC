@@ -502,7 +502,7 @@ namespace Informationsstander
                                 {
                                     Console.Clear();
                                     Console.WriteLine("Du har indtastet et ugyldigt input");
-                                    Console.Write("\nTryk enter for at vende tilbage til hovedmenuen");
+                                    Console.Write("\nTryk enter for at vende tilbage til menuen");
                                     Console.ReadKey();
                                 }
 
