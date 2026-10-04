@@ -24,7 +24,7 @@ namespace Informationsstander
 
             //Arrays til brugerdata
 
-                //Hovemenu
+                //Hovedmenu
 
                     //Brugergrænseflade
 
@@ -42,6 +42,8 @@ namespace Informationsstander
                             //Visning af alle brugere
                             //Statistik
                                //Gennemsnitsalder
+                            //Returnering til hovedmenuen
+                            //Nedlukning af programmet
 
                             //Søgefunktion og visning af alle brugere falder igennem til samme database
                                 //Søgte match vises
