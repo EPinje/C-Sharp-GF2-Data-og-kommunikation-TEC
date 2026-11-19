@@ -227,6 +227,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander (test)"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander - minimalt noteret", "Afsluttende projekt\Informationsstander - minimalt noteret\Informationsstander - minimalt noteret.csproj", "{73068433-E042-4A61-B9FD-0D861FE90E96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metode uden parametre (tasteopgave)", "Ekstra opgaver\08.1 - Metoder\Metode uden parametre (tasteopgave)\Metode uden parametre (tasteopgave).csproj", "{095BD569-DE6C-4550-ADC1-AE187F21711A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51 - Metode med navn og adresse", "Ekstra opgaver\08.1 - Metoder\51 - Metode med navn og adresse\51 - Metode med navn og adresse.csproj", "{537D1177-A60D-42F6-A6E7-1E405D5C3899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -593,6 +597,14 @@ Global
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -696,6 +708,8 @@ Global
 		{BE4A292A-048A-47C3-9554-62CD9A0D6411} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
 		{9A2BD315-C888-47A1-A061-2731D1ACB008} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
 		{73068433-E042-4A61-B9FD-0D861FE90E96} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
+		{095BD569-DE6C-4550-ADC1-AE187F21711A} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{537D1177-A60D-42F6-A6E7-1E405D5C3899} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}
