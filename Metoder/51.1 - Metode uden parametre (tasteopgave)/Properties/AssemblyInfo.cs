@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Metode uden parametre (tasteopgave)")]
+[assembly: AssemblyTitle("51.1 Metode uden parametre (tasteopgave)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TEC")]
-[assembly: AssemblyProduct("Metode uden parametre (tasteopgave)")]
+[assembly: AssemblyProduct("51.1 Metode uden parametre (tasteopgave)")]
 [assembly: AssemblyCopyright("Copyright © TEC 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("095bd569-de6c-4550-adc1-ae187f21711a")]
+[assembly: Guid("1579d6a9-1b99-4e09-9800-d6c95a5b19ce")]
 
 // Version information for an assembly consists of the following four values:
 //

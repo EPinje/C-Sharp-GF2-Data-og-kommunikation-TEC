@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{095BD569-DE6C-4550-ADC1-AE187F21711A}</ProjectGuid>
+    <ProjectGuid>{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Metode_uden_parametre__tasteopgave_</RootNamespace>
-    <AssemblyName>Metode uden parametre %28tasteopgave%29</AssemblyName>
+    <RootNamespace>_52._1___Metode_med_parametre__tasteopgave_</RootNamespace>
+    <AssemblyName>52.1 - Metode med parametre %28tasteopgave%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

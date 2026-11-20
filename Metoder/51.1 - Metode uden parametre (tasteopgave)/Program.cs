@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metode_uden_parametre__tasteopgave_
+namespace _51._1___Metode_uden_parametre__tasteopgave_
 {
     internal class Program
     {

@@ -193,13 +193,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "57 - Karaktergennemsnit med
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktisk eksamen - Billetter til Rosenborg slot", "Praktisk eksamen\Praktisk eksamen - Billetter til Rosenborg slot\Praktisk eksamen - Billetter til Rosenborg slot.csproj", "{0A2A0B2A-EE18-4FF8-A346-00BA96AC2883}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 - Eksamen", "11 - Eksamen", "{CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18 - Eksamen", "18 - Eksamen", "{CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Natur og forlystelsespark", "Praktisk eksamen\Natur og forlystelsespark\Natur og forlystelsespark.csproj", "{4CD9FB6A-274A-4A14-BEF5-95823CD8A569}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.2 - Klasser", "08.2 - Klasser", "{1780B620-0F69-4861-90D8-DEAA1DECDD71}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.1 - Metoder", "08.1 - Metoder", "{18C24442-FC24-4F83-8713-C6D0AA04B35B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Metoder", "10 - Metoder", "{18C24442-FC24-4F83-8713-C6D0AA04B35B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Nice to Know", "10 - Nice to Know", "{1027D924-994D-47A1-B87A-C7F8CA69E295}"
 EndProject
@@ -213,11 +213,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13 - CIDR og Subnet", "13 -
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14 - Sikker inputvalidering", "14 - Sikker inputvalidering", "{74544EE8-8657-454C-A944-89E52417F157}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Ekstra opgaver", "10 - Ekstra opgaver", "{E8929A50-2DC8-45A1-901A-49F293308AEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Ekstra opgaver", "20 - Ekstra opgaver", "{E8929A50-2DC8-45A1-901A-49F293308AEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55 - Egne klasser", "Ekstra opgaver\08.2 - Klasser\55 - Egne klasser\55 - Egne klasser.csproj", "{4581E7A1-C636-404C-95B3-D059BA33A9F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 -  Afsluttende projekt", "12 -  Afsluttende projekt", "{8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19 -  Afsluttende projekt", "19 -  Afsluttende projekt", "{8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander", "Afsluttende projekt\Informationsstander\Informationsstander.csproj", "{BE4A292A-048A-47C3-9554-62CD9A0D6411}"
 EndProject
@@ -227,9 +227,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander (test)"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informationsstander - minimalt noteret", "Afsluttende projekt\Informationsstander - minimalt noteret\Informationsstander - minimalt noteret.csproj", "{73068433-E042-4A61-B9FD-0D861FE90E96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metode uden parametre (tasteopgave)", "Ekstra opgaver\08.1 - Metoder\Metode uden parametre (tasteopgave)\Metode uden parametre (tasteopgave).csproj", "{095BD569-DE6C-4550-ADC1-AE187F21711A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51 - Metode med navn og adresse", "Ekstra opgaver\08.1 - Metoder\51 - Metode med navn og adresse\51 - Metode med navn og adresse.csproj", "{537D1177-A60D-42F6-A6E7-1E405D5C3899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52 - Metode til beregning af moms", "Ekstra opgaver\08.1 - Metoder\52 - Metode til beregning af moms\52 - Metode til beregning af moms.csproj", "{D21242B6-EF44-45EC-8FA9-DB6B054C4184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52.1 - Metode med parametre (tasteopgave)", "Ekstra opgaver\08.1 - Metoder\52.1 - Metode med parametre (tasteopgave)\52.1 - Metode med parametre (tasteopgave).csproj", "{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51.1 - Metode uden parametre (tasteopgave)", "Ekstra opgaver\08.1 - Metoder\51.1 - Metode uden parametre (tasteopgave)\51.1 - Metode uden parametre (tasteopgave).csproj", "{1579D6A9-1B99-4E09-9800-D6C95A5B19CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53 - Farveskift", "Ekstra opgaver\08.1 - Metoder\53 - Farveskift\53 - Farveskift.csproj", "{D808542F-E86B-4933-BB9C-7BA50172ED1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54.1 - Metode med parametre og returnering af værdi", "Metoder\54.1 - Metode med parametre og returnering af værdi\54.1 - Metode med parametre og returnering af værdi.csproj", "{D4E05634-E0B8-4675-A767-76070B380226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54 - Rumfang af cylinder", "Metoder\54 - Rumfang af cylinder\54 - Rumfang af cylinder.csproj", "{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -597,14 +607,34 @@ Global
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73068433-E042-4A61-B9FD-0D861FE90E96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{095BD569-DE6C-4550-ADC1-AE187F21711A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537D1177-A60D-42F6-A6E7-1E405D5C3899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21242B6-EF44-45EC-8FA9-DB6B054C4184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21242B6-EF44-45EC-8FA9-DB6B054C4184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21242B6-EF44-45EC-8FA9-DB6B054C4184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21242B6-EF44-45EC-8FA9-DB6B054C4184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E05634-E0B8-4675-A767-76070B380226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E05634-E0B8-4675-A767-76070B380226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E05634-E0B8-4675-A767-76070B380226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E05634-E0B8-4675-A767-76070B380226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -697,7 +727,6 @@ Global
 		{0A2A0B2A-EE18-4FF8-A346-00BA96AC2883} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
 		{4CD9FB6A-274A-4A14-BEF5-95823CD8A569} = {CE3F6817-E725-4D05-8CBA-3B2C8D87DBC0}
 		{1780B620-0F69-4861-90D8-DEAA1DECDD71} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
-		{18C24442-FC24-4F83-8713-C6D0AA04B35B} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{1027D924-994D-47A1-B87A-C7F8CA69E295} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{04A2A004-AF99-49AF-AF65-691E8DAF22A3} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
 		{D6C993FF-B5DE-416C-B30A-E0C6E6138E48} = {E8929A50-2DC8-45A1-901A-49F293308AEB}
@@ -708,8 +737,13 @@ Global
 		{BE4A292A-048A-47C3-9554-62CD9A0D6411} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
 		{9A2BD315-C888-47A1-A061-2731D1ACB008} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
 		{73068433-E042-4A61-B9FD-0D861FE90E96} = {8C38B7D2-8DCB-40A5-8E04-B4A24787BD26}
-		{095BD569-DE6C-4550-ADC1-AE187F21711A} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 		{537D1177-A60D-42F6-A6E7-1E405D5C3899} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{D21242B6-EF44-45EC-8FA9-DB6B054C4184} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{D808542F-E86B-4933-BB9C-7BA50172ED1B} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{D4E05634-E0B8-4675-A767-76070B380226} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}

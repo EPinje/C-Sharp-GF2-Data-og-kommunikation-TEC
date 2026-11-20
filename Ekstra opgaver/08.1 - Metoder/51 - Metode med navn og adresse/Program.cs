@@ -10,15 +10,15 @@ namespace _51___Metode_med_navn_og_adresse
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 5; i++)
-                metode();
+            for (int i = 1; i <= 5; i++)
+                metode(i);
 
             Console.ReadKey();
         }
 
-        static void metode()
+        static void metode(int i)
         {
-            Console.WriteLine("Jonas Christian Larsen, Højstrupparken 57, 1. tv.\n");
+            Console.WriteLine($"{i}. Jonas Christian Larsen, Højstrupparken 57, 1. tv.\n");
         }
     }
 }

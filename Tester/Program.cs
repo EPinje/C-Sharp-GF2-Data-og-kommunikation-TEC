@@ -10,12 +10,15 @@ namespace Tester
     {
         static void Main(string[] args)
         {
-            string[] bacon = new string[] { "stegt", "kogt", "slatent", "sprødt"};
-            bacon[20] = "hej";
-
-            Console.WriteLine(bacon[20]);
-
+            Console.Write("Indtast beløb i kr.: ");
+            double beløb = Convert.ToDouble(Console.ReadLine());
+            beregnprocent(beløb);
             Console.ReadKey();
+        }
+
+        static public void beregnprocent(double beløb)
+        {
+            Console.WriteLine("15% af {0:N2} kr. er {1:N2} kr.", beløb, 0.15 * beløb);
         }
     }
 }
