@@ -237,9 +237,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51.1 - Metode uden parametr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53 - Farveskift", "Ekstra opgaver\08.1 - Metoder\53 - Farveskift\53 - Farveskift.csproj", "{D808542F-E86B-4933-BB9C-7BA50172ED1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54.1 - Metode med parametre og returnering af værdi", "Metoder\54.1 - Metode med parametre og returnering af værdi\54.1 - Metode med parametre og returnering af værdi.csproj", "{D4E05634-E0B8-4675-A767-76070B380226}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54 - Rumfang af cylinder", "Metoder\54 - Rumfang af cylinder\54 - Rumfang af cylinder.csproj", "{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54.1 - Metode med parametre og returnering af værdi (tasteopgave)", "Metoder\54.1 - Metode med parametre og returnering af værdi (tasteopgave)\54.1 - Metode med parametre og returnering af værdi (tasteopgave).csproj", "{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -627,14 +627,14 @@ Global
 		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D808542F-E86B-4933-BB9C-7BA50172ED1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4E05634-E0B8-4675-A767-76070B380226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4E05634-E0B8-4675-A767-76070B380226}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4E05634-E0B8-4675-A767-76070B380226}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4E05634-E0B8-4675-A767-76070B380226}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -742,8 +742,8 @@ Global
 		{BE18FF18-042D-4E17-B0A3-EA507CA5BBE5} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 		{1579D6A9-1B99-4E09-9800-D6C95A5B19CE} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 		{D808542F-E86B-4933-BB9C-7BA50172ED1B} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
-		{D4E05634-E0B8-4675-A767-76070B380226} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 		{0437C827-1B9F-4CC6-93DD-FEB8AAE03791} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
+		{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36} = {18C24442-FC24-4F83-8713-C6D0AA04B35B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C179D628-E8DF-4F87-A539-00D97012383A}

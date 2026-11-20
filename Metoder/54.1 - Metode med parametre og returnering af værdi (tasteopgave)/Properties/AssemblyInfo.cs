@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("54.1 - Metode med parametre og returnering af værdi")]
+[assembly: AssemblyTitle("54.1 - Metode med parametre og returnering af værdi (tasteopgave)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TEC")]
-[assembly: AssemblyProduct("54.1 - Metode med parametre og returnering af værdi")]
+[assembly: AssemblyProduct("54.1 - Metode med parametre og returnering af værdi (tasteopgave)")]
 [assembly: AssemblyCopyright("Copyright © TEC 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d4e05634-e0b8-4675-a767-76070b380226")]
+[assembly: Guid("f6eabf0a-580c-4996-a2a2-d3ec0e8b8b36")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4E05634-E0B8-4675-A767-76070B380226}</ProjectGuid>
+    <ProjectGuid>{F6EABF0A-580C-4996-A2A2-D3EC0E8B8B36}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_54._1___Metode_med_parametre_og_returnering_af_værdi</RootNamespace>
-    <AssemblyName>54.1 - Metode med parametre og returnering af værdi</AssemblyName>
+    <RootNamespace>_54._1___Metode_med_parametre_og_returnering_af_værdi__tasteopgave_</RootNamespace>
+    <AssemblyName>54.1 - Metode med parametre og returnering af værdi %28tasteopgave%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

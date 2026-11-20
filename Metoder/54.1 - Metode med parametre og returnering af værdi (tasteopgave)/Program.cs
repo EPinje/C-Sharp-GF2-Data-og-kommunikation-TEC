@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _54._1___Metode_med_parametre_og_returnering_af_værdi
+namespace _54._1___Metode_med_parametre_og_returnering_af_værdi__tasteopgave_
 {
     internal class Program
     {
